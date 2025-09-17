@@ -431,12 +431,21 @@ footer {
   }
 }
 
-/* Estilos para los botones de los pasos */
+/* Contenedor de los pasos */
+.steps {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 20px; /* Espacio entre los botones */
+  margin: 40px 0; /* Agrega margen superior e inferior para separarlo de otras secciones */
+}
+
+/* Estilos de cada botón de paso */
 .step-button {
-  background-color: #f0f4f8; /* Color de fondo suave */
+  background-color: #f8fafc; /* Un color de fondo más claro para un look moderno */
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 25px;
+  padding: 30px; /* Aumenta el padding para más espacio */
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -446,24 +455,27 @@ footer {
   text-decoration: none;
   color: inherit;
   font-family: inherit;
-  margin: 10px;
+  flex: 1 1 300px; /* Flexbox: permite que el botón crezca, se encoja y tenga un ancho base de 300px */
+  max-width: 320px; /* Establece un ancho máximo para evitar que se estiren demasiado en pantallas grandes */
 }
 
-/* Efecto al pasar el cursor sobre el botón */
+/* Efecto de elevación al pasar el cursor */
 .step-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px); /* Eleva el botón ligeramente más */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para un efecto 3D más pronunciado */
 }
 
-/* Estilos para el texto dentro del botón */
+/* Estilos del texto del botón */
 .step-button h3 {
   color: #1a202c;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
 }
 
 .step-button p {
-  color: #4a5568;
+  color: #64748b; /* Un gris más suave para la descripción */
   margin: 0;
+  line-height: 1.6;
 }
 
 /* Estilo para el número del paso */
@@ -471,19 +483,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: #0ea5a4; /* Tu color principal */
+  width: 60px; /* Aumenta el tamaño del círculo */
+  height: 60px; /* Aumenta el tamaño del círculo */
+  background-color: #18365e;
   color: #fff;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Aumenta el tamaño del número */
   font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.steps {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  margin-bottom: 25px;
+  border: 3px solid #fff; /* Borde blanco para darle un toque de contraste */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
