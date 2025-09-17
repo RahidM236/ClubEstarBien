@@ -1,272 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Club Estar Bien — Bienestar Corporativo</title>
-    <meta
-      name="description"
-      content="Club Estar Bien: beneficios en salud, telemedicina y descuentos para equipos y familias. Afíliate y cuida a tu gente."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style2.css">
+    <title>ClubEstarBien</title>
 
-    <!-- Fuente de Google -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Estilos locales -->
-    <link rel="stylesheet" href="CSS/style1.css" />
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Header -->
     <header>
-      <div
-        class="container nav"
-        role="navigation"
-        aria-label="Navegación principal"
-      >
-        <div class="brand">
-          <img
-            src="https://clubestarbien.info/imagenes/logo.png"
-            alt="Logo Club Estar Bien"
-            onerror="this.src='https://via.placeholder.com/140x44?text=Logo'"
-          />
-          <div>
-            <h2>Club Estar Bien</h2>
-            <div class="muted small">Bienestar corporativo y descuentos</div>
-          </div>
+        <div class="container header-container">
+            <div class="logo">Club<span>EstarBien</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="btn">Únete ahora</a>
         </div>
-
-        <nav>
-          <button
-            class="mobile-toggle"
-            id="mobileToggle"
-            aria-expanded="false"
-            aria-controls="mobileMenu"
-          >
-            ☰
-          </button>
-          <ul id="mainNav">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#que">Qué hacemos</a></li>
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#aliados">Aliados</a></li>
-            <li><a href="#planes">Planes</a></li>
-            <li><a href="#contacto" class="cta">Afíliate</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Menú móvil -->
-      <div id="mobileMenu" class="mobile-menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#que">Qué hacemos</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#aliados">Aliados</a>
-        <a href="#planes">Planes</a>
-        <a href="#contacto" class="cta">Afíliate</a>
-      </div>
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section id="inicio" class="container hero" aria-labelledby="heroTitle">
-        <div class="hero-left">
-          <h1 id="heroTitle">
-            Bienestar para tu equipo. Salud, ahorro y comunidad.
-          </h1>
-          <p>
-            Club Estar Bien conecta a empresas y familias con telemedicina,
-            especialistas y descuentos exclusivos para mejorar la salud sin
-            complicaciones.
-          </p>
-          <div class="hero-ctas">
-            <a href="#planes" class="cta">Ver planes</a>
-            <a class="secondary" href="#que">Cómo funciona</a>
-          </div>
-
-          <form id="quickForm" class="form-inline">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre completo"
-              required
-            />
-            <input type="email" name="email" placeholder="Correo" required />
-            <button type="submit">Quiero información</button>
-          </form>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Transforma tu vida con ClubEstarBien</h1>
+            <p>Descubre el camino hacia el bienestar integral con nuestros programas personalizados de salud, nutrición y ejercicio.</p>
+            <a href="#servicios" class="btn">Conoce nuestros servicios</a>
         </div>
+    </section>
 
-        <aside class="hero-card">
-          <h3>Beneficios claves</h3>
-          <div class="benef-list">
-            <div class="benef-item">
-              <div class="icon">MD</div>
-              <div>
-                <strong>Telemedicina 24/7</strong>
-                <div class="muted">
-                  Consultas instantáneas por chat o video.
-                </div>
-              </div>
+    <!-- Services -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos programas integrales diseñados para mejorar tu calidad de vida en todos los aspectos.</p>
             </div>
-            <div class="benef-item">
-              <div class="icon">🔗</div>
-              <div>
-                <strong>Red de especialistas</strong>
-                <div class="muted">
-                  Clínicas y centros aliados en todo el país.
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">💪</div>
+                    <div class="service-content">
+                        <h3>Entrenamiento Personalizado</h3>
+                        <p>Programas de ejercicio adaptados a tus necesidades y objetivos, con seguimiento constante de nuestros coaches especializados.</p>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="benef-item">
-              <div class="icon">💸</div>
-              <div>
-                <strong>Descuentos exclusivos</strong>
-                <div class="muted">
-                  Farmacias, ópticas, gimnasios y comercios.
+                <div class="service-card">
+                    <div class="service-img">🥗</div>
+                    <div class="service-content">
+                        <h3>Asesoría Nutricional</h3>
+                        <p>Planes alimenticios balanceados y educación nutricional para alcanzar tus metas de salud y bienestar.</p>
+                    </div>
                 </div>
-              </div>
+                <div class="service-card">
+                    <div class="service-img">🧠</div>
+                    <div class="service-content">
+                        <h3>Bienestar Mental</h3>
+                        <p>Sesiones de mindfulness, manejo del estrés y técnicas de relajación para equilibrar cuerpo y mente.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="price-box">
-            <div><strong>Desde</strong></div>
-            <div class="price">S/ 9.90 <span>/usuario mes</span></div>
-          </div>
-        </aside>
-      </section>
-
-      <!-- QUÉ HACEMOS -->
-      <section id="que" class="container">
-        <h2>Qué hacemos</h2>
-        <p class="muted">
-          Diseñamos planes de bienestar que integran salud preventiva, atención
-          médica y soluciones de ahorro para empresas de cualquier tamaño.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h4>Telemedicina</h4>
-            <p class="muted">
-              Consultas por video y chat con médicos generales y especialistas.
-            </p>
-          </div>
-          <div class="card">
-            <h4>Programas preventivos</h4>
-            <p class="muted">
-              Campañas de vacunación, tamizajes y talleres de bienestar.
-            </p>
-          </div>
-          <div class="card">
-            <h4>Red de descuentos</h4>
-            <p class="muted">
-              Acuerdos con comercios para reducir gastos en salud y estilo de
-              vida.
-            </p>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- BENEFICIOS -->
-      <section id="beneficios" class="container">
-        <h2>Beneficios destacados</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h4>Atención inmediata</h4>
-            <p class="muted">Soporte médico digital 24/7.</p>
-          </div>
-          <div class="card">
-            <h4>Ahorro real</h4>
-            <p class="muted">Descuentos promedio del 15–30%.</p>
-          </div>
-          <div class="card">
-            <h4>Informes para RR.HH.</h4>
-            <p class="muted">Reportes simples y anonimizados.</p>
-          </div>
+    <!-- Benefits -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beneficios de Ser Miembro</h2>
+                <p>Al unirte a ClubEstarBien, accedes a una variedad de ventajas exclusivas.</p>
+            </div>
+            <div class="benefits-container">
+                <div class="benefit">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Programas Personalizados</h3>
+                    <p>Diseñamos rutinas específicas según tus objetivos y condición física actual.</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Comunidad de Apoyo</h3>
+                    <p>Conecta con personas que comparten tus mismos objetivos de bienestar.</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">📱</div>
+                    <h3>App Exclusiva</h3>
+                    <p>Acceso a nuestra plataforma digital con seguimiento de progreso y contenido exclusivo.</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- PLANES -->
-      <section id="planes" class="container">
-        <h2>Planes</h2>
-        <p class="muted">
-          Planes simples y escalables: corporativo, pyme y familiar.
-        </p>
-
-        <div class="price-grid">
-          <div class="price card">
-            <strong>Plan Pyme</strong>
-            <div class="price-value">S/ 9.90</div>
-            <ul>
-              <li>Telemedicina 24/7</li>
-              <li>2 campañas preventivas</li>
-              <li>Descuentos en red</li>
-            </ul>
-            <a href="#contacto" class="cta">Solicitar Pyme</a>
-          </div>
-
-          <div class="price card featured">
-            <strong>Plan Corporativo</strong>
-            <div class="price-value">Contactar</div>
-            <ul>
-              <li>Portal RR.HH.</li>
-              <li>Convenios con clínicas</li>
-              <li>Implementación prioritaria</li>
-            </ul>
-            <a href="#contacto" class="cta">Contactar ventas</a>
-          </div>
-
-          <div class="price card">
-            <strong>Plan Familiar</strong>
-            <div class="price-value">S/ 14.90</div>
-            <ul>
-              <li>Cobertura familiar</li>
-              <li>Promociones bienestar</li>
-              <li>Consultas virtuales</li>
-            </ul>
-            <a href="#contacto" class="cta">Afíliate</a>
-          </div>
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que Dicen Nuestros Miembros</h2>
+                <p>Experiencias reales de personas que han transformado su vida con nosotros.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"En solo 3 meses he logrado cambios increíbles no solo físicos, sino en mi energía y actitud hacia la vida. ¡Gracias ClubEstarBien!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">M</div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Miembro desde 2022</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"La combinación de entrenamiento, nutrición y mindfulness ha sido la clave para mi transformación. Finalmente encontré un approach integral."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">C</div>
+                        <div class="author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Miembro desde 2021</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"La comunidad que he encontrado aquí es invaluable. No solo he mejorado mi salud, sino que he hecho amigos para toda la vida."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">A</div>
+                        <div class="author-info">
+                            <h4>Ana Martínez</h4>
+                            <p>Miembro desde 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- CONTACTO -->
-      <section id="contacto" class="container">
-        <h2>Afíliate / Solicita información</h2>
-        <form id="leadForm" class="card">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre completo"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            required
-          />
-          <input type="tel" name="telefono" placeholder="Teléfono (opcional)" />
-          <textarea
-            name="mensaje"
-            rows="4"
-            placeholder="¿Qué necesitas?"
-          ></textarea>
-          <button type="submit" class="cta">Enviar solicitud</button>
-        </form>
-      </section>
-    </main>
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+        <div class="container">
+            <h2>¿Listo para Transformar tu Vida?</h2>
+            <p>Únete hoy mismo a ClubEstarBien y comienza tu journey hacia el bienestar integral con nuestro apoyo y guidance profesional.</p>
+            <a href="#" class="btn">Comenzar ahora</a>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-      <div class="container">
-        <div>
-          <strong>Club Estar Bien</strong>
-          <div class="muted small">info@clubestarbien.info • (01) 234-567</div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>ClubEstarBien</h3>
+                    <p>Tu destino para el bienestar integral. Transformamos vidas through programas personalizados de salud, nutrición y ejercicio.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contáctanos</h3>
+                    <ul>
+                        <li>📍 Av. Bienestar 123, Ciudad</li>
+                        <li>📞 (123) 456-7890</li>
+                        <li>✉️ info@clubestarbien.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ClubEstarBien. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <div class="socials">
-          <a href="#">FB</a><a href="#">IG</a><a href="#">LI</a>
-        </div>
-      </div>
     </footer>
-
-    <script src="JS/script1.js"></script>
-  </body>
+</body>
 </html>
