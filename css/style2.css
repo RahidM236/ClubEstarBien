@@ -102,14 +102,21 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(#19365f, #2c6e9bcc),
-    url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
+  background: linear-gradient(rgba(25, 54, 95, 0.8), rgba(44, 110, 155, 0.8)),
+    url("../img/cellphoneImg.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-color: #19365f; /* Color de respaldo */
   color: white;
   text-align: center;
   padding: 150px 0 100px;
   margin-top: 80px;
+  min-height: 80vh; /* Asegura suficiente altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero h1 {

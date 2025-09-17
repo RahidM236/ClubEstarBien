@@ -2,29 +2,29 @@
 // Lógica para los botones de menú
 // ==========================================================
 // Seleccionar los botones por sus IDs.
-const btnPaso1 = document.getElementById('btn-paso-1');
+//const btnPaso1 = document.getElementById('btn-paso-1');
 const btnPaso2 = document.getElementById('btn-paso-2');
-const btnPaso3 = document.getElementById('btn-paso-3');
+//const btnPaso3 = document.getElementById('btn-paso-3');
 
 // Añadir un evento de clic para cada botón.
-btnPaso1.addEventListener('click', () => {
+/*btnPaso1.addEventListener('click', () => {
     // Redirige al usuario a la página de planes.
     alert('¡Excelente! Te redirigimos a la página de planes para que elijas el ideal para ti.');
     // Descomenta la siguiente línea para activar la redirección.
     // window.location.href = '#planes';
-});
+});*/
 
-btnPaso2.addEventListener('click', () => {
+/*btnPaso2.addEventListener('click', () => {
     // Simula la acción de afiliarse.
-    alert('¡Genial! A continuación, serás dirigido a nuestra página de afiliación.');
+    //alert('¡Genial! A continuación, serás dirigido a nuestra página de afiliación.');
     // Descomenta la siguiente línea para activar la redirección.
     // window.location.href = '#afiliacion';
-});
+});*/
 
-btnPaso3.addEventListener('click', () => {
+/*btnPaso3.addEventListener('click', () => {
     // Muestra un mensaje de confirmación.
     alert('¡Felicidades! Ya estás listo para recibir atención inmediata de nuestros profesionales.');
-});
+});*/
 
 // ==========================================================
 // Lógica para el carrusel de aliados
