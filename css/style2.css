@@ -626,4 +626,9 @@ footer {
     height: 120px;
     font-size: 3rem;
   }
+
+  .about-header h2 {
+    font-size: 1.8rem;
+  }
 }
+
