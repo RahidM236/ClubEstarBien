@@ -1,35 +1,32 @@
-// ==========================================================
-// Lógica para los botones de menú
-// ==========================================================
-// Seleccionar los botones por sus IDs.
-//const btnPaso1 = document.getElementById('btn-paso-1');
-const btnPaso2 = document.getElementById('btn-paso-2');
-//const btnPaso3 = document.getElementById('btn-paso-3');
-
-// Añadir un evento de clic para cada botón.
-/*btnPaso1.addEventListener('click', () => {
-    // Redirige al usuario a la página de planes.
-    alert('¡Excelente! Te redirigimos a la página de planes para que elijas el ideal para ti.');
-    // Descomenta la siguiente línea para activar la redirección.
-    // window.location.href = '#planes';
-});*/
-
-/*btnPaso2.addEventListener('click', () => {
-    // Simula la acción de afiliarse.
-    //alert('¡Genial! A continuación, serás dirigido a nuestra página de afiliación.');
-    // Descomenta la siguiente línea para activar la redirección.
-    // window.location.href = '#afiliacion';
-});*/
-
-/*btnPaso3.addEventListener('click', () => {
-    // Muestra un mensaje de confirmación.
-    alert('¡Felicidades! Ya estás listo para recibir atención inmediata de nuestros profesionales.');
-});*/
-
-// ==========================================================
-// Lógica para el carrusel de aliados
-// ==========================================================
+// Esperamos a que todo el contenido del DOM se cargue.
 document.addEventListener('DOMContentLoaded', function() {
+
+    // ==========================================================
+    // Lógica para los botones de menú y smooth scroll
+    // ==========================================================
+    // Aplica "smooth scroll" a todos los enlaces de navegación y botones
+    // con 'href' que comienzan con '#'.
+    document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Ajustamos la posición para dejar un espacio superior de 80px.
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ==========================================================
+    // Lógica para el carrusel de aliados
+    // ==========================================================
     const carousel = document.querySelector('.carousel');
     const items = document.querySelectorAll('.carousel-item');
     const indicators = document.querySelectorAll('.indicator');
@@ -41,19 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función principal para actualizar la posición del carrusel y los indicadores.
     function updateCarousel() {
+        if (!carousel) return; // Aseguramos que el carrusel exista.
+
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // Actualizar el estado 'active' de los indicadores.
+        // Actualiza el estado 'active' de los indicadores.
         indicators.forEach((indicator, index) => {
-            if (index === currentIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
+            indicator.classList.toggle('active', index === currentIndex);
         });
     }
 
-    // Event listeners para los botones de navegación del carrusel (anterior y siguiente).
+    // Event listeners para los botones de navegación del carrusel.
     prevBtn.addEventListener('click', function() {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
         updateCarousel();
@@ -78,24 +73,28 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
     }, 5000);
 
-// ==========================================================
-// Lógica para el smooth scroll
-// ==========================================================
-    // Aplica "smooth scroll" a todos los enlaces de navegación y botones con `href` que comienzan con '#'.
-    document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault(); // Previene el comportamiento de salto predeterminado.
-            const targetId = this.getAttribute('href');
+    // ==========================================================
+    // Lógica para el acordeón (FAQ)
+    // ==========================================================
+    const accordionBtns = document.querySelectorAll('.accordion-btn');
 
-            // Evita desplazarse si el href es solo '#'.
-            if (targetId === '#') return;
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
 
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Ajusta la posición para dejar un espacio superior de 80px.
-                    behavior: 'smooth' // Habilita la animación de desplazamiento suave.
-                });
+            // Cierra todos los acordeones si ya hay uno abierto.
+            document.querySelectorAll('.accordion-content.show').forEach(item => {
+                item.classList.remove('show');
+            });
+            document.querySelectorAll('.accordion-btn.active').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Abre o cierra el acordeón actual.
+            if (!isActive) {
+                this.classList.add('active');
+                content.classList.add('show');
             }
         });
     });
