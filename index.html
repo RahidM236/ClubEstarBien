@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="css/fontawesome.css" />
 
+
     <title>ClubEstarBien</title>
   </head>
   <body>
@@ -28,7 +29,6 @@
                     <li><a href="#quienes-somos">Quiénes Somos</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#aliados">Aliados</a></li>
-                    <li><a href="#como-funciona">Cómo Funciona</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -233,34 +233,27 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="como-funciona">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tu bienestar en 3 pasos</h2>
-                <p>Un proceso simple para comenzar a disfrutar de todos nuestros servicios</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Elige tu plan</h3>
-                    <p>Selecciona el plan ideal para tus necesidades, con una afiliación mensual flexible.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Solicita tu servicio</h3>
-                    <p>Usa nuestra página web o App para afiliarte de forma instantánea.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Disfruta de los beneficios</h3>
-                    <p>Ya formas parte del Club Estar Bien y recibes la atención de nuestros profesionales calificados de manera inmediata.</p>
-                </div>
-            </div>
+    <!-- Steps -->
+       <div class="steps">
+        <button class="step-button" id="btn-paso-1">
+            <div class="step-number">1</div>
+            <h3>Elige tu plan</h3>
+            <p>Selecciona el plan ideal para tus necesidades, con una afiliación mensual flexible.</p>
+        </button>
+
+        <button class="step-button" id="btn-paso-2">
+            <div class="step-number">2</div>
+            <h3>Solicita tu servicio</h3>
+            <p>Usa nuestra página web o App para afiliarte de forma instantánea.</p>
+            <a href="#afiliacion" class="cta-link">Afíliate aquí</a>
+        </button>
+
+        <button class="step-button" id="btn-paso-3">
+            <div class="step-number">3</div>
+            <h3>Disfruta de los beneficios</h3>
+            <p>Ya formas parte del Club Estar Bien y recibes la atención de nuestros profesionales calificados de manera inmediata.</p>
+        </button>
         </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contacto">
@@ -309,8 +302,7 @@
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#quienes-somos">Quiénes Somos</a></li>
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#aliados">Aliados</a></li>
-                        <li><a href="#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="#aliados">Aliados</a></li>                    
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -339,74 +331,6 @@
         </div>
     </footer>
 
-    <script>
-        // JavaScript para el carrusel de aliados
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.carousel');
-            const items = document.querySelectorAll('.carousel-item');
-            const indicators = document.querySelectorAll('.indicator');
-            const prevBtn = document.querySelector('.carousel-control.prev');
-            const nextBtn = document.querySelector('.carousel-control.next');
-            
-            let currentIndex = 0;
-            const totalItems = items.length;
-            
-            // Función para actualizar el carrusel
-            function updateCarousel() {
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
-                // Actualizar indicadores
-                indicators.forEach((indicator, index) => {
-                    if (index === currentIndex) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Event listeners para botones
-            prevBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
-                updateCarousel();
-            });
-            
-            nextBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-                updateCarousel();
-            });
-            
-            // Event listeners para indicadores
-            indicators.forEach(indicator => {
-                indicator.addEventListener('click', function() {
-                    currentIndex = parseInt(this.getAttribute('data-index'));
-                    updateCarousel();
-                });
-            });
-            
-            // Auto slide cada 5 segundos
-            setInterval(function() {
-                currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-                updateCarousel();
-            }, 5000);
-            
-            // Smooth scroll para navegación
-            document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/script1.js"></script>
 </body>
 </html>
