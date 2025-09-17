@@ -134,7 +134,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="servicios">
       <div class="container">
         <div class="section-title">
@@ -144,86 +143,93 @@
           </p>
         </div>
         <div class="services-grid">
-          <div class="service-card star">
+          <div class="service-card" id="telemedicina-card">
             <div class="service-img">🏥</div>
             <div class="service-content">
               <h3>Telemedicina 24/7</h3>
-              <p>
+              <button class="btn-more" data-service="telemedicina">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
                 Acceso ilimitado a médicos profesionales por videollamada y
-                chat, las 24 horas, los 365 días del año. Recibe orientación,
-                recetas digitales y seguimiento desde la comodidad de tu hogar.
+                chat, las 24 horas, los 365 días del año.
               </p>
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" id="domiciliaria-card">
             <div class="service-img">🏠</div>
             <div class="service-content">
               <h3>Asistencia Médica Domiciliaria</h3>
-              <p>
+              <button class="btn-more" data-service="domiciliaria">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
                 Atención médica sin salir de casa. Envío de una unidad de avance
-                con médico vàramédico para una evaluación completa y
-                estabilización en tu domicilio.
+                con médico y paramédico para una evaluación completa.
               </p>
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" id="ambulancia-card">
             <div class="service-img">🚑</div>
             <div class="service-content">
               <h3>Ambulancia</h3>
-              <p>
+              <button class="btn-more" data-service="ambulancia">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
                 Traslado urgente y seguro. Activamos el envío de una ambulancia
-                básica o UCI con personal de emergencia para un traslado rápido
-                y seguro al centro hospitalario más cercano.
+                básica o UCI con personal de emergencia para un traslado rápido.
               </p>
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" id="hogar-card">
             <div class="service-img">🔧</div>
             <div class="service-content">
               <h3>Asistencia en el Hogar</h3>
-              <p>
+              <button class="btn-more" data-service="hogar">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
                 Olvídate de las preocupaciones. Contamos con un equipo
                 especializado para resolver emergencias de plomería,
-                electricidad y cerrajería de forma rápida y eficiente en tu
-                hogar.
+                electricidad y cerrajería.
               </p>
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" id="vehicular-card">
             <div class="service-img">🚗</div>
             <div class="service-content">
               <h3>Asistencia Vehicular</h3>
-              <p>
+              <button class="btn-more" data-service="vehicular">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
                 No te quedes varado. Asistencia inmediata para fallas comunes
                 como batería descargada, cambio de neumático o problemas
-                eléctricos menores, directamente donde lo necesites.
+                eléctricos menores.
               </p>
             </div>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" id="descuentos-card">
             <div class="service-img">🎁</div>
             <div class="service-content">
               <h3>Descuentos y Beneficios</h3>
-              <p>
+              <a href="#contacto" class="btn">Descubre cuáles son</a>
+              <p class="hidden-info">
                 Bienestar a tu alcance. Accede a nuestra red de aliados con
                 descuentos exclusivos en servicios de salud, farmacias,
-                laboratorios y descuentos especiales en variedad de
-                establecimientos de diferente categoría, para cuidar de ti y de
-                tu familia.
+                laboratorios y más.
               </p>
-              <a href="#aliados" class="btn" style="margin-top: 15px"
-                >Descubre cuáles son</a
-              >
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section>
 
     <!-- Allies Section with Carousel -->
     <section class="allies-section" id="aliados">

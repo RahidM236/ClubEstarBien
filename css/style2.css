@@ -269,65 +269,85 @@ nav ul li a:hover {
 }
 
 /* Services Section */
-.services {
-  padding: 80px 0;
-}
-
+/* Estilos generales para las tarjetas de servicio */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+  margin-top: 50px;
 }
 
 .service-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 300px;
+  max-width: 350px;
+  cursor: pointer;
+  position: relative; /* Necesario para posicionar el botón */
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.service-card.star {
-  border: 2px solid #ffcc00;
-  position: relative;
-}
-
-.service-card.star::before {
-  content: "⭐ SERVICIO ESTRELLA";
-  position: absolute;
-  top: -15px;
-  right: 15px;
-  background: #ffcc00;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-img {
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 3rem;
-  background-color: #e8f4ff;
-}
-
-.service-content {
-  padding: 20px;
-}
-
-.service-content h3 {
-  color: #19365f;
   margin-bottom: 15px;
+  color: #0ea5a4;
 }
 
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+/* Estilos para el párrafo oculto */
+.hidden-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+  margin-top: 0;
+}
+
+/* Cuando el párrafo está activo, se muestra */
+.hidden-info.show {
+  max-height: 200px; /* Suficiente espacio para que se muestre el contenido */
+  margin-top: 10px;
+}
+
+/* Estilo para el botón "+" y su animación de rotación */
+.btn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #0ea5a4;
+  color: #0ea5a4;
+  font-size: 1.2rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 10px; /* Separación del título */
+}
+
+/* Rota el ícono cuando el acordeón está abierto */
+.btn-more.active {
+  transform: rotate(45deg); /* Gira 45 grados para formar una "x" */
+}
 /* Carrusel de Aliados */
 .allies-section {
   padding: 80px 0;
