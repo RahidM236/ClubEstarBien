@@ -1,4 +1,6 @@
-/* Estilos generales */
+/*=====================================
+  # Estilos generales y utilidades
+=====================================*/
 * {
   margin: 0;
   padding: 0;
@@ -24,35 +26,6 @@ body {
   margin-bottom: 50px;
 }
 
-/* Estilos para el título "Quiénes Somos" */
-.section-title h2 {
-  background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
-  background-size: 200% 100%;
-  animation: gradient-animation 4s linear infinite;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  font-size: 3.5rem;
-  font-weight: 800;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0% 0;
-  }
-}
-
-.section-title p {
-  font-size: 1.1rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 .btn {
   display: inline-block;
   background-color: #18365e;
@@ -69,7 +42,9 @@ body {
   transform: translateY(-3px);
 }
 
-/* Header */
+/*=====================================
+  # Header
+=====================================*/
 header {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -116,12 +91,12 @@ nav ul li a:hover {
   color: #2c6e9b;
 }
 
-/* Hero Section */
-/* Hero Section */
+/*=====================================
+  # Hero Section
+=====================================*/
 .hero {
   background: linear-gradient(#19365fcc, rgba(44, 110, 155, 0.8)),
     url("../img/clubestarbienHeading.png");
-  /* Cambio clave: 'cover' en lugar de 'contain' */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -148,18 +123,47 @@ nav ul li a:hover {
   margin: 0 auto 30px;
 }
 
-/* About Section */
-/* Estilos para el nuevo diseño de "Quiénes Somos" */
+/*=====================================
+  # Quienes Somos (About Section)
+=====================================*/
+.section-title h2 {
+  background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
+  background-size: 200% 100%;
+  animation: gradient-animation 4s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .about-flex-container {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
-  align-items: center; /* Centra los elementos verticalmente */
-  gap: 40px; /* Espacio entre la imagen y el texto */
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
   margin-top: 50px;
 }
 
 .about-image {
-  flex: 1 1 400px; /* La imagen ocupará un ancho base de 400px */
+  flex: 1 1 400px;
 }
 
 .about-image img {
@@ -167,24 +171,22 @@ nav ul li a:hover {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  /* Estilo inclinado para el efecto visual */
-  transform: rotate(-3deg); 
+  transform: rotate(-3deg);
   transition: transform 0.3s ease;
 }
 
 .about-image img:hover {
-  transform: rotate(0deg); /* Se endereza al pasar el cursor */
+  transform: rotate(0deg);
 }
 
 .about-content {
-  flex: 1 1 400px; /* El contenido ocupará un ancho base de 400px */
+  flex: 1 1 400px;
 }
 
 .about-content h3 {
   font-size: 2.2rem;
   color: #333;
   margin-bottom: 20px;
-  /* La línea roja se agrega con un pseudo-elemento */
   position: relative;
   padding-left: 20px;
 }
@@ -197,7 +199,7 @@ nav ul li a:hover {
   transform: translateY(-50%);
   width: 10px;
   height: 3px;
-  background-color: #e53e3e; /* Rojo */
+  background-color: #e53e3e;
 }
 
 .about-content p {
@@ -207,9 +209,6 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-/* El resto de tu CSS (como .section-title y .btn) se mantiene. */
-
-/* Partner Badge */
 .partner-badge {
   background: linear-gradient(135deg, #e8f4fc, #d4e8f8);
   border-left: 4px solid var(--accent);
@@ -225,7 +224,9 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
-/* Servicios Section - Estilos para las tarjetas */
+/*=====================================
+  # Servicios Section
+=====================================*/
 .services-grid {
   display: flex;
   flex-wrap: wrap;
@@ -254,7 +255,6 @@ nav ul li a:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Contenedor de la imagen en la tarjeta */
 .service-image-wrapper {
   width: 100%;
   height: 150px;
@@ -269,7 +269,6 @@ nav ul li a:hover {
   display: block;
 }
 
-/* Contenido de la tarjeta (título, botón y texto) */
 .service-content {
   padding: 20px;
   display: flex;
@@ -285,7 +284,6 @@ nav ul li a:hover {
   flex-grow: 1;
 }
 
-/* Párrafo oculto para el acordeón */
 .hidden-info {
   max-height: 0;
   overflow: hidden;
@@ -300,10 +298,8 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
-/* Botón de expansión "+" para el acordeón */
 .btn-more {
-  /* ¡Cambiado aquí! */
-  position: relative; /* Cambiado de absolute a relative */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,14 +312,13 @@ nav ul li a:hover {
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-left: auto; /* Alinea el botón a la derecha */
+  margin-left: auto;
 }
 
 .btn-more.active {
   transform: rotate(45deg);
 }
 
-/* Estilos para el botón "Descubre cuáles son" */
 .btn-discover {
   display: inline-block;
   width: auto;
@@ -342,7 +337,9 @@ nav ul li a:hover {
   background-color: #1c5075;
 }
 
-/* Carrusel de Aliados */
+/*=====================================
+  # Carrusel de Aliados
+=====================================*/
 .allies-section {
   padding: 80px 0;
   background-color: #e8f4ff;
@@ -368,17 +365,26 @@ nav ul li a:hover {
   background: white;
   border-radius: 15px;
   box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
 
 .carousel-img {
-  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
-  background-color: #e8f4ff;
+  background-color: transparent;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .carousel-content h3 {
@@ -442,7 +448,29 @@ nav ul li a:hover {
   transform: scale(1.2);
 }
 
-/* Business Section */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/*=====================================
+  # Business Section
+=====================================*/
 .business {
   padding: 80px 0;
   background-color: #f9f9f9;
@@ -458,7 +486,9 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-/* How It Works Section */
+/*=====================================
+  # How It Works Section
+=====================================*/
 .how-it-works {
   padding: 80px 0;
 }
@@ -522,7 +552,9 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Section */
+/*=====================================
+  # Contact Section
+=====================================*/
 .contact {
   padding: 80px 0;
   background-color: #f9f9f9;
@@ -566,7 +598,9 @@ nav ul li a:hover {
   background: #19365f;
 }
 
-/* CTA Section */
+/*=====================================
+  # CTA Section
+=====================================*/
 .cta {
   background: linear-gradient(#2c6e9be6, #18365e),
     url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
@@ -588,7 +622,9 @@ nav ul li a:hover {
   margin: 0 auto 30px;
 }
 
-/* Footer */
+/*=====================================
+  # Footer
+=====================================*/
 footer {
   background: #333;
   color: white;
@@ -633,7 +669,9 @@ footer {
   color: #aaa;
 }
 
-/* Responsive */
+/*=====================================
+  # Responsive
+=====================================*/
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
