@@ -352,3 +352,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const openModalBtn = document.querySelector('.open-modal-btn');
+  const modal = document.getElementById('about-modal');
+  const closeModalBtn = document.querySelector('.close-modal');
+
+  // Abre el modal al hacer clic en el botón
+  openModalBtn.addEventListener('click', function (event) {
+    event.preventDefault(); // Previene el comportamiento por defecto del enlace
+    modal.style.display = 'block';
+  });
+
+  // Cierra el modal al hacer clic en el botón de cierre (X)
+  closeModalBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  // Cierra el modal si el usuario hace clic fuera del contenido
+  window.addEventListener('click', function (event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  });
+});

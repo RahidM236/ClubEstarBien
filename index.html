@@ -52,31 +52,65 @@
       </div>
     </section>
 
-    <section class="about" id="quienes-somos">
-      <div class="container">
-        <div class="about-flex-container">
-          <div class="about-image">
-            <img src="img/logo-solo-03.png" alt="CLUB ESTAR BIEN" />
-          </div>
-          <div class="about-content">
-            <div class="section-title">
-              <h2>¿Quiénes Somos?</h2>
-              <p>Club Estar Bien @Telemedicina24, C.A.</p>
-            </div>
-            <p>
-              Somos una empresa que actúa como intermediaria en la prestación de
-              servicios de salud. Con más de 7 años de trayectoria en el mercado
-              venezolano, nuestra misión es conectar a los usuarios con la
-              atención médica que necesitan, operando a nivel nacional. Nos
-              destaca por nuestra sólida base de clientes, con más de 40.000
-              afiliados activos, lo que demuestra nuestra consolidación y
-              confianza en el sector de la salud digital.
-            </p>
-            <a href="#contacto" class="btn">Conocer más</a>
-          </div>
+<section class="about" id="quienes-somos">
+  <div class="container">
+    <div class="about-flex-container">
+      <div class="about-image">
+        <img src="img/logo-solo-03.png" alt="CLUB ESTAR BIEN" />
+      </div>
+      <div class="about-content">
+        <div class="section-title">
+          <h2>¿Quiénes Somos?</h2>
+          <p>Club Estar Bien @Telemedicina24, C.A.</p>
+        </div>
+        <p>
+          Somos una empresa que actúa como intermediaria en la prestación de
+          servicios de salud. Con más de 7 años de trayectoria en el mercado
+          venezolano, nuestra misión es conectar a los usuarios con la
+          atención médica que necesitan, operando a nivel nacional. Nos
+          destaca por nuestra sólida base de clientes, con más de 40.000
+          afiliados activos, lo que demuestra nuestra consolidación y
+          confianza en el sector de la salud digital.
+        </p>
+        <a href="#" class="btn open-modal-btn">Conocer más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="about-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-body">
+      <div class="modal-flex-container">
+        <div class="modal-section">
+          <h3>Punto 1: Acceso 24/7/365</h3>
+          <p>
+            El servicio está disponible las 24 horas del día, los 7 días de
+            la semana y los 365 días del año. Los afiliados pueden contactar a un médico
+            profesional en cualquier momento, ya sea a través de la línea telefónica
+            0800-2320000 o de nuestra aplicación móvil. Esta disponibilidad constante es
+            crucial para atender emergencias, consultas de último minuto o simplemente para
+            recibir una orientación médica sin esperas.
+          </p>
+        </div>
+        <div class="modal-section">
+          <h3>Punto 2: Tecnología y Confidencialidad</h3>
+          <p>
+            La plataforma del "CLUB ESTAR BIEN" utiliza tecnología de punta. Uno de nuestros
+            elementos más importantes es el historial médico unificado, que organiza la
+            información del paciente de manera especializada. Esto permite a los médicos
+            tener un panorama completo de la salud de la persona, lo que resulta en
+            diagnósticos más precisos y una atención más personalizada. La empresa hace un
+            fuerte énfasis en la confidencialidad, asegurando que solo el médico y el
+            paciente puedan visualizar estos informes, garantizando la privacidad de los
+            datos de salud.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
 
     <section class="services" id="servicios">
       <div class="container">
@@ -176,7 +210,7 @@
           <div class="beneficios-descuentos-card-container">
               <div class="service-card" id="descuentos-card">
                 <div class="service-image-wrapper">
-                  <img src="img/DyB.png" alt="Descuentos" />
+                  <img src="img/Descuentos.png" alt="Descuentos" />
                 </div>
                 <div class="service-content">
                   <h3>Descuentos</h3>
@@ -186,7 +220,7 @@
 
               <div class="service-card" id="beneficios-card">
                 <div class="service-image-wrapper">
-                  <img src="img/DyB.png" alt="beneficios" />
+                  <img src="img/Beneficios.png" alt="beneficios" />
                 </div>
                 <div class="service-content">
                   <h3>Beneficios</h3>
@@ -525,19 +559,22 @@
             </p>
           </button>
 
-          <button class="step-button" id="btn-paso-2">
-            <div class="step-number">2</div>
-            <h3>Solicita tu servicio</h3>
-            <p>
-              Usa nuestra página web o App para afiliarte de forma instantánea.
-            </p>
-            <a
-              href="https://play.google.com/store/apps/details?id=ceb.com.club&hl=es_VE"
-              class="btn btn-afiliate"
-              target="_blank"
-              >Afíliate aquí</a
-            >
-          </button>
+          
+<button class="step-button" id="btn-paso-2">
+  <div class="step-number">2</div>
+  <h3>Solicita tu servicio</h3>
+  <p>
+    Usa nuestra página web o App para afiliarte de forma instantánea.
+  </p>
+  <div class="app-stores-container">
+    <a href="https://play.google.com/store/apps/details?id=ceb.com.club&hl=es_VE" target="_blank" aria-label="Descargar en Google Play">
+      <img src="img/Google_Play_Store.avif" alt="Google Play" />
+    </a>
+    <a href="https://apps.apple.com/us/app/club-estar-bien/id6469519763" target="_blank" aria-label="Descargar en App Store">
+      <img src="img/apple-app-store.avif" alt="App Store" />
+    </a>
+  </div>
+</button>
 
           <button class="step-button" id="btn-paso-3">
             <div class="step-number">3</div>
