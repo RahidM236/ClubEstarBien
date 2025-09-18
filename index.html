@@ -3,28 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/logo solo-02.png" type="image/png" />
+    <meta
+      name="description"
+      content="ClubEstarBien: Tu bienestar integral a través de telemedicina, asistencia en el hogar, descuentos exclusivos y más. Afíliate hoy mismo a la tranquilidad."
+    />
+    <link rel="icon" href="img/logo-solo-02.png" type="image/png" />
     <link rel="stylesheet" href="css/style2.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
     <link href="FONTS/fonts1" rel="stylesheet" />
-    <link rel="stylesheet" href="css/all.css" />
-    <link rel="stylesheet" href="css/fontawesome.css" />
 
     <title>ClubEstarBien</title>
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="container header-container">
         <div class="logo">
-          <img
-            src="img/logo solo-05.png"
-            alt="ClubEstarBien Logo"
-            height="50"
-          />
+          <img src="img/logo-solo-05.png" alt="ClubEstarBien Logo" height="50" />
         </div>
         <nav>
           <ul>
@@ -35,11 +32,10 @@
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
-        <a href="#contacto" class="btn">Afíliate</a>
+        <a href="#afiliate" class="btn">Afíliate</a>
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
       <div class="container">
         <h1>Donde tu tranquilidad y bienestar se encuentran</h1>
@@ -52,12 +48,11 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="quienes-somos">
-    <div class="container">      
-      <div class="about-flex-container">
+      <div class="container">
+        <div class="about-flex-container">
           <div class="about-image">
-            <img src="img/logo solo-03.png" alt="CLUB ESTAR BIEN" />
+            <img src="img/logo-solo-03.png" alt="CLUB ESTAR BIEN" />
           </div>
           <div class="about-content">
             <div class="section-title">
@@ -65,11 +60,13 @@
               <p>Club Estar Bien @Telemedicina24, C.A.</p>
             </div>
             <p>
-              Somos una empresa que actúa como intermediaria en la prestación de servicios de salud. 
-              Con más de 7 años de trayectoria en el mercado venezolano, nuestra misión es conectar a los usuarios 
-              con la atención médica que necesitan, operando a nivel nacional. 
-              Nos destaca por nuestra sólida base de clientes, con más de 40.000 afiliados activos, 
-              lo que demuestra nuestra consolidación y confianza en el sector de la salud digital. 
+              Somos una empresa que actúa como intermediaria en la prestación de
+              servicios de salud. Con más de 7 años de trayectoria en el mercado
+              venezolano, nuestra misión es conectar a los usuarios con la
+              atención médica que necesitan, operando a nivel nacional. Nos
+              destaca por nuestra sólida base de clientes, con más de 40.000
+              afiliados activos, lo que demuestra nuestra consolidación y
+              confianza en el sector de la salud digital.
             </p>
             <a href="#contacto" class="btn">Conocer más</a>
           </div>
@@ -77,7 +74,6 @@
       </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="servicios">
       <div class="container">
         <div class="section-title">
@@ -187,19 +183,102 @@
       </div>
     </section>
 
-    <!-- Allies Section with Carousel -->
     <section class="allies-section" id="aliados">
       <div class="container">
         <div class="section-title">
           <h2>Conoce Nuestros Aliados</h2>
         </div>
 
-        <div class="carousel-container">
-          <div class="carousel">
-            <!-- Item 1 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/Telemedicina.png"></div>
-              <div class="carousel-content">
+        <div class="allies-grid">
+          <div class="ally-item" data-ally="telemedicina">
+            <div class="ally-image">
+              <img src="img/Telemedicina.png" alt="Telemedicina" />
+            </div>
+            <div class="ally-content">
+              <h3>Telemedicina 24/7</h3>
+              <p>
+                Acceso ilimitado a médicos profesionales por videollamada y
+                chat...
+              </p>
+            </div>
+          </div>
+
+          <div class="ally-item" data-ally="salud">
+            <div class="ally-image">
+              <img src="img/SaludYBienestar.png" alt="Salud y Bienestar" />
+            </div>
+            <div class="ally-content">
+              <h3>Salud y Bienestar</h3>
+              <p>Conoce nuestros aliados en el área de Salud y Bienestar</p>
+            </div>
+          </div>
+
+          <div class="ally-item" data-ally="farmacia">
+            <div class="ally-image">
+              <img src="img/Farmacia.png" alt="Farmacia" />
+            </div>
+            <div class="ally-content">
+              <h3>Farmacia</h3>
+              <p>Conoce nuestros aliados en el área de Farmacia</p>
+            </div>
+          </div>
+
+          <div class="ally-item" data-ally="servicios">
+            <div class="ally-image">
+              <img src="img/Servicios.png" alt="Servicios" />
+            </div>
+            <div class="ally-content">
+              <h3>Servicios</h3>
+              <p>Conoce nuestros aliados en el área de Servicios</p>
+            </div>
+          </div>
+
+          <div class="ally-item" data-ally="calzado">
+            <div class="ally-image">
+              <img src="img/CalzadoYRopa.png" alt="Calzado y Ropa" />
+            </div>
+            <div class="ally-content">
+              <h3>Calzado y Ropa</h3>
+              <p>Conoce nuestros aliados en el área de Calzado y Ropa</p>
+            </div>
+          </div>
+
+          <div class="ally-item" data-ally="mascotas">
+            <div class="ally-image">
+              <img src="img/Mascotas.png" alt="Mascotas" />
+            </div>
+            <div class="ally-content">
+              <h3>Mascotas</h3>
+              <p>Conoce nuestros aliados en el área de Mascotas</p>
+            </div>
+          </div>
+
+          <div class="ally-item" data-ally="restaurantes">
+            <div class="ally-image">
+              <img src="img/Restaurantes.png" alt="Restaurantes" />
+            </div>
+            <div class="ally-content">
+              <h3>Restaurantes</h3>
+              <p>Conoce nuestros aliados en el área de Restaurantes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" id="ally-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <button class="carousel-control modal-prev">&#10094;</button>
+          <button class="carousel-control modal-next">&#10095;</button>
+
+          <div class="modal-carousel">
+            <div class="modal-slide active" data-index="0">
+              <div class="modal-image">
+                <img src="img/Telemedicina.png" alt="Telemedicina" />
+              </div>
+              <div class="modal-info">
                 <h3>Telemedicina 24/7</h3>
                 <p>
                   Acceso ilimitado a médicos profesionales por videollamada y
@@ -210,93 +289,104 @@
               </div>
             </div>
 
-            <!-- Item 2 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/Farmacia.png"></div>
-              <div class="carousel-content">
-                <h3>Farmacia</h3>
-                <p>
-                  Conoce nuestros aliados en el area de Farmacia
-                </p>
+            <div class="modal-slide" data-index="1">
+              <div class="modal-image">
+                <img src="img/SaludYBienestar.png" alt="Salud y Bienestar" />
               </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/Restaurantes.png"></div>
-              <div class="carousel-content">
-                <h3>Restaurantes</h3>
-                <p>
-                  Conoce Nuestros aliados en el area de Restaurantes
-                </p>
-              </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/SaludYBienestar.png"></div>
-              <div class="carousel-content">
+              <div class="modal-info">
                 <h3>Salud y Bienestar</h3>
                 <p>
-                  Conoce Nuestros aliados en el area de Salud y Bienestar
+                  Conoce nuestros aliados en el área de Salud y Bienestar.
+                  Accede a centros de salud, spas, gimnasios y profesionales del
+                  bienestar con descuentos exclusivos.
                 </p>
               </div>
             </div>
 
-            <!-- Item 5 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/Servicios.png"></div>
-              <div class="carousel-content">
+            <div class="modal-slide" data-index="2">
+              <div class="modal-image">
+                <img src="img/Farmacia.png" alt="Farmacia" />
+              </div>
+              <div class="modal-info">
+                <h3>Farmacia</h3>
+                <p>
+                  Conoce nuestros aliados en el área de Farmacia. Ofrecemos
+                  descuentos exclusivos en medicamentos y productos de farmacia
+                  con nuestras farmacias asociadas en todo el país.
+                </p>
+              </div>
+            </div>
+
+            <div class="modal-slide" data-index="3">
+              <div class="modal-image">
+                <img src="img/Servicios.png" alt="Servicios" />
+              </div>
+              <div class="modal-info">
                 <h3>Servicios</h3>
                 <p>
-                  Conoce Nuestros aliados en el area de Servicios.
+                  Conoce nuestros aliados en el área de Servicios. Desde
+                  talleres mecánicos hasta servicios de limpieza, nuestros
+                  aliados te ofrecen calidad y precios preferenciales.
                 </p>
               </div>
             </div>
 
-            <!-- Item 6 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/Mascotas.png"></div>
-              <div class="carousel-content">
-                <h3>Mascotas</h3>
-                <p>
-                  Conoce Nuestros aliados en el area de Mascotas.
-                </p>
+            <div class="modal-slide" data-index="4">
+              <div class="modal-image">
+                <img src="img/CalzadoYRopa.png" alt="Calzado y Ropa" />
               </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div class="carousel-item">
-              <div class="carousel-img"><img src="img/CalzadoYRopa.png"></div>
-              <div class="carousel-content">
+              <div class="modal-info">
                 <h3>Calzado y Ropa</h3>
                 <p>
-                  Conoce Nuestros aliados en el area de Calzado y Ropa.
+                  Conoce nuestros aliados en el área de Calzado y Ropa. Viste
+                  con estilo y ahorra con descuentos exclusivos en las mejores
+                  marcas de calzado y ropa.
                 </p>
               </div>
             </div>
 
+            <div class="modal-slide" data-index="5">
+              <div class="modal-image">
+                <img src="img/Mascotas.png" alt="Mascotas" />
+              </div>
+              <div class="modal-info">
+                <h3>Mascotas</h3>
+                <p>
+                  Conoce nuestros aliados en el área de Mascotas. También
+                  pensamos en tus mascotas con veterinarias, tiendas de mascotas
+                  y servicios de cuidado animal con descuentos especiales.
+                </p>
+              </div>
+            </div>
+
+            <div class="modal-slide" data-index="6">
+              <div class="modal-image">
+                <img src="img/Restaurantes.png" alt="Restaurantes" />
+              </div>
+              <div class="modal-info">
+                <h3>Restaurantes</h3>
+                <p>
+                  Conoce nuestros aliados en el área de Restaurantes. Disfruta
+                  de descuentos especiales en una amplia variedad de
+                  restaurantes, desde comida rápida hasta restaurantes gourmet.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <!-- Controles del carrusel -->
-          <button class="carousel-control prev">&#10094;</button>
-          <button class="carousel-control next">&#10095;</button>
-        </div>
-
-        <!-- Indicadores -->
-        <div class="carousel-indicators">
-          <div class="indicator active" data-index="0"></div>
-          <div class="indicator" data-index="1"></div>
-          <div class="indicator" data-index="2"></div>
-          <div class="indicator" data-index="3"></div>
-          <div class="indicator" data-index="4"></div>
-          <div class="indicator" data-index="5"></div>
-          <div class="indicator" data-index="6"></div>
+          <div class="modal-indicators">
+            <div class="modal-indicator active" data-index="0"></div>
+            <div class="modal-indicator" data-index="1"></div>
+            <div class="modal-indicator" data-index="2"></div>
+            <div class="modal-indicator" data-index="3"></div>
+            <div class="modal-indicator" data-index="4"></div>
+            <div class="modal-indicator" data-index="5"></div>
+            <div class="modal-indicator" data-index="6"></div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Business Section -->
     <section class="business">
       <div class="container">
         <div class="section-title">
@@ -311,61 +401,11 @@
             calidad y asistencia en su vida diaria, demostrando tu compromiso
             con su salud y bienestar.
           </p>
-          <a href="mailto:comercializacion@clubestarbien.com" class="btn"
-            >Contactar área comercial</a
-          >
+          <a href="mailto:comercializacion@clubestarbien.com" class="btn">Contactar área comercial</a>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <h2>¿Listo para Transformar tu Vida?</h2>
-        <p>
-          Únete hoy mismo a ClubEstarBien y comienza tu journey hacia el
-          bienestar integral con nuestro apoyo y guidance profesional.
-        </p>
-        <!--<a href="#contacto" class="btn">Comenzar ahora</a>-->
-        <div class="steps">
-      <button class="step-button" id="btn-paso-1">
-        <div class="step-number">1</div>
-        <h3>Elige tu plan</h3>
-        <p>
-          Selecciona el plan ideal para tus necesidades, con una afiliación
-          mensual flexible.
-        </p>
-      </button>
-
-      <button class="step-button" id="btn-paso-2">
-        <div class="step-number">2</div>
-        <h3>Solicita tu servicio</h3>
-        <p>Usa nuestra página web o App para afiliarte de forma instantánea.</p>
-        <a
-          href="https://play.google.com/store/apps/details?id=ceb.com.club&hl=es_VE"
-          class="btn btn-afiliate"
-          target="_blank"
-          >Afíliate aquí</a
-        >
-      </button>
-
-      <button class="step-button" id="btn-paso-3">
-        <div class="step-number">3</div>
-        <h3>Disfruta de los beneficios</h3>
-        <p>
-          Ya formas parte del Club Estar Bien y recibes la atención de nuestros
-          profesionales calificados de manera inmediata.
-        </p>
-      </button>
-    </div>
-
-      </div>
-    </section>
-
-    <!-- Steps -->
-    
-
-    <!-- Contact Section -->
     <section class="contact" id="contacto">
       <div class="container">
         <div class="section-title">
@@ -404,7 +444,47 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <section class="cta" id="afiliate">
+      <div class="container">
+        <h2>¿Listo para Transformar tu Vida?</h2>
+        <p>
+          Únete hoy mismo a ClubEstarBien y comienza tu journey hacia el
+          bienestar integral con nuestro apoyo y guidance profesional.
+        </p>
+        <div class="steps">
+          <button class="step-button" id="btn-paso-1">
+            <div class="step-number">1</div>
+            <h3>Elige tu plan</h3>
+            <p>
+              Selecciona el plan ideal para tus necesidades, con una afiliación
+              mensual flexible.
+            </p>
+          </button>
+
+          <button class="step-button" id="btn-paso-2">
+            <div class="step-number">2</div>
+            <h3>Solicita tu servicio</h3>
+            <p>Usa nuestra página web o App para afiliarte de forma instantánea.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=ceb.com.club&hl=es_VE"
+              class="btn btn-afiliate"
+              target="_blank"
+              >Afíliate aquí</a
+            >
+          </button>
+
+          <button class="step-button" id="btn-paso-3">
+            <div class="step-number">3</div>
+            <h3>Disfruta de los beneficios</h3>
+            <p>
+              Ya formas parte del Club Estar Bien y recibes la atención de
+              nuestros profesionales calificados de manera inmediata.
+            </p>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <div class="container">
         <div class="footer-container">
@@ -438,23 +518,30 @@
           <div class="footer-section">
             <h3>Síguenos</h3>
             <div class="social-links">
-                <a
+              <a
                 href="https://www.facebook.com/clubestarbienve/?locale=es_LA"
                 target="_blank"
-                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-
-                <a href="https://www.instagram.com/clubestarbienve/?hl=es"
-                  target="_blank"
-                  aria-label="Instagram"><i class="fab fa-instagram"></i></a>      
-
-                  <a href="https://www.tiktok.com/@clubestarbien"
-                  target="_blank"
-                  aria-label="TikTok"
-                  ><i class="fab fa-tiktok"></i></a>
-
-                <a href="https://www.youtube.com/@ClubEstarBienYt"
-                    target="_blank"
-                    aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/clubestarbienve/?hl=es"
+                target="_blank"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@clubestarbien"
+                target="_blank"
+                aria-label="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@ClubEstarBienYt"
+                target="_blank"
+                aria-label="youtube"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
           </div>
         </div>

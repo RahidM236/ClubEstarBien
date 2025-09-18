@@ -1,6 +1,15 @@
 /*=====================================
-  # Estilos generales y utilidades
+  # Variables y estilos generales
 =====================================*/
+:root {
+  --primary-color: #18365e;
+  --secondary-color: #2c6e9b;
+  --accent-color: #e53e3e;
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  --light-blue-bg: #e8f4ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +19,8 @@
 
 body {
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  color: var(--text-color);
+  background-color: var(--light-bg);
 }
 
 .container {
@@ -28,7 +37,7 @@ body {
 
 .btn {
   display: inline-block;
-  background-color: #18365e;
+  background-color: var(--primary-color);
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
@@ -82,25 +91,21 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #2c6e9b;
+  color: var(--secondary-color);
 }
 
 /*=====================================
   # Hero Section
 =====================================*/
 .hero {
-  background: linear-gradient(#19365fcc, rgba(44, 110, 155, 0.8)),
-    url("../img/clubestarbienHeading.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #19365f;
+  background: linear-gradient(rgba(25, 54, 95, 0.8), rgba(44, 110, 155, 0.8)),
+    url("../img/clubestarbienHeading.png") center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 150px 0 100px;
@@ -130,10 +135,9 @@ nav ul li a:hover {
   background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
   background-size: 200% 100%;
   animation: gradient-animation 4s linear infinite;
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  -webkit-text-fill-color: transparent;
   font-size: 3.5rem;
   font-weight: 800;
 }
@@ -152,6 +156,10 @@ nav ul li a:hover {
   color: #666;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.about {
+  padding: 80px 0;
 }
 
 .about-flex-container {
@@ -185,7 +193,7 @@ nav ul li a:hover {
 
 .about-content h3 {
   font-size: 2.2rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 20px;
   position: relative;
   padding-left: 20px;
@@ -199,7 +207,7 @@ nav ul li a:hover {
   transform: translateY(-50%);
   width: 10px;
   height: 3px;
-  background-color: #e53e3e;
+  background-color: var(--accent-color);
 }
 
 .about-content p {
@@ -209,24 +217,13 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-.partner-badge {
-  background: linear-gradient(135deg, #e8f4fc, #d4e8f8);
-  border-left: 4px solid var(--accent);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 30px;
-  font-size: 1.1rem;
-}
-
-.partner-badge strong {
-  color: var(--primary);
-  font-weight: 700;
-}
-
 /*=====================================
   # Servicios Section
 =====================================*/
+.services {
+  padding: 80px 0;
+}
+
 .services-grid {
   display: flex;
   flex-wrap: wrap;
@@ -306,8 +303,8 @@ nav ul li a:hover {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 2px solid #2c6e9b;
-  color: #2c6e9b;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   font-size: 1rem;
   background-color: transparent;
   cursor: pointer;
@@ -319,87 +316,138 @@ nav ul li a:hover {
   transform: rotate(45deg);
 }
 
-.btn-discover {
-  display: inline-block;
-  width: auto;
-  padding: 12px 25px;
-  background-color: #2c6e9b;
-  color: #ffffff;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-.btn-discover:hover {
-  background-color: #1c5075;
-}
-
 /*=====================================
   # Carrusel de Aliados
 =====================================*/
 .allies-section {
   padding: 80px 0;
-  background-color: #e8f4ff;
+  background-color: var(--light-blue-bg);
 }
 
-.carousel-container {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
+.allies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.ally-item {
+  background-color: white;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.ally-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.carousel-item {
-  min-width: 100%;
-  padding: 30px;
-  background: white;
-  border-radius: 15px;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 300px;
+.ally-image {
+  height: 150px;
   overflow: hidden;
 }
 
-.carousel-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.carousel-item img {
+.ally-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  transition: transform 0.3s ease;
 }
 
-.carousel-content h3 {
-  color: #19365f;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+.ally-item:hover .ally-image img {
+  transform: scale(1.05);
 }
 
-.carousel-content p {
-  margin-bottom: 20px;
+.ally-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.ally-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.ally-content p {
   color: #555;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.carousel-control {
+/*=====================================
+  # Modal Styles
+=====================================*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 0;
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.close-modal {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.modal-body {
+  position: relative;
+  padding: 0;
+}
+
+.modal-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal-slide {
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-slide.active {
+  display: flex;
+}
+
+.modal-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -415,57 +463,66 @@ nav ul li a:hover {
   transition: background-color 0.3s;
 }
 
-.carousel-control:hover {
-  background-color: #2c6e9b;
+.modal-control:hover {
+  background-color: var(--secondary-color);
 }
 
-.carousel-control.prev {
+.modal-prev {
   left: 15px;
 }
 
-.carousel-control.next {
+.modal-next {
   right: 15px;
 }
 
-.carousel-indicators {
+.modal-indicators {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  gap: 10px;
 }
 
-.indicator {
+.modal-indicator {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background-color: #ccc;
-  margin: 0 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.indicator.active {
-  background-color: #2c6e9b;
+.modal-indicator.active {
+  background-color: var(--secondary-color);
   transform: scale(1.2);
 }
 
-.carousel-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+.modal-image {
+  height: 250px;
+  overflow: hidden;
 }
 
-.carousel-caption h5 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.carousel-caption p {
-  font-size: 1rem;
-  line-height: 1.5;
+.modal-info {
+  padding: 30px;
+}
+
+.modal-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.modal-info p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 /*=====================================
@@ -473,7 +530,7 @@ nav ul li a:hover {
 =====================================*/
 .business {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: var(--light-bg);
   text-align: center;
 }
 
@@ -487,10 +544,25 @@ nav ul li a:hover {
 }
 
 /*=====================================
-  # How It Works Section
+  # CTA Section
 =====================================*/
-.how-it-works {
+.cta {
+  background: linear-gradient(rgba(44, 110, 155, 0.9), rgba(24, 54, 94, 0.9)),
+    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+  color: white;
+  text-align: center;
   padding: 80px 0;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
 }
 
 .steps {
@@ -542,7 +614,7 @@ nav ul li a:hover {
   align-items: center;
   width: 60px;
   height: 60px;
-  background-color: #18365e;
+  background-color: var(--primary-color);
   color: #fff;
   border-radius: 50%;
   font-size: 1.8rem;
@@ -557,7 +629,7 @@ nav ul li a:hover {
 =====================================*/
 .contact {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: var(--light-bg);
 }
 
 .contact-info {
@@ -587,7 +659,7 @@ nav ul li a:hover {
 .social-links a {
   display: inline-block;
   padding: 10px 15px;
-  background: #18365e;
+  background: var(--primary-color);
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -595,31 +667,7 @@ nav ul li a:hover {
 }
 
 .social-links a:hover {
-  background: #19365f;
-}
-
-/*=====================================
-  # CTA Section
-=====================================*/
-.cta {
-  background: linear-gradient(#2c6e9be6, #18365e),
-    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 80px 0;
-}
-
-.cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.cta p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
+  background: var(--secondary-color);
 }
 
 /*=====================================
@@ -640,7 +688,7 @@ footer {
 
 .footer-section h3 {
   margin-bottom: 20px;
-  color: #2c6e9b;
+  color: var(--secondary-color);
 }
 
 .footer-section ul {
@@ -658,7 +706,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-  color: #19365f;
+  color: var(--primary-color);
 }
 
 .copyright {
@@ -710,31 +758,41 @@ footer {
     font-size: 2rem;
   }
 
-  .carousel-control {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+  .about-flex-container {
+    flex-direction: column;
   }
 
-  .carousel-img {
-    height: 120px;
-    font-size: 3rem;
+  .about-image {
+    order: 2;
   }
 
-  .about {
-    padding: 60px 0;
+  .about-content {
+    order: 1;
   }
 
-  .section-title h2 {
-    font-size: 2rem;
+  .ally-item {
+    grid-template-columns: 1fr;
   }
 
-  .about-card {
-    padding: 25px;
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
   }
 
-  .accordion-btn {
-    padding: 16px 20px;
-    font-size: 1.1rem;
+  .modal-image {
+    height: 200px;
+  }
+
+  .modal-info {
+    padding: 20px;
+  }
+
+  .modal-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .allies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
   }
 }
