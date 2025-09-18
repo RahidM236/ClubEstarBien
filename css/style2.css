@@ -255,6 +255,20 @@ nav ul li a:hover {
   /* Espacio entre las secciones */
 }
 
+.beneficios-descuentos-card-container {
+  display: flex; /* Convierte el contenedor en un flex container */
+  justify-content: center; /* Centra las tarjetas horizontalmente dentro del contenedor */
+  align-items: flex-start; /* Alinea los ítems al inicio de la línea (si tuvieran diferentes alturas) */
+  gap: 20px; /* Añade un espacio entre las tarjetas */
+  margin-bottom: 2rem; /* Espacio entre las secciones */
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea en pantallas pequeñas */
+}
+
+.beneficios-descuentos-card-container .service-card {
+  max-width: 280px; /* Define un ancho máximo para cada tarjeta si no lo tienes */
+  /* Asegúrate de que tus tarjetas de descuentos y beneficios tengan la clase 'service-card' o una similar */
+}
+
 /* Estilos para la tarjeta destacada */
 .service-card.highlighted {
   /* Opcional: ajusta el tamaño si es necesario */
