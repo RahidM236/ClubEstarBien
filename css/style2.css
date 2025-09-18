@@ -24,12 +24,34 @@ body {
   margin-bottom: 50px;
 }
 
+/* Estilos para el título "Quiénes Somos" */
 .section-title h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #18365e;
+  /* Fondo con degradado y animación */
+  background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
+  background-size: 200% 100%;
+  animation: gradient-animation 4s linear infinite;
+
+  /* Recorta el degradado al contorno del texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Mantenemos el prefijo para mayor compatibilidad */
+
+  /* Hace que el texto sea transparente */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  /* Estilos de tipografía */
+  font-size: 3.5rem;
+  font-weight: 800;
 }
 
+@keyframes gradient-animation {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
 .section-title p {
   font-size: 1.1rem;
   color: #666;
@@ -131,141 +153,141 @@ nav ul li a:hover {
 }
 
 /* About Section */
-  .about {
-      padding: 80px 0;
-      background: linear-gradient(to bottom, #f9fbfd, #eef2f7);
-  }
-  
-  .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-  }
-  
-  .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-  }
-  
-  .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-  }
-  
-  .section-title p {
-      font-size: 1.2rem;
-      color: var(--secondary);
-      font-weight: 500;
-  }
-  
-  .about-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      padding: 40px;
-      margin-bottom: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .about-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-  }
-  
-  .about-text p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-      color: #444;
-  }
-  
-  .program-title {
-      color: var(--primary);
-      margin: 30px 0 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-  }
-  
-  /* Accordion Features */
-  .accordion-container {
-      margin: 40px 0;
-  }
-  
-  .accordion-btn {
-      width: 100%;
-      text-align: left;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      color: #19365fcc;
-      border: none;
-      padding: 20px 25px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .accordion-btn:hover {
-      background: linear-gradient(to right, #152c4f, #245a82);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  }
-  
-  .accordion-btn i {
-      transition: transform 0.3s ease;
-  }
-  
-  .accordion-btn.active i {
-      transform: rotate(180deg);
-  }
-  
-  .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      background: white;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-  
-  .accordion-content-inner {
-      padding: 0 25px 20px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #444;
-  }
-  
-  .accordion-content.show {
-      max-height: 500px;
-  }
+.about {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #f9fbfd, #eef2f7);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.about-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.program-title {
+  color: var(--primary);
+  margin: 30px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+/* Accordion Features */
+.accordion-container {
+  margin: 40px 0;
+}
+
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: #19365fcc;
+  border: none;
+  padding: 20px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-btn:hover {
+  background: linear-gradient(to right, #152c4f, #245a82);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.accordion-btn i {
+  transition: transform 0.3s ease;
+}
+
+.accordion-btn.active i {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-content-inner {
+  padding: 0 25px 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.accordion-content.show {
+  max-height: 500px;
+}
 
 /* Partner Badge */
 .partner-badge {
-    background: linear-gradient(135deg, #e8f4fc, #d4e8f8);
-    border-left: 4px solid var(--accent);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 30px;
-    font-size: 1.1rem;
+  background: linear-gradient(135deg, #e8f4fc, #d4e8f8);
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.1rem;
 }
 
 .partner-badge strong {
-    color: var(--primary);
-    font-weight: 700;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* Services Section */
@@ -342,6 +364,7 @@ nav ul li a:hover {
   cursor: pointer;
   transition: transform 0.3s ease;
   margin-bottom: 10px; /* Separación del título */
+  margin-left: 120px;
 }
 
 /* Rota el ícono cuando el acordeón está abierto */
@@ -661,20 +684,20 @@ footer {
   }
 
   .about {
-      padding: 60px 0;
+    padding: 60px 0;
   }
-  
+
   .section-title h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
-  
+
   .about-card {
-      padding: 25px;
+    padding: 25px;
   }
-  
+
   .accordion-btn {
-      padding: 16px 20px;
-      font-size: 1.1rem;
+    padding: 16px 20px;
+    font-size: 1.1rem;
   }
 }
 
