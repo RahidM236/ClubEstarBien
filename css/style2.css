@@ -247,6 +247,20 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
+.telemedicina-card-container {
+    display: flex;
+    justify-content: center;
+    /* Centra la tarjeta horizontalmente */
+    margin-bottom: 2rem;
+    /* Espacio entre las secciones */
+}
+
+/* Estilos para la tarjeta destacada */
+.service-card.highlighted {
+    /* Opcional: ajusta el tamaño si es necesario */
+    max-width: 300px;
+}
+
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
