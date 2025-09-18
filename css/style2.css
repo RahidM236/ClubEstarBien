@@ -26,20 +26,13 @@ body {
 
 /* Estilos para el título "Quiénes Somos" */
 .section-title h2 {
-  /* Fondo con degradado y animación */
   background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
   background-size: 200% 100%;
   animation: gradient-animation 4s linear infinite;
-
-  /* Recorta el degradado al contorno del texto */
   background-clip: text;
-  -webkit-background-clip: text; /* Mantenemos el prefijo para mayor compatibilidad */
-
-  /* Hace que el texto sea transparente */
+  -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-
-  /* Estilos de tipografía */
   font-size: 3.5rem;
   font-weight: 800;
 }
@@ -52,6 +45,7 @@ body {
     background-position: 0% 0;
   }
 }
+
 .section-title p {
   font-size: 1.1rem;
   color: #666;
@@ -129,12 +123,12 @@ nav ul li a:hover {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #19365f; /* Color de respaldo */
+  background-color: #19365f;
   color: white;
   text-align: center;
   padding: 150px 0 100px;
   margin-top: 80px;
-  min-height: 80vh; /* Asegura suficiente altura */
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,11 +150,6 @@ nav ul li a:hover {
 .about {
   padding: 80px 0;
   background: linear-gradient(to bottom, #f9fbfd, #eef2f7);
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 .section-title h2 {
@@ -290,8 +279,7 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
-/* Services Section */
-/* Estilos generales para las tarjetas de servicio */
+/* Servicios Section - Estilos para las tarjetas */
 .services-grid {
   display: flex;
   flex-wrap: wrap;
@@ -304,73 +292,110 @@ nav ul li a:hover {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  padding: 30px;
-  text-align: center;
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 300px;
-  max-width: 350px;
+  flex: 1 1 200px;
+  max-width: 280px;
   cursor: pointer;
-  position: relative; /* Necesario para posicionar el botón */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.service-img {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  color: #0ea5a4;
+/* Contenedor de la imagen en la tarjeta */
+.service-image-wrapper {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.service-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido de la tarjeta (título, botón y texto) */
+.service-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .service-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #1a202c;
   margin-bottom: 10px;
+  font-weight: bold;
+  flex-grow: 1;
 }
 
-.service-card p {
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-/* Estilos para el párrafo oculto */
+/* Párrafo oculto para el acordeón */
 .hidden-info {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
   margin-top: 0;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
-/* Cuando el párrafo está activo, se muestra */
 .hidden-info.show {
-  max-height: 200px; /* Suficiente espacio para que se muestre el contenido */
+  max-height: 200px;
   margin-top: 10px;
 }
 
-/* Estilo para el botón "+" y su animación de rotación */
+/* Botón de expansión "+" para el acordeón */
 .btn-more {
+  /* ¡Cambiado aquí! */
+  position: relative; /* Cambiado de absolute a relative */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  border: 2px solid #0ea5a4;
-  color: #0ea5a4;
-  font-size: 1.2rem;
+  border: 2px solid #2c6e9b;
+  color: #2c6e9b;
+  font-size: 1rem;
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-bottom: 10px; /* Separación del título */
-  margin-left: 120px;
+  margin-left: auto; /* Alinea el botón a la derecha */
 }
 
-/* Rota el ícono cuando el acordeón está abierto */
 .btn-more.active {
-  transform: rotate(45deg); /* Gira 45 grados para formar una "x" */
+  transform: rotate(45deg);
 }
+
+/* Estilos para el botón "Descubre cuáles son" */
+.btn-discover {
+  display: inline-block;
+  width: auto;
+  padding: 12px 25px;
+  background-color: #2c6e9b;
+  color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-discover:hover {
+  background-color: #1c5075;
+}
+
 /* Carrusel de Aliados */
 .allies-section {
   padding: 80px 0;
@@ -494,32 +519,61 @@ nav ul li a:hover {
 
 .steps {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
 }
 
-.step {
-  flex: 1 1 250px;
+.step-button {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px;
   text-align: center;
-  padding: 30px 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  flex: 1 1 300px;
+  max-width: 320px;
+}
+
+.step-button:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-button h3 {
+  color: #1a202c;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.step-button p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .step-number {
-  width: 50px;
-  height: 50px;
-  background: #19365f;
-  color: white;
-  border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 1.5rem;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #18365e;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.8rem;
   font-weight: bold;
+  margin-bottom: 25px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
@@ -699,68 +753,4 @@ footer {
     padding: 16px 20px;
     font-size: 1.1rem;
   }
-}
-
-/* Contenedor de los pasos */
-.steps {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
-  justify-content: center; /* Centra los elementos horizontalmente */
-  gap: 20px; /* Espacio entre los botones */
-  margin: 40px 0; /* Agrega margen superior e inferior para separarlo de otras secciones */
-}
-
-/* Estilos de cada botón de paso */
-.step-button {
-  background-color: #f8fafc; /* Un color de fondo más claro para un look moderno */
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 30px; /* Aumenta el padding para más espacio */
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-family: inherit;
-  flex: 1 1 300px; /* Flexbox: permite que el botón crezca, se encoja y tenga un ancho base de 300px */
-  max-width: 320px; /* Establece un ancho máximo para evitar que se estiren demasiado en pantallas grandes */
-}
-
-/* Efecto de elevación al pasar el cursor */
-.step-button:hover {
-  transform: translateY(-8px); /* Eleva el botón ligeramente más */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para un efecto 3D más pronunciado */
-}
-
-/* Estilos del texto del botón */
-.step-button h3 {
-  color: #1a202c;
-  margin-bottom: 12px;
-  font-size: 1.5rem;
-}
-
-.step-button p {
-  color: #64748b; /* Un gris más suave para la descripción */
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* Estilo para el número del paso */
-.step-number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px; /* Aumenta el tamaño del círculo */
-  height: 60px; /* Aumenta el tamaño del círculo */
-  background-color: #18365e;
-  color: #fff;
-  border-radius: 50%;
-  font-size: 1.8rem; /* Aumenta el tamaño del número */
-  font-weight: bold;
-  margin-bottom: 25px;
-  border: 3px solid #fff; /* Borde blanco para darle un toque de contraste */
-  box-shadow: 0 4px 8px rgba(0,  0,  0,  0.1);
 }
