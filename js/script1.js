@@ -7,6 +7,7 @@
       initializeScrollTop();
       initializeServiceCards();
       initializeModals();
+      initializeServiciosModal();
     });
 
     /*=====================================
@@ -215,6 +216,45 @@
         }
         if (plansModal && e.target === plansModal) {
           plansModal.classList.remove('show');
+        }
+        // Agregar la nueva modal
+        const serviciosModal = document.getElementById('serviciosModal');
+        if (serviciosModal && e.target === serviciosModal) {
+          serviciosModal.classList.remove('show');
+        }
+      });
+    }
+
+    /*=====================================
+      # Servicios Modal
+    =====================================*/
+    function initializeServiciosModal() {
+      const serviciosModal = document.getElementById('serviciosModal');
+      const closeServiciosModalBtn = document.querySelector('#serviciosModal .close-btn');
+      
+      // Asignar eventos a los botones "Descubre cuáles son"
+      const descubreButtons = document.querySelectorAll('#descuentos-card .btn, #beneficios-card .btn');
+      
+      descubreButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (serviciosModal) {
+            serviciosModal.classList.add('show');
+          }
+        });
+      });
+      
+      // Close servicios modal
+      if (closeServiciosModalBtn && serviciosModal) {
+        closeServiciosModalBtn.addEventListener('click', () => {
+          serviciosModal.classList.remove('show');
+        });
+      }
+      
+      // Cerrar con la tecla Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && serviciosModal && serviciosModal.classList.contains('show')) {
+          serviciosModal.classList.remove('show');
         }
       });
     }
