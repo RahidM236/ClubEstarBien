@@ -662,6 +662,17 @@
       text-decoration: none;
     }
 
+  /* Estilos para la imagen ajustada */
+      .planes-img {
+          max-width: 100%;       /* La imagen no será más ancha que su contenedor */
+          max-height: 80vh;      /* La imagen no ocupará más del 80% de la altura de la ventana */
+          width: auto;           /* Mantiene la proporción original */
+          height: auto;          /* Mantiene la proporción original */
+          display: block;        /* Elimina espacio extra debajo de la imagen */
+          margin: 0 auto;        /* Centra la imagen horizontalmente */
+          padding: 20px;         /* Espacio alrededor de la imagen */
+      }
+
     .modal-body {
       position: relative;
       padding: 0;
