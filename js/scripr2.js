@@ -46,3 +46,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollBtn = document.getElementById("btn-scroll-top");
+
+    // Muestra u oculta el botón al hacer scroll
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
+    });
+
+    // Scroll suave al hacer clic en el botón
+    scrollBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});

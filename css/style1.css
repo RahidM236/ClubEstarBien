@@ -83,9 +83,6 @@ h4 {
 /*=====================================
   # Header
 =====================================*/
-/*=====================================
-  # Header
-=====================================*/
 header {
   background-color: white;
   padding: 10px 0;
@@ -578,51 +575,215 @@ footer {
 }
 
 /*=====================================
-  # Landing Page - Estilo de Secciones
+  # Estilos para la sección de "Conocer Más" (Renovada)
 =====================================*/
-.gallery-section {
-  padding: 80px 0;
+
+/* Sección de ancho completo con imagen de fondo y paralaje */
+.full-width-section {
+  position: relative;
+  padding: 100px 0; /* Espaciado interno */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efecto de paralaje */
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Asegura que la imagen flotante no se desborde */
+}
+
+/* Overlay para hacer el texto legible sobre la imagen de fondo */
+.full-width-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+  z-index: 1;
+}
+
+/* Contenedor del contenido sobre el overlay */
+.content-overlay {
+  position: relative;
+  z-index: 2;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 40px;
-  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
 }
 
-.gallery-item {
-  background-color: white;
+/* Tarjeta de texto principal */
+.text-card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo blanco semitransparente */
+  color: var(--text-color);
+  padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  transform: translateY(0); /* Estado inicial para la animación */
+  opacity: 1; /* Estado inicial para la animación */
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
-.gallery-item:hover {
-  transform: translateY(-10px);
+.text-card h2 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
 }
 
-.gallery-content {
-  padding: 30px;
+.text-card p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* Imagen flotante con animación */
+.floating-image {
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%; /* Circular */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 5px solid white;
+  transform: translateX(0); /* Estado inicial para la animación */
+  opacity: 1; /* Estado inicial para la animación */
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* Estilos para la segunda sección (Tecnología y Confidencialidad) */
+.standard-section {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+}
+
+.alternate-layout {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.text-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.image-content {
+  flex: 1;
   text-align: center;
 }
 
-.gallery-image {
-  width: 100%;
+.responsive-image {
+  max-width: 100%;
   height: auto;
-  display: block;
-  filter: grayscale(100%); /* Efecto de escala de grises por defecto */
-  transition: filter 0.5s ease, transform 0.3s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-out;
 }
 
-.gallery-item:hover .gallery-image {
-  filter: grayscale(0%); /* Se colorea al pasar el cursor */
-  transform: scale(1.05);
+/* Animaciones CSS (se pueden activar con JavaScript para scroll-reveal) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Media Queries para un diseño responsivo */
-@media (max-width: 768px) {
-  .gallery-section {
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1s ease-out forwards;
+  animation-delay: 0.3s; /* Retraso para que aparezca después del texto */
+}
+
+.scale-up {
+  animation: scaleUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 992px) {
+  .text-card {
+    padding: 30px;
+  }
+  .text-card h2 {
+    font-size: 2.2rem;
+  }
+  .text-card p {
+    font-size: 1rem;
+  }
+  .floating-image {
+    max-width: 200px;
+  }
+  .alternate-layout {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+  }
+  .alternate-layout .image-content {
+    order: -1; /* Mueve la imagen arriba en móviles */
+  }
+  .text-content,
+  .image-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .full-width-section {
+    padding: 60px 0;
+  }
+  .text-card {
+    padding: 20px;
+  }
+  .text-card h2 {
+    font-size: 1.8rem;
+  }
+  .text-card p {
+    font-size: 0.95rem;
+  }
+  .floating-image {
+    max-width: 150px;
   }
 }
