@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function initializeSmoothScroll() {
     // Aplica "smooth scroll" a todos los enlaces de navegación y botones
     // con 'href' que comienzan con '#'.
-    document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"], .btn[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
