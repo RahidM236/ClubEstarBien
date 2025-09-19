@@ -65,7 +65,7 @@
             afiliados activos, lo que demuestra nuestra consolidación y
             confianza en el sector de la salud digital.
           </p>
-          <a href="/ClubEstarBien/info_page.html" class="btn open-modal-btn">Conocer más</a>
+          <a href="#" class="btn open-modal-btn" id="open-about-modal">Conocer más</a>
         </div>
       </div>
     </div>
@@ -358,9 +358,8 @@
         <div class="card-new">
           <h3>Soporte Técnico 24/7</h3>
           <div class="card-body-new">
-            <p><strong>Teléfono:</strong> 0800-232-0000</p>
-            <p><strong>Correo:</strong> info@clubestarbien.com</p>
-            <a href="mailto:contacto@miemstarbien.com">contacto@miemstarbien.com</a>
+            <p><strong>Teléfono:</strong> 0800-232-0000</p>            
+            <a href="mailto:contacto@miemstarbien.com" class="mailto">info@clubestarbien.com</a>
           </div>
         </div>
       </div>
@@ -409,7 +408,7 @@
           <h3>Elige tu plan</h3>
           <p>Selecciona el plan ideal para tus necesidades, con una afiliación mensual flexible.</p>
           <br>
-          <a href="#planes" class="btn">Ver planes</a>
+          <a href="#planes" class="btn" id="open-plans-modal">Ver planes</a>
         </button>
 
         <button class="step-button" id="btn-paso-3">
@@ -424,11 +423,17 @@
     </div>
   </section>
 
+  <div id="planesModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img src="img/planes.jpg" alt="Planes de afiliación" class="planes-img">
+    </div>
+  </div>
+
   <a href="#inicio" id="btn-scroll-top" class="float-btn" aria-label="Volver arriba">
     <i class="fas fa-arrow-up"></i></a>
   <a href="https://wa.me/584241576342?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios." id="btn-whatsapp" class="float-btn" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i></a>
-
 
   <footer>
     <div class="container">
