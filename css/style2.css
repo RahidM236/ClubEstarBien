@@ -827,11 +827,11 @@ nav a:hover {
   text-align: center;
 }
 
-.contact-new .section-title h2 {
+/*.contact-new .section-title h2 {
   font-size: 2.8em;
   color: #343a40;
   margin-bottom: 15px;
-}
+}*/
 
 .contact-new .section-title p {
   font-size: 1.2em;
@@ -1088,4 +1088,70 @@ footer {
 /* Utilidad para desplazamiento suave */
 html {
   scroll-behavior: smooth;
+}
+
+/* =====================================
+  # Estilos para Producto Estrella
+===================================== */
+.featured-product {
+  position: relative;
+  border: 3px solid #FFD700; /* Amarillo dorado */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  transform: scale(1.02);
+  z-index: 5;
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: #FFD700;
+  color: #18365e;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+/* Asegurar que la tarjeta destacada se mantenga por encima de las demás */
+.featured-product:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.float-btn {
+  text-decoration: none;
+}
+
+.mawdy-cintillo-container {
+    width: 100%; /* Ocupa el ancho completo */
+    max-width: 1000px;  /*Limita el ancho como los otros elementos */
+    margin: 40px auto; /* Centra el contenedor y le da espacio vertical */
+    text-align: center; /* Centra la imagen dentro del contenedor */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.mawdy-cintillo {
+    width: 20%; /* La imagen se ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; 
+    max-height: 150px; /* Establece una altura máxima para que se vea como un cintillo */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
 }
