@@ -528,8 +528,8 @@ footer {
 }
 
 /*=====================================
-  # Footer
-=====================================*/
+      # Footer
+    =====================================*/
 footer {
   background: #333;
   color: white;
@@ -572,6 +572,17 @@ footer {
   border-top: 1px solid #444;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
 }
 
 /*=====================================
