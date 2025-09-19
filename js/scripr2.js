@@ -31,3 +31,18 @@ function initializeSmoothScroll() {
         });
     });
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollBtn = document.getElementById("btn-scroll-top");
+
+    // Muestra u oculta el botón al hacer scroll
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) { // El número 200 es la distancia en pixeles que se debe desplazar para que el botón aparezca
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
+    });
+
+});

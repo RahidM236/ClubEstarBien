@@ -126,41 +126,145 @@ nav a:hover {
 }
 
 /*--- HERO ---*/
-.hero {
-  background: linear-gradient(rgba(25, 54, 95, 0.8), rgba(44, 110, 155, 0.8)),
-    url("../img/clubestarbienHeading.png") center/cover no-repeat;
+/*=====================================
+  # Hero para "Venemergencia"
+=====================================*/
+.hero-venemergencia {
+  background-color: var(--primary-color);
   color: white;
+  padding: 80px 0;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin: 10px 0 20px;
+}
+
+.hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.hero-list li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-list i {
+  margin-right: 10px;
+}
+
+.btn-hero {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.btn-hero:hover {
+  background-color: #f1f1f1;
+}
+
+.hero-image-container {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  transform: translateY(40px);
+}
+
+/*=====================================
+  # Pasos de "Cómo Funciona"
+=====================================*/
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 80px 0;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.step-card {
+  background-color: white;
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
-  padding: 150px 0 100px;
-  margin-top: 80px;
-  min-height: 80vh;
-  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto 20px;
 }
 
-.hero-left {
-  flex: 1;
-}
-
-.hero-card {
-  flex: 0.8;
-  background: #f1f5f9;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.hero-ctas {
+.app-links {
   display: flex;
-  gap: 10px;
-  margin: 12px 0;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.secondary {
-  background: #e2e8f0;
-  color: var(--text-color);
-  padding: 10px 16px;
-  border-radius: 8px;
+.app-links img {
+  height: 40px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    max-width: 80%;
+  }
+
+  .app-links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*--- FORM ---*/
@@ -471,4 +575,54 @@ footer {
   border-top: 1px solid #444;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/*=====================================
+  # Landing Page - Estilo de Secciones
+=====================================*/
+.gallery-section {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%); /* Efecto de escala de grises por defecto */
+  transition: filter 0.5s ease, transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover .gallery-image {
+  filter: grayscale(0%); /* Se colorea al pasar el cursor */
+  transform: scale(1.05);
+}
+
+/* Media Queries para un diseño responsivo */
+@media (max-width: 768px) {
+  .gallery-section {
+    flex-direction: column;
+    align-items: center;
+  }
 }
