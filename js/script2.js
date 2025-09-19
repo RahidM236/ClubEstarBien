@@ -68,3 +68,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentItem = 0;
+
+    function showNextItem() {
+        // Esconde el ítem actual
+        galleryItems[currentItem].classList.remove('active');
+
+        // Calcula el próximo ítem
+        currentItem = (currentItem + 1) % galleryItems.length;
+
+        // Muestra el próximo ítem
+        galleryItems[currentItem].classList.add('active');
+    }
+
+    // Cambia la imagen cada 4 segundos
+    setInterval(showNextItem, 4000);
+});

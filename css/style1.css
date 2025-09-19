@@ -330,12 +330,40 @@ button:hover {
 /*=====================================
   # Botones Flotantes (WhatsApp y Scroll Top)
 =====================================*/
+.btn-whatsapp-icon {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-whatsapp-icon:hover {
+  background-color: #174477;
+  transform: translateY(-3px);
+}
+
+.btn-whatsapp-icon i {
+  font-size: 1.2em;
+}
+
+/* Floating Buttons */
 .float-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 50px;
   height: 50px;
+  background-color: #25d366; /* Default for WhatsApp */
   color: white;
   text-align: center;
   border-radius: 50%;
@@ -345,16 +373,17 @@ button:hover {
   align-items: center;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 1000;
+  text-decoration: none;
 }
 
 #btn-whatsapp {
   bottom: 80px;
-  background-color: #25d366; /* Verde de WhatsApp */
+  background-color: #25d366;
 }
 
 #btn-scroll-top {
   bottom: 20px;
-  background-color: #333; /* Color de fondo oscuro */
+  background-color: #333;
   color: #fff;
   opacity: 0;
   visibility: hidden;
@@ -370,7 +399,6 @@ button:hover {
   visibility: visible;
   pointer-events: auto;
 }
-
 /*=====================================
   # Footer
 =====================================*/
@@ -528,8 +556,8 @@ footer {
 }
 
 /*=====================================
-      # Footer
-    =====================================*/
+  # Footer
+=====================================*/
 footer {
   background: #333;
   color: white;
@@ -592,13 +620,13 @@ footer {
 /* Sección de ancho completo con imagen de fondo y paralaje */
 .full-width-section {
   position: relative;
-  padding: 100px 0; /* Espaciado interno */
+  padding: 100px 0;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Efecto de paralaje */
+  background-attachment: fixed;
   color: white;
   text-align: center;
-  overflow: hidden; /* Asegura que la imagen flotante no se desborde */
+  overflow: hidden;
 }
 
 /* Overlay para hacer el texto legible sobre la imagen de fondo */
@@ -609,7 +637,12 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Ajustado a 0.2 para mayor transparencia de la imagen */
   z-index: 1;
 }
 
@@ -623,47 +656,131 @@ footer {
   gap: 40px;
 }
 
+/* Contenedor para la disposición de la tarjeta y la imagen */
+.card-and-image-container {
+  display: flex; /* Activa Flexbox para colocar elementos en fila */
+  flex-direction: row; /* Asegura que se dispongan en fila */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 60px; /* Espacio entre la tarjeta y la imagen */
+  max-width: 1100px; /* Ancho máximo para el contenedor */
+  margin: 0 auto; /* Centra el contenedor completo */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
 /* Tarjeta de texto principal */
+/* Tarjeta de texto principal - Opción 1 */
 .text-card {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Fondo blanco semitransparente */
-  color: var(--text-color);
+  background-color: rgba(59, 59, 59, 0.233);
+  color: white;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(190, 190, 190, 0.5); /* Sombra con efecto neón */
+  max-width: 600px;
   text-align: left;
-  transform: translateY(0); /* Estado inicial para la animación */
-  opacity: 1; /* Estado inicial para la animación */
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transform: scale(1);
+  transition: all 0.5s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(149, 150, 150, 0.6); /* Borde translúcido */
+}
+
+/* Efecto al pasar el cursor */
+.text-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(252, 252, 252, 0.8); /* Brillo más intenso */
+}
+/* Animación del gradiente */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .text-card h2 {
-  font-size: 2.8rem;
-  color: var(--primary-color);
-  margin-bottom: 20px;
+  background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
+  background-size: 200% 100%;
+  animation: gradient-animation 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
 }
 
 .text-card p {
   font-size: 1.15rem;
   line-height: 1.8;
+  color: #ffffff;
+  text-align: justify;
+}
+
+/* Animación flotante para la imagen */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Imagen flotante con animación */
 .floating-image {
   max-width: 250px;
   height: auto;
-  border-radius: 50%; /* Circular */
+  border-radius: 50%;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   border: 5px solid white;
-  transform: translateX(0); /* Estado inicial para la animación */
-  opacity: 1; /* Estado inicial para la animación */
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 992px) {
+  .text-card {
+    padding: 30px;
+  }
+  .text-card h2 {
+    font-size: 2.2rem;
+  }
+  .text-card p {
+    font-size: 1rem;
+  }
+  .floating-image {
+    max-width: 200px;
+  }
+  .card-and-image-container {
+    flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .full-width-section {
+    padding: 60px 0;
+  }
+  .text-card {
+    padding: 20px;
+  }
+  .text-card h2 {
+    font-size: 1.8rem;
+  }
+  .text-card p {
+    font-size: 0.95rem;
+  }
+  .floating-image {
+    max-width: 150px;
+  }
 }
 
 /* Estilos para la segunda sección (Tecnología y Confidencialidad) */
@@ -683,14 +800,22 @@ footer {
   max-width: 600px;
 }
 
+/* Estilos de gradiente para el texto dentro de la tarjeta */
 .text-content h2 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
+  background-image: linear-gradient(to right, #18365e, #2c6e9b, #18365e);
+  background-size: 200% 100%;
+  animation: gradient-animation 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 3.5rem;
+  font-weight: 800;
 }
 
 .text-content p {
   font-size: 1.1rem;
   line-height: 1.7;
+  text-align: justify;
 }
 
 .image-content {
@@ -740,13 +865,22 @@ footer {
   }
 }
 
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 .fade-in-up {
   animation: fadeInUp 1s ease-out forwards;
 }
 
 .fade-in-left {
   animation: fadeInLeft 1s ease-out forwards;
-  animation-delay: 0.3s; /* Retraso para que aparezca después del texto */
+  animation-delay: 0.3s;
 }
 
 .scale-up {
@@ -773,11 +907,15 @@ footer {
     text-align: center;
   }
   .alternate-layout .image-content {
-    order: -1; /* Mueve la imagen arriba en móviles */
+    order: -1;
   }
   .text-content,
   .image-content {
     max-width: 100%;
+  }
+  .card-and-image-container {
+    flex-direction: column;
+    gap: 40px;
   }
 }
 
