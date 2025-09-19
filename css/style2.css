@@ -981,102 +981,202 @@ footer {
     text-align: center;
   }
 
-  .logo {
-    margin-bottom: 15px;
-    justify-content: center;
+  @media (max-width: 480px) {
+    .contact-new {
+      padding: 50px 0;
+    }
+
+    .card-new {
+      padding: 25px;
+    }
   }
 
-  nav ul {
-    margin-top: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 5px 10px;
-  }
-
-  .header-container .btn {
-    margin-top: 15px;
-  }
-
-  .hero {
-    margin-top: 160px;
-    padding: 80px 0 60px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .section-title h2 {
-    font-size: 2rem;
-  }
-
-  .about-flex-container {
-    flex-direction: column;
-  }
-
-  .about-image {
-    order: 2;
-  }
-
-  .about-content {
-    order: 1;
-  }
-
-  .ally-item {
-    flex: 0 0 calc(100% - 20px);
-  }
-
-  .allies-carousel-control {
-    width: 35px;
-    height: 35px;
-  }
-
-  .modal-content {
-    width: 95%;
-    margin: 10% auto;
-  }
-
-  .modal-flex-container {
+  /*=====================================
+  # Modal Servicios Adicionales
+=====================================*/
+  .modal-header-servicios {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    color: white;
     padding: 20px;
-  }
-
-  .modal-section h3 {
-    font-size: 1.3rem;
-  }
-
-  .contact-new .section-title h2 {
-    font-size: 1.6em;
-  }
-
-  .card-new {
-    padding: 30px;
-    max-width: 90%;
-  }
-
-  .logo-img {
-    height: 40px;
-  }
-
-  .footer-logo {
     text-align: center;
+    position: relative;
+  }
+
+  .modal-header-servicios h2 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  .servicios-intro {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     margin-bottom: 25px;
   }
 
-  .footer-logo-img {
-    height: 45px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-new {
-    padding: 50px 0;
+  .servicio-item {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
   }
 
-  .card-new {
-    padding: 25px;
+  .servicio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .servicio-icono {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+  }
+
+  .servicio-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .servicio-item p {
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .servicios-beneficios {
+    background-color: var(--light-blue-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .servicios-beneficios h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .beneficios-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .beneficio-item {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .beneficio-icono {
+    color: var(--secondary-color);
+  }
+
+  @media (max-width: 768px) {
+    .servicios-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .beneficios-lista {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /*=====================================
+  # Ajustes para Producto Estrella
+=====================================*/
+  .telemedicina-card-container {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .featured-product {
+    position: relative;
+    margin-top: 20px; /* Espacio para que la etiqueta no se corte */
+    z-index: 5;
+    overflow: visible; /* Permite que la etiqueta sobresalga */
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: #ffd700;
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+    white-space: nowrap;
+  }
+
+  /* Ajustar el contenido de la tarjeta para que el texto no se desborde */
+  #telemedicina-card .service-content {
+    min-height: 180px; /* Asegura espacio suficiente para el contenido */
+    display: flex;
+    flex-direction: column;
+  }
+
+  #telemedicina-card .service-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    min-height: auto;
+    flex-grow: 0;
+  }
+
+  #telemedicina-card .btn-more {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+  }
+
+  #telemedicina-card .hidden-info {
+    margin-top: 15px;
+  }
+
+  /* Asegurar que la imagen se vea correctamente */
+  #telemedicina-card .service-image-wrapper {
+    height: 180px; /* Un poco más alta para mejor visualización */
+  }
+
+  /* Ajustes responsivos para la tarjeta destacada */
+  @media (max-width: 768px) {
+    .featured-badge {
+      top: -12px;
+      right: 15px;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+
+    #telemedicina-card .service-content {
+      min-height: 160px;
+    }
+
+    #telemedicina-card .service-image-wrapper {
+      height: 160px;
+    }
   }
 }
