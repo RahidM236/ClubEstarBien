@@ -387,3 +387,22 @@ function initializeAliadosModal() {
     });
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('info-toggle');
+            const moreInfo = document.getElementById('more-info');
+            const icon = toggleButton.querySelector('i');
+            
+            toggleButton.addEventListener('click', function() {
+                moreInfo.classList.toggle('show');
+                toggleButton.classList.toggle('active');
+                
+                if (moreInfo.classList.contains('show')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
