@@ -658,14 +658,45 @@ footer {
 
 /* Contenedor para la disposición de la tarjeta y la imagen */
 .card-and-image-container {
-  display: flex; /* Activa Flexbox para colocar elementos en fila */
-  flex-direction: row; /* Asegura que se dispongan en fila */
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
-  gap: 60px; /* Espacio entre la tarjeta y la imagen */
-  max-width: 1100px; /* Ancho máximo para el contenedor */
-  margin: 0 auto; /* Centra el contenedor completo */
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Animaciones CSS para efectos de entrada */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 1s ease-out forwards;
 }
 
 /* Tarjeta de texto principal */

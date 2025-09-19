@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Afiliación</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style3.css" />
+  </head>
+  <body>
+    <div class="form-body">
+      <form
+        action="/afiliacion"
+        method="POST"
+        enctype="multipart/form-data"
+        class="afiliacion-form"
+        id="afiliacionForm"
+      >
+        <!-- Barra de progreso -->
+        <div class="progress-bar">
+          <div class="progress-step active" id="step1-indicator">1</div>
+          <div class="progress-step" id="step2-indicator">2</div>
+          <div class="progress-step" id="step3-indicator">3</div>
+        </div>
+
+        <div class="steps-container">
+          <!-- Paso 1 -->
+          <div class="step active" id="step1">
+            <h2 class="form-title full-width">Datos Personales</h2>
+
+            <div class="form-group">
+              <label for="codigoReferido">Código de Referido</label>
+              <input
+                type="text"
+                id="codigoReferido"
+                name="codigoReferido"
+                placeholder="CÓDIGO DE REFERIDO"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="municipio">Elija un municipio:</label>
+              <select id="municipio" name="municipio" required>
+                <option value="">Seleccione un municipio</option>
+                <!-- Distrito Capital -->
+                <option value="Libertador">
+                  Libertador (Distrito Capital)
+                </option>
+                <!-- Amazonas -->
+                <option value="Alto Orinoco">Alto Orinoco</option>
+                <option value="Atabapo">Atabapo</option>
+                <option value="Atures">Atures</option>
+                <option value="Autana">Autana</option>
+                <option value="Manapiare">Manapiare</option>
+                <option value="Maroa">Maroa</option>
+                <option value="Rio Negro">Río Negro</option>
+                <!-- Anzoátegui -->
+                <option value="Anaco">Anaco</option>
+                <option value="Aragua (Barcelona)">Aragua (Barcelona)</option>
+                <option value="Bruzual (Clarines)">Bruzual (Clarines)</option>
+                <option value="Diego Bautista Urbaneja">
+                  Diego Bautista Urbaneja
+                </option>
+                <option value="Guanta">Guanta</option>
+                <option value="Jose Gregorio Monagas">
+                  José Gregorio Monagas
+                </option>
+                <option value="Puerto la Cruz">Puerto la Cruz</option>
+                <!-- Continúa para todos los estados... -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tipoDocumento">Tipo de Documento</label>
+              <select id="tipoDocumento" name="tipoDocumento" required>
+                <option value="">Seleccione un tipo de documento</option>
+                <option value="cedula">Cédula</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="licencia">Licencia de Conducir</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cedula">Cédula</label>
+              <input
+                type="text"
+                id="cedula"
+                name="cedula"
+                placeholder="V12345678"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingrese su nombre"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                placeholder="Ingrese su apellido"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="sexo">Sexo</label>
+              <select id="sexo" name="sexo" required>
+                <option value="">Seleccione su Sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input
+                type="date"
+                id="fechaNacimiento"
+                name="fechaNacimiento"
+                required
+              />
+            </div>
+
+            <div class="form-buttons full-width">
+              <a href="index.html" class="btn-nav">Inicio</a>
+              <button type="button" class="btn-nav" id="next1">
+                Siguiente
+              </button>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="step" id="step2">
+            <h2 class="form-title full-width">Datos de Contacto y Cuenta</h2>
+            <p class="info-text full-width">
+              El teléfono debe ser el asociado a su pago móvil para validar
+              recargas automáticamente.
+            </p>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="+58 4120000000"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                placeholder="Ingrese su usuario"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo</label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="Ingrese su correo"
+                required
+              />
+            </div>
+
+            <!-- Contraseñas en la misma fila -->
+            <div class="form-group password-group">
+              <label for="password">Contraseña</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Ingrese su contraseña"
+                  required
+                />
+                <span class="toggle-password" data-target="password">👁️</span>
+              </div>
+            </div>
+
+            <div class="form-group password-group">
+              <label for="confirmPassword">Confirmar Contraseña</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Repita su contraseña"
+                  required
+                />
+                <span class="toggle-password" data-target="confirmPassword"
+                  >👁️</span
+                >
+              </div>
+            </div>
+
+            <div class="form-buttons full-width">
+              <button type="button" class="btn-nav prev" id="prev2">
+                Anterior
+              </button>
+              <button type="button" class="btn-nav" id="next2">
+                Siguiente
+              </button>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="step" id="step3">
+            <h2 class="form-title full-width">Carga de Documentos</h2>
+
+            <div class="file-upload-section full-width">
+              <p>
+                Cargue una foto de su documento de identidad (Cédula, Licencia o
+                Pasaporte)
+              </p>
+              <div class="file-upload-buttons">
+                <button
+                  type="button"
+                  class="btn-upload"
+                  onclick="document.getElementById('documentoIdentidad').click();"
+                >
+                  CARGAR FOTO
+                </button>
+              </div>
+              <input
+                type="file"
+                id="documentoIdentidad"
+                name="documentoIdentidad"
+                accept="image/*"
+                style="display: none"
+                required
+              />
+            </div>
+
+            <div class="form-buttons full-width">
+              <button type="button" class="btn-nav prev" id="prev3">
+                Anterior
+              </button>
+              <button type="submit" class="btn-submit">Registrarme</button>
+            </div>
+
+            <p class="terms-text full-width">
+              Al continuar acepta nuestros <a href="#terminos">términos</a>
+            </p>
+            <p class="login-text full-width">
+              ¿Ya tiene cuenta? <a href="#iniciar-sesion">Inicie Sesión</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/script3.js"></script>
+  </body>
+</html>
