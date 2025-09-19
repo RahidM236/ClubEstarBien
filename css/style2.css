@@ -1367,11 +1367,90 @@ footer {
 }
 
 .planes-img {
-        max-width: 100%;       /* La imagen no será más ancha que su contenedor */
-        max-height: 80vh;      /* La imagen no ocupará más del 80% de la altura de la ventana */
-        width: auto;           /* Mantiene la proporción original */
-        height: auto;          /* Mantiene la proporción original */
-        display: block;        /* Elimina espacio extra debajo de la imagen */
-        margin: 0 auto;        /* Centra la imagen horizontalmente */
-        padding: 20px;         /* Espacio alrededor de la imagen */
-    }
+    max-width: 100%;       /* La imagen no será más ancha que su contenedor */
+    max-height: 80vh;      /* La imagen no ocupará más del 80% de la altura de la ventana */
+    width: auto;           /* Mantiene la proporción original */
+    height: auto;          /* Mantiene la proporción original */
+    display: block;        /* Elimina espacio extra debajo de la imagen */
+    margin: 0 auto;        /* Centra la imagen horizontalmente */
+    padding: 20px;         /* Espacio alrededor de la imagen */
+}
+
+/*=====================================
+  # Modal Aliados
+=====================================*/
+.modal-header-aliados {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header-aliados h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.aliados-modal-content {
+  max-width: 800px;
+  padding: 0;
+}
+
+.aliados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.aliado-modal-item {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.aliado-modal-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aliado-modal-link {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.aliado-modal-img {
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.aliado-modal-name {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aliados-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .aliado-modal-img {
+    height: 60px;
+  }
+}

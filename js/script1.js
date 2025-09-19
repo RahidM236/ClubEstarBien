@@ -8,6 +8,7 @@
       initializeServiceCards();
       initializeModals();
       initializeServiciosModal();
+      initializeAliadosModal();
     });
 
     /*=====================================
@@ -258,3 +259,131 @@
         }
       });
     }
+
+
+    // Datos de los aliados (debes completar con los enlaces reales)
+const aliadosData = {
+  salud: [
+    { nombre: "Corpore", imagen: "img/aliadosImg/SaludyBienestar/Corpore.png", enlace: "https://www.corporesthetic.com/" },
+    { nombre: "GoldsGym", imagen: "img/aliadosImg/SaludyBienestar/GoldsGym.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "Laboatencion", imagen: "img/aliadosImg/SaludyBienestar/Laboatencion.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/Opticolor.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "PhysioSport", imagen: "img/aliadosImg/SaludyBienestar/PhysioSport.png", enlace: "https://www.goldsgym.com.ve/" },
+    // Agrega más aliados de salud aquí
+  ],
+  farmacia: [
+    { nombre: "FarMarket", imagen: "img/aliadosImg/Farmacia/FarMarket.png", enlace: "https://ejemplo.com/farmacia1" },
+    { nombre: "Farmatencion", imagen: "img/aliadosImg/Farmacia/Farmatencion.png", enlace: "https://ejemplo.com/farmacia2" },
+    // Agrega más aliados de farmacia aquí
+  ],
+  servicios: [
+    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/Credimport.png", enlace: "https://ejemplo.com/servicios1" },
+    { nombre: "Miramall", imagen: "img/aliadosImg/Servicios/Miramall.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/Turaser.png", enlace: "https://ejemplo.com/servicios2" },
+    // Agrega más aliados de servicios aquí
+  ],
+  calzado: [
+    { nombre: "BrandsShop", imagen: "img/aliadosImg/RopayCalzado/BrandsShop.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },
+    { nombre: "Estivaneli", imagen: "img/aliadosImg/RopayCalzado/Estivaneli.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Everlast", imagen: "img/aliadosImg/RopayCalzado/Everlast.png", enlace: "https://ejemplo.com/calzado2" },
+    { nombre: "LucyLingerie", imagen: "img/aliadosImg/RopayCalzado/LucyLingerie.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://ejemplo.com/calzado2" },
+    { nombre: "PrimeShoes", imagen: "img/aliadosImg/RopayCalzado/PrimeShoes.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Skechers", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },
+    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/TuOutlet.png", enlace: "https://ejemplo.com/calzado2" },
+    // Agrega más aliados de calzado aquí
+  ],
+  mascotas: [
+    { nombre: "Aliado Mascotas 1", imagen: "img/aliadosImg/mascotas1.jpg", enlace: "https://ejemplo.com/mascotas1" },
+    { nombre: "Aliado Mascotas 2", imagen: "img/aliadosImg/mascotas2.jpg", enlace: "https://ejemplo.com/mascotas2" },
+    // Agrega más aliados de mascotas aquí
+  ],
+  restaurantes: [
+    { nombre: "Aliado Restaurantes 1", imagen: "img/aliadosImg/restaurantes1.jpg", enlace: "https://ejemplo.com/restaurantes1" },
+    { nombre: "Aliado Restaurantes 2", imagen: "img/aliadosImg/restaurantes2.jpg", enlace: "https://ejemplo.com/restaurantes2" },
+    // Agrega más aliados de restaurantes aquí
+  ]
+};
+
+// Función para inicializar la modal de aliados
+function initializeAliadosModal() {
+  const aliadosModal = document.getElementById('aliadosModal');
+  const closeAliadosModalBtn = document.querySelector('#aliadosModal .close-btn');
+  const aliadosGrid = document.getElementById('aliadosGrid');
+  const modalTitle = document.getElementById('modalAliadosTitle');
+  
+  // Asignar eventos a los items del carrusel
+  const allyItems = document.querySelectorAll('.ally-item');
+  
+  allyItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const allyType = this.getAttribute('data-ally');
+      const allyTitle = this.querySelector('h3').textContent;
+      
+      // Actualizar título de la modal
+      modalTitle.textContent = allyTitle;
+      
+      // Cargar aliados correspondientes
+      loadAliados(allyType);
+      
+      // Mostrar modal
+      if (aliadosModal) {
+        aliadosModal.classList.add('show');
+      }
+    });
+  });
+  
+  // Close aliados modal
+  if (closeAliadosModalBtn && aliadosModal) {
+    closeAliadosModalBtn.addEventListener('click', () => {
+      aliadosModal.classList.remove('show');
+    });
+  }
+  
+  // Cerrar con la tecla Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && aliadosModal && aliadosModal.classList.contains('show')) {
+      aliadosModal.classList.remove('show');
+    }
+  });
+  
+  // Cerrar al hacer clic fuera del contenido
+  window.addEventListener('click', (e) => {
+    if (aliadosModal && e.target === aliadosModal) {
+      aliadosModal.classList.remove('show');
+    }
+  });
+  
+  // Función para cargar los aliados en la grid
+  function loadAliados(allyType) {
+    if (!aliadosGrid) return;
+    
+    // Limpiar grid
+    aliadosGrid.innerHTML = '';
+    
+    // Obtener aliados del tipo seleccionado
+    const aliados = aliadosData[allyType] || [];
+    
+    if (aliados.length === 0) {
+      aliadosGrid.innerHTML = '<p class="no-aliados">Próximamente más aliados en esta categoría.</p>';
+      return;
+    }
+    
+    // Crear elementos para cada aliado
+    aliados.forEach(aliado => {
+      const aliadoItem = document.createElement('div');
+      aliadoItem.classList.add('aliado-modal-item');
+      
+      aliadoItem.innerHTML = `
+        <a href="${aliado.enlace}" target="_blank" class="aliado-modal-link">
+          <img src="${aliado.imagen}" alt="${aliado.nombre}" class="aliado-modal-img">
+          <p class="aliado-modal-name">${aliado.nombre}</p>
+        </a>
+      `;
+      
+      aliadosGrid.appendChild(aliadoItem);
+    });
+  }
+}
