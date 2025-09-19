@@ -473,21 +473,40 @@ nav a:hover {
 
 /* Mawdy cintillo (banner) */
 .mawdy-cintillo-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 40px auto;
-  text-align: center;
+  width: 100%; /* Ocupa todo el ancho de la ventana */
+  overflow: hidden; /* Oculta el desbordamiento horizontal */
+}
+
+.mawdy-cintillo-animado {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+  position: relative;
+  /* La animación ahora mueve el elemento de un lado a otro */
+  animation: slideAnimation 15s linear infinite; /* Usa linear para un movimiento constante */
+}
+
+.alianza-texto {
+  font-family: sans-serif;
+  font-size: 1.2em;
+  color: #333;
+  white-space: nowrap;
 }
 
 .mawdy-cintillo {
-  width: 20%;
+  width: 100px;
   height: auto;
-  display: block;
-  max-height: 150px;
-  object-fit: contain;
+}
+
+@keyframes slideAnimation {
+  0% {
+    /* Posición inicial fuera de la pantalla, a la izquierda */
+    transform: translateX(-100%);
+  }
+  100% {
+    /* Posición final, completamente fuera de la pantalla, a la derecha */
+    transform: translateX(100vw);
+  }
 }
 
 /*=====================================
