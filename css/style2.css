@@ -503,10 +503,10 @@ nav a:hover {
     /* Posición inicial fuera de la pantalla, a la izquierda */
     transform: translateX(-100%);
   }
-  100% {
+  100%{
     /* Posición final, completamente fuera de la pantalla, a la derecha */
     transform: translateX(100vw);
-  }
+  }
 }
 
 /*=====================================
