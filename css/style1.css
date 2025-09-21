@@ -564,14 +564,41 @@ footer {
   --text-muted: #b0b0b0;
   --link-color: #ffffff;
   --line-color: #444;
-  --primary-color: #18365e; /* Azul */
-  --secondary-color: #f5f4f1; /* Amarillo */
+  --primary-footer-color: #ead917; /* Azul */
+  --secondary-footer-color: #f5f4f1; /* Amarillo */
 }
 
 footer {
   background: var(--footer-bg);
   color: var(--text-light);
   padding: 60px 0 20px;
+}
+
+/* Acomodar enlaces rápidos */
+.footer-left .contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* una columna en móvil */
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer-left .contact-info li {
+  margin: 0;
+}
+
+.footer-left .contact-info a {
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer-left .contact-info a:hover {
+  color: var(--link-color);
+  transform: translateX(4px); /* efecto de desplazamiento al pasar el mouse */
 }
 
 .footer-container-v2 {
@@ -603,15 +630,26 @@ footer {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: var(--secondary-color);
-  border-bottom: 2px solid var(--primary-color);
+  color: var(--secondary-footer-color);
+  border-bottom: 2px solid var(--primary-footer-color);
   padding-bottom: 5px;
   display: inline-block;
+  margin-top: 90px; /* 🔽 baja cada bloque */
+}
+.footer-heading1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--secondary-footer-color);
+  border-bottom: 2px solid var(--primary-footer-color);
+  padding-bottom: 5px;
+  display: inline-block;
+  /* 🔽 baja cada bloque */
 }
 
 .footer-heading i {
   margin-right: 10px;
-  color: var(--primary-color);
+  color: var(--primary-footer-color);
 }
 
 .footer-section-v2 p {
@@ -680,7 +718,7 @@ footer {
 }
 
 .social-links-v2 a:hover {
-  background-color: var(--primary-color);
+  background-color: var(--primary-footer-color);
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -694,7 +732,7 @@ footer {
 
 .copyright-v2 hr {
   border: none;
-  border-top: 1px solid var(--line-color);
+  border-top: 1px solid var(--line-footer-color);
   margin: 0 auto 20px;
   width: 90%;
 }

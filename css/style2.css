@@ -946,6 +946,33 @@ footer {
   padding: 60px 0 20px;
 }
 
+/* Acomodar enlaces rápidos */
+.footer-left .contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* una columna en móvil */
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer-left .contact-info li {
+  margin: 0;
+}
+
+.footer-left .contact-info a {
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer-left .contact-info a:hover {
+  color: var(--link-color);
+  transform: translateX(4px); /* efecto de desplazamiento al pasar el mouse */
+}
+
 .footer-container-v2 {
   display: flex;
   flex-wrap: wrap;
@@ -979,6 +1006,17 @@ footer {
   border-bottom: 2px solid var(--primary-footer-color);
   padding-bottom: 5px;
   display: inline-block;
+  margin-top: 90px; /* 🔽 baja cada bloque */
+}
+.footer-heading1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--secondary-footer-color);
+  border-bottom: 2px solid var(--primary-footer-color);
+  padding-bottom: 5px;
+  display: inline-block;
+  /* 🔽 baja cada bloque */
 }
 
 .footer-heading i {
@@ -2005,4 +2043,112 @@ footer {
 
 .send-button i {
   font-size: 1.1rem;
+}
+/*=====================================
+  # Redes Sociales - Nueva Versión    
+=====================================*/
+.social-links-new {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center; /* centra vertical */
+  flex-wrap: wrap; /* permite que bajen si no caben */
+  gap: 20px; /* espacio entre tarjetas */
+  margin-top: 20px;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  width: 200px; /* mismo ancho para todas */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*=====================================
+  # Redes Sociales - Ajustado TikTok    
+=====================================*/
+/* General */
+.social-card img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 6px;
+  object-fit: contain;
+}
+
+/* TikTok ya se maneja con el src correcto, sin filtros */
+.social-card.tiktok-card img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 5px;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Texto principal */
+.social-card span {
+  font-size: 0.3em; /* más pequeño y balanceado con el logo */
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 2px;
+  display: block;
+}
+
+/* Texto secundario */
+.social-card small {
+  font-size: 0.5em; /* más discreto que el span */
+  font-weight: 400;
+  opacity: 0.9;
+  display: block;
+}
+
+/* Colores de fondo */
+.instagram-card {
+  background: linear-gradient(
+    45deg,
+    #f09533ab,
+    #e6693cb0,
+    #dc27429f,
+    #cc2367a9,
+    #bc18889f
+  );
+}
+.tiktok-card {
+  background-color: #00000063;
+}
+.facebook-card {
+  background-color: #1876f28c;
+}
+.youtube-card {
+  background-color: #ff00009a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .social-links-new {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    gap: 15px;
+  }
+  .social-card {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+  .social-card img {
+    width: 38px;
+    height: 38px;
+  }
+  .social-card span {
+    font-size: 0.95em;
+  }
+  .social-card small {
+    font-size: 0.75em;
+  }
 }
