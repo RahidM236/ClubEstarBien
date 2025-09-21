@@ -88,36 +88,135 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNextItem, 4000);
 });
 
+// ==========================================================
+// Lógica para el chat widget
+// ==========================================================
 
-// Ejemplo básico para mostrar/ocultar el widget
-// Primero, necesitas un botón que active el chat, por ejemplo:
-// <button id="openChat">Abrir Asistente</button>
+const chatWidget = document.getElementById('chat-widget');
+const openChatBtn = document.getElementById('open-chat-btn');
+const closeChatBtn = document.getElementById('close-chat-btn');
+const chatBody = document.querySelector('.chat-body');
+const chatInput = document.querySelector('.chat-input');
+const sendButton = document.querySelector('.send-button');
+const chatButtons = document.querySelectorAll('.chat-button');
 
-const chatWidget = document.querySelector(".chat-widget");
-const openChatButton = document.getElementById("openChat"); // Si tienes un botón para abrirlo
+// Función para agregar un mensaje al chat
+function addMessage(message, sender) {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message-bubble');
 
-// Si quieres que aparezca al cargar la página o con un retardo
-// chatWidget.style.display = 'flex';
+    if (sender === 'user') {
+        messageContainer.classList.add('user-message');
+        const p = document.createElement('p');
+        p.textContent = message;
+        messageContainer.appendChild(p);
+    } else { // Es un mensaje del bot
+        messageContainer.classList.add('bot-message');
+        const logoImg = document.createElement('img');
+        logoImg.src = 'img/logo-solo-02.png';
+        logoImg.alt = 'Logo Bot';
+        logoImg.classList.add('bot-logo');
+        const messageContent = document.createElement('p');
+        messageContent.innerHTML = message;
+        messageContainer.appendChild(logoImg);
+        messageContainer.appendChild(messageContent);
+    }
 
-// Si quieres un botón para abrir/cerrar
-/*
-openChatButton.addEventListener('click', () => {
-    if (chatWidget.style.display === 'none' || chatWidget.style.display === '') {
-        chatWidget.style.display = 'flex';
-    } else {
-        chatWidget.style.display = 'none';
+    chatBody.appendChild(messageContainer);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Función para mostrar un formulario de contacto para el médico
+function showContactForm() {
+    const formHtml = `
+        <div class="contact-form-container">
+            <p>Por favor, ingresa tu número de teléfono para que un médico te llame.</p>
+            <input type="tel" id="user-phone" placeholder="Tu número de teléfono" class="chat-input" />
+            <button class="send-form-button">Enviar</button>
+        </div>
+    `;
+    const formContainer = document.createElement('div');
+    formContainer.innerHTML = formHtml;
+    chatBody.appendChild(formContainer);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    const sendFormButton = formContainer.querySelector('.send-form-button');
+    const phoneInput = formContainer.querySelector('#user-phone');
+
+    sendFormButton.addEventListener('click', () => {
+        const phoneNumber = phoneInput.value.trim();
+        if (phoneNumber) {
+            addMessage('Gracias. Un médico se pondrá en contacto contigo en el número ' + phoneNumber + '.', 'bot');
+            sendFormButton.disabled = true;
+            phoneInput.disabled = true;
+        } else {
+            addMessage('Por favor, introduce un número de teléfono válido.', 'bot');
+        }
+    });
+}
+
+// Función para obtener la respuesta del bot según la opción seleccionada
+function getBotResponse(option) {
+    switch (option) {
+        case 'Hablar con un médico':
+            showContactForm();
+            return '¡Claro! Para hablar con un médico, por favor, ingresa tus datos y un especialista te contactará en breve.';
+        case 'Solicitar servicios':
+            // Esta es la clave: el botón ya no agrega un mensaje, sino que redirige
+            return '¡Con gusto! Redirigiendo a la sección de servicios...';
+        case 'Consultar Estatus':
+            return 'Para consultar el estatus de tu solicitud, por favor, introduce tu número de referencia.';
+        default:
+            return 'Lo siento, no entiendo tu solicitud. Por favor, selecciona una de las opciones o escribe tu pregunta.';
+    }
+}
+
+// Abre el chat
+openChatBtn.addEventListener('click', () => {
+    chatWidget.classList.add('active');
+    openChatBtn.style.display = 'none';
+});
+
+// Cierra el chat
+closeChatBtn.addEventListener('click', () => {
+    chatWidget.classList.remove('active');
+    openChatBtn.style.display = 'block';
+});
+
+// Interacción de los botones (Lógica optimizada)
+chatButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const userMessage = button.textContent.trim();
+        addMessage(userMessage, 'user');
+
+        // Lógica de redirección específica para el botón de servicios
+        if (userMessage === 'Solicitar servicios') {
+            // Se redirige directamente sin mostrar un mensaje clicable en el chat
+            window.location.href = '/ClubEstarBien/index.html#servicios';
+        } else {
+            const botResponse = getBotResponse(userMessage);
+            setTimeout(() => {
+                addMessage(botResponse, 'bot');
+            }, 500);
+        }
+    });
+});
+
+// Lógica para enviar un mensaje con la tecla Enter o el botón de envío
+chatInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        sendButton.click();
     }
 });
-*/
 
-// Para la interacción de los botones (ejemplo: cambiar el mensaje)
-const chatButtons = document.querySelectorAll(".chat-button");
-const welcomeMessage = document.querySelector(".welcome-message p:first-child"); // Seleccionar el primer párrafo
+sendButton.addEventListener('click', () => {
+    const message = chatInput.value.trim();
+    if (message !== '') {
+        addMessage(message, 'user');
+        chatInput.value = '';
 
-chatButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        welcomeMessage.textContent = `Has seleccionado: "${button.textContent.trim()}"`;
-        // Aquí podrías agregar lógica para mostrar diferentes respuestas
-        // o cargar nuevo contenido en el chat.
-    });
+        setTimeout(() => {
+            addMessage('Gracias por tu mensaje. Actualmente, el bot solo puede responder a las opciones predefinidas. Por favor, selecciona una de las opciones.', 'bot');
+        }, 500);
+    }
 });
