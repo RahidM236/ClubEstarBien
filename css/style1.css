@@ -124,7 +124,7 @@ nav a:hover {
 
 /*--- HERO ---*/
 /*=====================================
-  # Hero para "Venemergencia"
+  # Hero para "clubestarbien.com"
 =====================================*/
 .hero-venemergencia {
   background-color: var(--primary-color);
@@ -762,9 +762,9 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(
-    0,
-    0,
-    0,
+    255,
+    255,
+    255,
     0.6
   ); /* Ajustado a 0.2 para mayor transparencia de la imagen */
   z-index: 1;
@@ -842,7 +842,7 @@ footer {
 /* Efecto al pasar el cursor */
 .text-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 35px rgba(252, 252, 252, 0.8); /* Brillo más intenso */
+  box-shadow: 0 0 35px rgba(23, 67, 148, 0.8); /* Brillo más intenso */
 }
 /* Animación del gradiente */
 @keyframes gradient-flow {
