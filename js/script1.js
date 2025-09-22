@@ -279,7 +279,7 @@ const aliadosData = {
   servicios: [
     { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://ejemplo.com/servicios1" },
     { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://gamaenlinea.com/es/?srsltid=AfmBOooXaN5j0-XSZfl6d7J0Q36Jiz-xgmWNn23VQ_crxwKKOrzcOh0Q" },
     { nombre: "Full Motors", imagen: "img/aliadosImg/Servicios/fullmotors.png", enlace: "https://ejemplo.com/servicios2" },
     { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://ejemplo.com/servicios2" },
     { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://ejemplo.com/servicios2" },
