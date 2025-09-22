@@ -1557,21 +1557,22 @@ footer {
   font-size: 1.8rem;
 }
 
-.aliados-modal-content {
-  max-width: 800px;
-  padding: 0;
-}
-
+/*=====================================
+  # Modal Aliados Horizontal
+=====================================*/
 .aliados-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+  display: flex; /* Flex en fila */
+  gap: 20px; /* Separación entre aliados */
   padding: 30px;
+  overflow-x: auto; /* Scroll horizontal */
+  overflow-y: hidden; /* Evita scroll vertical */
   max-height: 60vh;
-  overflow-y: auto;
+  scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
 .aliado-modal-item {
+  flex: 0 0 auto; /* Mantiene ancho fijo, no se encoge */
+  width: 150px;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
@@ -1609,7 +1610,6 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .aliados-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 15px;
     padding: 20px;
   }
