@@ -526,18 +526,30 @@ nav a:hover {
 
 .allies-carousel {
   display: flex;
+  gap: 20px; /* Espacio entre aliados */
   transition: transform 0.5s ease;
 }
 
 .ally-item {
-  flex: 0 0 calc(100% / 3 - 20px);
-  margin: 0 10px;
+  flex: 0 0 calc((100% - 40px) / 3); /* 3 ítems por vista, descontando el gap total */
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .ally-item {
+    flex: 0 0 calc((100% - 20px) / 2); /* 2 ítems por vista */
+  }
+}
+
+@media (max-width: 768px) {
+  .ally-item {
+    flex: 0 0 100%; /* 1 ítem por vista */
+  }
 }
 
 .ally-item:hover {
