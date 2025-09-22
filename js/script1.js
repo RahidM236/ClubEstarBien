@@ -279,7 +279,7 @@ const aliadosData = {
   servicios: [
     { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://ejemplo.com/servicios1" },
     { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://gamaenlinea.com/es/?srsltid=AfmBOooXaN5j0-XSZfl6d7J0Q36Jiz-xgmWNn23VQ_crxwKKOrzcOh0Q" },
     { nombre: "Full Motors", imagen: "img/aliadosImg/Servicios/fullmotors.png", enlace: "https://ejemplo.com/servicios2" },
     { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://ejemplo.com/servicios2" },
     { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://ejemplo.com/servicios2" },
@@ -555,7 +555,7 @@ const plansData = {
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
       { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" },
       { service: "Servicio de Plomeria, Cerrajeria u Electricidad", coverage: "Para el hogar", limit: "1 evento (Hasta 40$ de Cobertura)" },
-      { service: "Reparacion In Situ (Cambios de neumatico y falla de Bateria)", coverage: "Para el Vehiculo", limit: "1 evento (Hasta 40$ de Cobertura)" },
+      { service: "Reparacion In Situ (Cambios de neumatico y falla de Bateria)", coverage: "Para el Vehiculo", limit: "1 evento" },
     ],
     benefits: [
       "Acceso a descuentos en farmacias aliadas",
