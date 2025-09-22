@@ -2,7 +2,8 @@
       # Variables and General Styles
     =====================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 :root {
   --primary-color: #18365e;
   --secondary-color: #2c6e9b;
@@ -48,7 +49,6 @@
   font-style: italic;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -63,7 +63,7 @@ html {
 body {
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--light-bg);  
+  background-color: var(--light-bg);
 }
 
 .container {
@@ -1633,10 +1633,10 @@ footer {
 }
 
 .aliado-modal-img {
-   width: 100%;
-    height: 100%;
-    object-fit: contain; /* Esto reduce la imagen para que se vea completa */
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Esto reduce la imagen para que se vea completa */
+  transition: transform 0.3s ease;
 }
 
 .aliado-modal-name {
@@ -1726,7 +1726,7 @@ footer {
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
-  font-family: "Sansation"
+  font-family: "Sansation";
 }
 
 .btn-more {
@@ -2166,21 +2166,21 @@ footer {
 .instagram-card {
   background: linear-gradient(
     45deg,
-    #f09533ab,
-    #e6693cb0,
-    #dc27429f,
-    #cc2367a9,
-    #bc18889f
+    #f09533,
+    #e6693c,
+    #dc2742,
+    #cc2367,
+    #bc1888
   );
 }
 .tiktok-card {
-  background-color: #00000063;
+  background-color: #000000bb;
 }
 .facebook-card {
-  background-color: #1876f28c;
+  background-color: #1876f2;
 }
 .youtube-card {
-  background-color: #ff00009a;
+  background-color: #ff0000cc;
 }
 
 /* Responsive */
