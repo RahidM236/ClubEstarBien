@@ -259,6 +259,26 @@
               </div>
             </div>
 
+            <div class="ally-item" data-ally="TelemedicinaMascotas">
+              <div class="ally-image">
+                <img src="img/aliadosImg/TelemedicinaMascotas.png" alt="TelemedicinaMascotas" />
+              </div>
+              <div class="ally-content">
+                <h3>Telemedicina para Mascotas</h3>
+                <p>Conoce tambien nuestros servicios en Telemedicina para mascotas</p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="mascotas">
+              <div class="ally-image">
+                <img src="img/aliadosImg/Mascotas.png" alt="Mascotas" />
+              </div>
+              <div class="ally-content">
+                <h3>Mascotas</h3>
+                <p>Conoce nuestros aliados en el área de Mascotas</p>
+              </div>
+            </div>
+
             <div class="ally-item" data-ally="servicios">
               <div class="ally-image">
                 <img src="img/aliadosImg/Servicios.png" alt="Servicios" />
@@ -280,17 +300,7 @@
                 <h3>Calzado y Ropa</h3>
                 <p>Conoce nuestros aliados en el área de Calzado y Ropa</p>
               </div>
-            </div>
-
-            <div class="ally-item" data-ally="mascotas">
-              <div class="ally-image">
-                <img src="img/aliadosImg/Mascotas.png" alt="Mascotas" />
-              </div>
-              <div class="ally-content">
-                <h3>Mascotas</h3>
-                <p>Conoce nuestros aliados en el área de Mascotas</p>
-              </div>
-            </div>
+            </div>            
 
             <div class="ally-item" data-ally="restaurantes">
               <div class="ally-image">
@@ -332,8 +342,7 @@
             con su salud y bienestar.
           </p>
           <a href="mailto:comercializacion@clubestarbien.com" class="btn"
-            >Contactar área comercial</a
-          >
+            >Contactar área comercial</a>
         </div>
       </div>
     </section>
@@ -372,8 +381,7 @@
             <div class="card-body-new">
               <p><strong>Teléfono:</strong> 0800-232-0000</p>
               <a href="mailto:contacto@miemstarbien.com" class="mailto"
-                >info@clubestarbien.com</a
-              >
+                >info@clubestarbien.com</a>
             </div>
           </div>
         </div>
@@ -615,8 +623,21 @@
         </div>
 
         <div class="modal-body">
-          <div class="aliados-grid" id="aliadosGrid">
-            <!-- Los aliados se cargarán dinámicamente aquí -->
+          <div class="modal-carousel-container">
+            <div class="modal-carousel" id="modalCarousel">
+              <!-- Los aliados se cargarán dinámicamente aquí -->
+            </div>
+            
+            <!-- Controles del carrusel dentro del modal -->
+            <button class="modal-carousel-control prev" aria-label="Anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-carousel-control next" aria-label="Siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Indicadores para el modal -->
+            <div class="modal-carousel-indicators"></div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeServiceCards();
   initializeModals();
   initializeServiciosModal();
-  initializeAliadosModal();
+  initializeAllyModal();
 });
 
 /*=====================================
@@ -253,145 +253,259 @@ function initializeServiciosModal() {
 // Datos de los aliados (debes completar con los enlaces reales)
 const aliadosData = {
   salud: [
-    { nombre: "Corpore", imagen: "img/aliadosImg/SaludyBienestar/Corpore.png", enlace: "https://www.corporesthetic.com/" },
-    { nombre: "GoldsGym", imagen: "img/aliadosImg/SaludyBienestar/GoldsGym.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "Laboatencion", imagen: "img/aliadosImg/SaludyBienestar/Laboatencion.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/Opticolor.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "PhysioSport", imagen: "img/aliadosImg/SaludyBienestar/PhysioSport.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "AlterGold", imagen: "img/aliadosImg/SaludyBienestar/altergold.png", enlace: "https://www.corporesthetic.com/"},
+    { nombre: "Buena Vida", imagen: "img/aliadosImg/SaludyBienestar/buenaVida1.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "Centro Medico Castillito", imagen: "img/aliadosImg/SaludyBienestar/centroMedicoCastillito.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "Laboatención", imagen: "img/aliadosImg/SaludyBienestar/laboatencion.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/opticolor.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "Optica Caroni", imagen: "img/aliadosImg/SaludyBienestar/opticaCaroni.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "SonoLife", imagen: "img/aliadosImg/SaludyBienestar/sonolife.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.goldsgym.com.ve/" },
     // Agrega más aliados de salud aquí
   ],
   farmacia: [
-    { nombre: "FarMarket", imagen: "img/aliadosImg/Farmacia/FarMarket.png", enlace: "https://ejemplo.com/farmacia1" },
-    { nombre: "Farmatencion", imagen: "img/aliadosImg/Farmacia/Farmatencion.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmacia Carmencita", imagen: "img/aliadosImg/Farmacia/farmaciaCarmencita.png", enlace: "https://ejemplo.com/farmacia1" },
+    { nombre: "Farmacia Doctoral", imagen: "img/aliadosImg/Farmacia/farmaciaDoctoral.jpeg", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmacia Las Flores", imagen: "img/aliadosImg/Farmacia/farmaciaLasFlores.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Grupo de Farmacias Girasol", imagen: "img/aliadosImg/Farmacia/farmaciasGirasol.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmacia Yari", imagen: "img/aliadosImg/Farmacia/farmaciaYari.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "FarmaDaily", imagen: "img/aliadosImg/Farmacia/farmaDaily.jpeg", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "FarmaOferta", imagen: "img/aliadosImg/Farmacia/farmaOferta.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmaser", imagen: "img/aliadosImg/Farmacia/farmaser.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmatención", imagen: "img/aliadosImg/Farmacia/farmatension.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmapaz", imagen: "img/aliadosImg/Farmacia/farmapaz.png", enlace: "https://ejemplo.com/farmacia2" },
     // Agrega más aliados de farmacia aquí
   ],
   servicios: [
-    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/Credimport.png", enlace: "https://ejemplo.com/servicios1" },
-    { nombre: "Miramall", imagen: "img/aliadosImg/Servicios/Miramall.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/Turaser.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://ejemplo.com/servicios1" },
+    { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Full Motors", imagen: "img/aliadosImg/Servicios/fullmotors.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Wonderland", imagen: "img/aliadosImg/Servicios/wonderland.png", enlace: "https://ejemplo.com/servicios2" },
     // Agrega más aliados de servicios aquí
   ],
   calzado: [
-    { nombre: "BrandsShop", imagen: "img/aliadosImg/RopayCalzado/BrandsShop.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "Estivaneli", imagen: "img/aliadosImg/RopayCalzado/Estivaneli.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Converse", imagen: "img/aliadosImg/RopayCalzado/converse.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },    
     { nombre: "Everlast", imagen: "img/aliadosImg/RopayCalzado/Everlast.png", enlace: "https://ejemplo.com/calzado2" },
+    { nombre: "Havaianas", imagen: "img/aliadosImg/RopayCalzado/havaianas.png", enlace: "https://ejemplo.com/calzado2" },      
     { nombre: "LucyLingerie", imagen: "img/aliadosImg/RopayCalzado/LucyLingerie.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "PrimeShoes", imagen: "img/aliadosImg/RopayCalzado/PrimeShoes.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Skechers", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/TuOutlet.png", enlace: "https://ejemplo.com/calzado2" },
+    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://ejemplo.com/calzado2" },      
+    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/tuoutlet1.png", enlace: "https://ejemplo.com/calzado2" },  
+    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://ejemplo.com/calzado1" },    
     // Agrega más aliados de calzado aquí
   ],
   mascotas: [
-    { nombre: "Aliado Mascotas 1", imagen: "img/aliadosImg/mascotas1.jpg", enlace: "https://ejemplo.com/mascotas1" },
-    { nombre: "Aliado Mascotas 2", imagen: "img/aliadosImg/mascotas2.jpg", enlace: "https://ejemplo.com/mascotas2" },
+    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://ejemplo.com/mascotas1" },
+    { nombre: "Egoavil Sardiñas Veterinarios", imagen: "img/aliadosImg/Mascotas/egoavilsardiñas.png", enlace: "https://ejemplo.com/mascotas2" },
     // Agrega más aliados de mascotas aquí
   ],
   restaurantes: [
-    { nombre: "Aliado Restaurantes 1", imagen: "img/aliadosImg/restaurantes1.jpg", enlace: "https://ejemplo.com/restaurantes1" },
-    { nombre: "Aliado Restaurantes 2", imagen: "img/aliadosImg/restaurantes2.jpg", enlace: "https://ejemplo.com/restaurantes2" },
+    { nombre: "La Grand Plaz", imagen: "img/aliadosImg/Restaurantes/lagrandplaz.png", enlace: "https://ejemplo.com/restaurantes1" },
+    { nombre: "Sotano 7", imagen: "img/aliadosImg/Restaurantes/sotano7.png", enlace: "https://ejemplo.com/restaurantes2" },
+    { nombre: "Vecchio Caminetto", imagen: "img/aliadosImg/Restaurantes/vecchioCaminetto.png", enlace: "https://ejemplo.com/restaurantes2" },
+    // Agrega más aliados de restaurantes aquí
+  ],
+  TelemedicinaMascotas: [
+    { nombre: "Telemedicina1", imagen: "img/aliadosImg/restaurantes1.jpg", enlace: "https://ejemplo.com/restaurantes1" },
+    { nombre: "Telemedicina2", imagen: "img/aliadosImg/restaurantes2.jpg", enlace: "https://ejemplo.com/restaurantes2" },
     // Agrega más aliados de restaurantes aquí
   ]
 };
 
-// Función para inicializar la modal de aliados
-function initializeAliadosModal() {
-  const aliadosModal = document.getElementById('aliadosModal');
-  const closeAliadosModalBtn = document.querySelector('#aliadosModal .close-btn');
-  const aliadosGrid = document.getElementById('aliadosGrid');
-  const modalTitle = document.getElementById('modalAliadosTitle');
-
-  // Asignar eventos a los items del carrusel
+/*=====================================
+  # Aliados Modal con Carrusel (Función unificada)
+=====================================*/
+function initializeAllyModal() {
   const allyItems = document.querySelectorAll('.ally-item');
+  const aliadosModal = document.getElementById('aliadosModal');
+  
+  if (!allyItems.length || !aliadosModal) return;
+  
+  const modalTitle = document.getElementById('modalAliadosTitle');
+  const closeModalBtn = aliadosModal.querySelector('.close-btn');
+  
+  // Datos completos de aliados (usando el objeto que ya tenías definido arriba)
+  // NOTA: Eliminé el objeto duplicado que estaba dentro de esta función
 
+  // Eventos para abrir el modal
   allyItems.forEach(item => {
-    item.addEventListener('click', function () {
-      const allyType = this.getAttribute('data-ally');
-      const allyTitle = this.querySelector('h3').textContent;
-
-      // Actualizar título de la modal
-      modalTitle.textContent = allyTitle;
-
-      // Cargar aliados correspondientes
-      loadAliados(allyType);
-
-      // Mostrar modal
-      if (aliadosModal) {
-        aliadosModal.classList.add('show');
-      }
+    item.addEventListener('click', () => {
+      const allyType = item.getAttribute('data-ally');
+      const allyTitle = item.querySelector('h3').textContent;
+      openAllyModal(allyType, allyTitle);
     });
   });
 
-  // Close aliados modal
-  if (closeAliadosModalBtn && aliadosModal) {
-    closeAliadosModalBtn.addEventListener('click', () => {
+  function openAllyModal(allyType, allyTitle) {
+    // Establecer el título del modal
+    modalTitle.textContent = allyTitle;
+    
+    // Limpiar el carrusel existente
+    const modalCarousel = document.querySelector('.modal-carousel');
+    const modalIndicators = document.querySelector('.modal-carousel-indicators');
+    
+    if (modalCarousel) modalCarousel.innerHTML = '';
+    if (modalIndicators) modalIndicators.innerHTML = '';
+    
+    // Obtener aliados para esta categoría
+    const aliados = aliadosData[allyType] || [];
+    
+    if (aliados.length === 0) {
+      // Mostrar mensaje si no hay aliados
+      if (modalCarousel) {
+        modalCarousel.innerHTML = '<p class="no-aliados">Próximamente más aliados en esta categoría.</p>';
+      }
+    } else {
+      // Crear elementos del carrusel
+      aliados.forEach((aliado, index) => {
+        const allyElement = document.createElement('div');
+        allyElement.className = 'modal-carousel-item';
+        allyElement.innerHTML = `
+          <a href="${aliado.enlace}" target="_blank" class="aliado-modal-link">
+            <div class="modal-ally-image">
+              <img src="${aliado.imagen}" alt="${aliado.nombre}">
+            </div>
+            <div class="modal-ally-content">
+              <h3>${aliado.nombre}</h3>
+              <p>${aliado.descripcion || 'Aliado de Club Estar Bien'}</p>
+            </div>
+          </a>
+        `;
+        if (modalCarousel) modalCarousel.appendChild(allyElement);
+        
+        // Crear indicadores
+        if (modalIndicators) {
+          const indicator = document.createElement('div');
+          indicator.className = 'indicator';
+          indicator.dataset.index = index;
+          if (index === 0) indicator.classList.add('active');
+          indicator.addEventListener('click', () => {
+            goToSlide(index);
+          });
+          modalIndicators.appendChild(indicator);
+        }
+      });
+      
+      // Inicializar el carrusel del modal
+      initModalCarousel();
+    }
+    
+    // Mostrar el modal
+    aliadosModal.classList.add('show');
+  }
+
+  // Variables para el control del carrusel
+  let currentIndex = 0;
+  let itemsPerView = 3;
+
+  function initModalCarousel() {
+    const carousel = document.querySelector('.modal-carousel');
+    const items = document.querySelectorAll('.modal-carousel-item');
+    const prevBtn = document.querySelector('.modal-carousel-control.prev');
+    const nextBtn = document.querySelector('.modal-carousel-control.next');
+    
+    if (!carousel || !items.length) return;
+    
+    // Calcular items por vista según el tamaño de pantalla
+    updateItemsPerView();
+    
+    // Event listeners para controles
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    // Inicializar
+    updateCarousel();
+    
+    // Redimensionamiento de ventana
+    window.addEventListener('resize', () => {
+      updateItemsPerView();
+      updateCarousel();
+    });
+  }
+
+  function updateItemsPerView() {
+    if (window.innerWidth <= 768) {
+      itemsPerView = 1;
+    } else if (window.innerWidth <= 992) {
+      itemsPerView = 2;
+    } else {
+      itemsPerView = 3;
+    }
+  }
+
+  function updateCarousel() {
+    const carousel = document.querySelector('.modal-carousel');
+    const items = document.querySelectorAll('.modal-carousel-item');
+    const indicators = document.querySelectorAll('.modal-carousel-indicators .indicator');
+    
+    if (!carousel || !items.length) return;
+    
+    const itemWidth = items[0].offsetWidth + 20; // width + gap
+    const translateX = -currentIndex * itemWidth * itemsPerView;
+    carousel.style.transform = `translateX(${translateX}px)`;
+    
+    // Actualizar indicadores
+    if (indicators.length) {
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === currentIndex);
+      });
+    }
+    
+    // Mostrar/ocultar controles según la posición
+    const prevBtn = document.querySelector('.modal-carousel-control.prev');
+    const nextBtn = document.querySelector('.modal-carousel-control.next');
+    const totalItems = items.length;
+    
+    if (prevBtn) prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+    if (nextBtn) nextBtn.style.display = currentIndex >= Math.ceil(totalItems / itemsPerView) - 1 ? 'none' : 'block';
+  }
+
+  function nextSlide() {
+    const items = document.querySelectorAll('.modal-carousel-item');
+    if (currentIndex < Math.ceil(items.length / itemsPerView) - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  // Cerrar modal
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
       aliadosModal.classList.remove('show');
     });
   }
+
+  // Cerrar modal al hacer clic fuera del contenido
+  aliadosModal.addEventListener('click', (e) => {
+    if (e.target === aliadosModal) {
+      aliadosModal.classList.remove('show');
+    }
+  });
 
   // Cerrar con la tecla Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && aliadosModal && aliadosModal.classList.contains('show')) {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && aliadosModal.classList.contains('show')) {
       aliadosModal.classList.remove('show');
     }
   });
-
-  // Cerrar al hacer clic fuera del contenido
-  window.addEventListener('click', (e) => {
-    if (aliadosModal && e.target === aliadosModal) {
-      aliadosModal.classList.remove('show');
-    }
-  });
-
-  // Función para cargar los aliados en la grid
-  function loadAliados(allyType) {
-    if (!aliadosGrid) return;
-
-    // Limpiar grid
-    aliadosGrid.innerHTML = '';
-
-    // Obtener aliados del tipo seleccionado
-    const aliados = aliadosData[allyType] || [];
-
-    if (aliados.length === 0) {
-      aliadosGrid.innerHTML = '<p class="no-aliados">Próximamente más aliados en esta categoría.</p>';
-      return;
-    }
-
-    // Crear elementos para cada aliado
-    aliados.forEach(aliado => {
-      const aliadoItem = document.createElement('div');
-      aliadoItem.classList.add('aliado-modal-item');
-
-      aliadoItem.innerHTML = `
-        <a href="${aliado.enlace}" target="_blank" class="aliado-modal-link">
-          <img src="${aliado.imagen}" alt="${aliado.nombre}" class="aliado-modal-img">
-          <p class="aliado-modal-name">${aliado.nombre}</p>
-        </a>
-      `;
-
-      aliadosGrid.appendChild(aliadoItem);
-    });
-  }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleButton = document.getElementById('info-toggle');
-  const moreInfo = document.getElementById('more-info');
-  const icon = toggleButton.querySelector('i');
-
-  toggleButton.addEventListener('click', function () {
-    moreInfo.classList.toggle('show');
-    toggleButton.classList.toggle('active');
-
-    if (moreInfo.classList.contains('show')) {
-      icon.classList.remove('fa-plus');
-      icon.classList.add('fa-minus');
-    } else {
-      icon.classList.remove('fa-minus');
-      icon.classList.add('fa-plus');
-    }
-  });
-});
