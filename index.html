@@ -204,26 +204,29 @@
                 
           </div>
 
+          <!-- En la sección de servicios -->
           <div class="beneficios-descuentos-card-container">
-            <div class="service-card" id="beneficios-card">
-              <div class="service-image-wrapper">
-                <img src="img/beneficios.png" alt="beneficios" />
+              <div class="service-card" id="beneficios-card">
+                  <div class="service-image-wrapper">
+                      <img src="img/beneficios.png" alt="beneficios">
+                  </div>
+                  <div class="service-content">
+                      <h3>Beneficios</h3>
+                      <!-- Cambiar ID para beneficios -->
+                      <a href="#servicios" class="btn" id="open-beneficios-modal">Descubre cuáles son</a>
+                  </div>
               </div>
-              <div class="service-content">
-                <h3>Beneficios</h3>
-                <a href="#servicios" class="btn">Descubre cuáles son</a>
-              </div>
-            </div>
 
-            <div class="service-card" id="descuentos-card">
-              <div class="service-image-wrapper">
-                <img src="img/descuentos.png" alt="Descuentos" />
+              <div class="service-card" id="descuentos-card">
+                  <div class="service-image-wrapper">
+                      <img src="img/descuentos.png" alt="Descuentos">
+                  </div>
+                  <div class="service-content">
+                      <h3>Descuentos</h3>
+                      <!-- Cambiar ID para descuentos -->
+                      <a href="#servicios" class="btn" id="open-descuentos-modal">Descubre cuáles son</a>
+                  </div>
               </div>
-              <div class="service-content">
-                <h3>Descuentos</h3>
-                <a href="#servicios" class="btn">Descubre cuáles son</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -537,13 +540,13 @@
       </div>
     </div>
 
-    <!-- Modal para Servicios Adicionales -->
+    <!-- Modal para Beneficios Adicionales -->
     <div id="serviciosModal" class="modal">
       <div class="modal-content">
         <span class="close-btn">&times;</span>
 
         <div class="modal-header-servicios">
-          <h2>🩺 Servicios Adicionales para tu bienestar</h2>
+          <h2>Servicios Adicionales para tu bienestar</h2>
         </div>
 
         <div class="modal-body">
@@ -569,10 +572,9 @@
                 <div class="servicio-icono">
                   <i class="fas fa-vial"></i>
                 </div>
-                <h3>Laboratorio y Rayos X en casa</h3>
+                <h3>Laboratorio y Rayos X donde Prefieras</h3>
                 <p>
-                  Realizamos estudios de laboratorio y radiología sin que tengas
-                  que salir de casa.
+                  Realizamos estudios de laboratorio y radiología desde nuestras sedes hasta tu domicilio.
                 </p>
               </div>
 
@@ -639,6 +641,82 @@
       </div>
     </div>
 
+    <!-- Modal para Descuentos -->
+    <div id="descuentosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+
+            <div class="modal-header-descuentos">
+                <h2>Descuentos Exclusivos para Afiliados</h2>
+                <p>Disfruta de estos beneficios especiales en nuestros aliados comerciales</p>
+            </div>
+
+            <div class="modal-body-descuentos">
+                <div class="descuentos-grid">
+                    <div class="descuento-item">
+                        <div class="descuento-icono">
+                            <i class="fas fa-prescription-bottle"></i>
+                        </div>
+                        <h3>Farmacias Aliadas</h3>
+                        <p>Descuentos especiales en medicamentos y productos de farmacia.</p>
+                        <span class="descuento-porcentaje">10% - 15%</span>
+                    </div>
+
+                    <div class="descuento-item">
+                        <div class="descuento-icono">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Restaurantes</h3>
+                        <p>Disfruta de descuentos en nuestros restaurantes aliados.</p>
+                        <span class="descuento-porcentaje">10% - 20%</span>
+                    </div>
+
+                    <div class="descuento-item">
+                        <div class="descuento-icono">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h3>Calzado y Ropa</h3>
+                        <p>Descuentos en marcas reconocidas de calzado y vestimenta.</p>
+                        <span class="descuento-porcentaje">15% - 25%</span>
+                    </div>
+
+                    <div class="descuento-item">
+                        <div class="descuento-icono">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h3>Productos para Mascotas</h3>
+                        <p>Descuentos en alimentos y accesorios para tus mascotas.</p>
+                        <span class="descuento-porcentaje">10% - 20%</span>
+                    </div>
+
+                    <div class="descuento-item">
+                        <div class="descuento-icono">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Servicios Vehiculares</h3>
+                        <p>Descuentos en mantenimiento y servicios para tu vehículo.</p>
+                        <span class="descuento-porcentaje">10% - 15%</span>
+                    </div>
+
+                    <div class="descuento-item">
+                        <div class="descuento-icono">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Servicios para el Hogar</h3>
+                        <p>Descuentos en plomería, electricidad y cerrajería.</p>
+                        <span class="descuento-porcentaje">15% - 20%</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; padding: 15px; background-color: #e8f4ff; border-radius: 8px;">
+                    <h3 style="color: #18365e; margin-top: 0;">¿Cómo acceder a los descuentos?</h3>
+                    <p>Para disfrutar de estos descuentos, simplemente presenta tu credencial de afiliado al Club Estar Bien en cualquiera de nuestros establecimientos aliados.</p>
+                    <p>Si aún no tienes tu credencial digital, descárgala desde nuestra aplicación móvil.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal para Aliados -->
     <div id="aliadosModal" class="modal">
       <div class="modal-content aliados-modal-content">
@@ -669,6 +747,7 @@
       </div>
     </div>
 
+    
     <a
       href="#inicio"
       id="btn-scroll-top"

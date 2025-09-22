@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeScrollTop();
   initializeServiceCards();
   initializeModals();
-  initializeServiciosModal();
+  initializeBeneficiosModal();
   initializeAllyModal();
+  initializeDescuentosModal();
 });
 
 /*=====================================
@@ -215,38 +216,37 @@ function initializeModals() {
   });
 }
 
+
 /*=====================================
-  # Servicios Modal
+  # Beneficios Modal (SOLO para Beneficios)
 =====================================*/
-function initializeServiciosModal() {
-  const serviciosModal = document.getElementById('serviciosModal');
-  const closeServiciosModalBtn = document.querySelector('#serviciosModal .close-btn');
+function initializeBeneficiosModal() {
+    const serviciosModal = document.getElementById('serviciosModal');
+    const closeServiciosModalBtn = document.querySelector('#serviciosModal .close-btn');
 
-  // Asignar eventos a los botones "Descubre cuáles son"
-  const descubreButtons = document.querySelectorAll('#descuentos-card .btn, #beneficios-card .btn');
+    // Asignar evento SOLO al botón de beneficios
+    const descubreBeneficiosBtn = document.getElementById('open-beneficios-modal');
 
-  descubreButtons.forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (serviciosModal) {
-        serviciosModal.classList.add('show');
-      }
-    });
-  });
-
-  // Close servicios modal
-  if (closeServiciosModalBtn && serviciosModal) {
-    closeServiciosModalBtn.addEventListener('click', () => {
-      serviciosModal.classList.remove('show');
-    });
-  }
-
-  // Cerrar con la tecla Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && serviciosModal && serviciosModal.classList.contains('show')) {
-      serviciosModal.classList.remove('show');
+    if (descubreBeneficiosBtn && serviciosModal) {
+        descubreBeneficiosBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            serviciosModal.classList.add('show');
+        });
     }
-  });
+
+    // Close servicios modal
+    if (closeServiciosModalBtn && serviciosModal) {
+        closeServiciosModalBtn.addEventListener('click', () => {
+            serviciosModal.classList.remove('show');
+        });
+    }
+
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && serviciosModal && serviciosModal.classList.contains('show')) {
+            serviciosModal.classList.remove('show');
+        }
+    });
 }
 
 
@@ -508,4 +508,39 @@ function initializeAllyModal() {
       aliadosModal.classList.remove('show');
     }
   });
+}
+
+function initializeDescuentosModal() {
+    const descuentosModal = document.getElementById('descuentosModal');
+    const openDescuentosModalBtn = document.getElementById('open-descuentos-modal');
+    const closeDescuentosModalBtn = descuentosModal?.querySelector('.close-btn');
+
+    // Abrir modal de descuentos
+    if (openDescuentosModalBtn && descuentosModal) {
+        openDescuentosModalBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            descuentosModal.classList.add('show');
+        });
+    }
+
+    // Cerrar modal de descuentos
+    if (closeDescuentosModalBtn && descuentosModal) {
+        closeDescuentosModalBtn.addEventListener('click', function() {
+            descuentosModal.classList.remove('show');
+        });
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.addEventListener('click', function(e) {
+        if (descuentosModal && e.target === descuentosModal) {
+            descuentosModal.classList.remove('show');
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && descuentosModal && descuentosModal.classList.contains('show')) {
+            descuentosModal.classList.remove('show');
+        }
+    });
 }
