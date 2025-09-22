@@ -253,21 +253,21 @@ function initializeBeneficiosModal() {
 // Datos de los aliados (debes completar con los enlaces reales)
 const aliadosData = {
   salud: [
-    { nombre: "AlterGold", imagen: "img/aliadosImg/SaludyBienestar/altergold.png", enlace: "https://www.corporesthetic.com/" },
-    { nombre: "Buena Vida", imagen: "img/aliadosImg/SaludyBienestar/buenaVida1.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "Centro Medico Castillito", imagen: "img/aliadosImg/SaludyBienestar/centroMedicoCastillito.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "Laboatención", imagen: "img/aliadosImg/SaludyBienestar/laboatencion.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/opticolor.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "Optica Caroni", imagen: "img/aliadosImg/SaludyBienestar/opticaCaroni.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "SonoLife", imagen: "img/aliadosImg/SaludyBienestar/sonolife.png", enlace: "https://www.goldsgym.com.ve/" },
-    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.goldsgym.com.ve/" },
+    { nombre: "AlterGold", imagen: "img/aliadosImg/SaludyBienestar/altergold.png", enlace: "http://intranetaltergold.sigmadental.net/" },
+    { nombre: "Buena Vida", imagen: "img/aliadosImg/SaludyBienestar/buenaVida1.png", enlace: "https://www.instagram.com/centroclinicobuenavida/?hl=en" },
+    { nombre: "Centro Medico Castillito", imagen: "img/aliadosImg/SaludyBienestar/centroMedicoCastillito.png", enlace: "https://www.instagram.com/cmcastillitopzo/?hl=en" },
+    { nombre: "Laboatención", imagen: "img/aliadosImg/SaludyBienestar/laboatencion.png", enlace: "https://www.instagram.com/laboatencion/" },
+    { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/opticolor.png", enlace: "https://opticolor.com.ve/" },
+    { nombre: "Optica Caroni", imagen: "img/aliadosImg/SaludyBienestar/opticaCaroni.png", enlace: "https://opticacaroni.com/" },
+    { nombre: "SonoLife", imagen: "img/aliadosImg/SaludyBienestar/sonolife.png", enlace: "https://www.instagram.com/sonolife.ve/?hl=en" },
+    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.facebook.com/100066210745136/about/?locale=es_ES&_rdr" },
     // Agrega más aliados de salud aquí
   ],
   farmacia: [
-    { nombre: "Farmacia Carmencita", imagen: "img/aliadosImg/Farmacia/farmaciaCarmencita.png", enlace: "https://ejemplo.com/farmacia1" },
-    { nombre: "Farmacia Doctoral", imagen: "img/aliadosImg/Farmacia/farmaciaDoctoral.jpeg", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmacia Las Flores", imagen: "img/aliadosImg/Farmacia/farmaciaLasFlores.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Grupo de Farmacias Girasol", imagen: "img/aliadosImg/Farmacia/farmaciasGirasol.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmacia Carmencita", imagen: "img/aliadosImg/Farmacia/farmaciaCarmencita.png", enlace: "https://www.facebook.com/farmacia.carmencitacpno/" },
+    { nombre: "Farmacia Doctoral", imagen: "img/aliadosImg/Farmacia/farmaciaDoctoral.jpeg", enlace: "https://www.instagram.com/farmaciadoctoral/reels/" },
+    { nombre: "Farmacia Las Flores", imagen: "img/aliadosImg/Farmacia/farmaciaLasFlores.png", enlace: "https://www.instagram.com/farmacia_lasflores/reels/" },
+    { nombre: "Grupo de Farmacias Girasol", imagen: "img/aliadosImg/Farmacia/farmaciasGirasol.png", enlace: "https://farmagirasol.com/" },
     { nombre: "Farmacia Yari", imagen: "img/aliadosImg/Farmacia/farmaciaYari.png", enlace: "https://ejemplo.com/farmacia2" },
     { nombre: "FarmaDaily", imagen: "img/aliadosImg/Farmacia/farmaDaily.jpeg", enlace: "https://ejemplo.com/farmacia2" },
     { nombre: "FarmaOferta", imagen: "img/aliadosImg/Farmacia/farmaOferta.png", enlace: "https://ejemplo.com/farmacia2" },
@@ -553,13 +553,15 @@ const plansData = {
     coverages: [
       { service: "Telemedicina 24/7", coverage: "Ilimitado", limit: "-" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
-      { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" }
+      { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" },
+      { service: "Servicio de Plomeria, Cerrajeria u Electricidad", coverage: "Para el hogar", limit: "1 evento (Hasta 40$ de Cobertura)" },
+      { service: "Reparacion In Situ (Cambios de neumatico y falla de Bateria)", coverage: "Para el Vehiculo", limit: "1 evento (Hasta 40$ de Cobertura)" },
     ],
     benefits: [
       "Acceso a descuentos en farmacias aliadas",
       "Soporte técnico 24/7",
       "App móvil incluida",
-      "Recordatorios de servicios por WhatsApp"
+      "Vigencia Mensual, Servicios no Acumulativos"
     ]
   },
   estandar: {
