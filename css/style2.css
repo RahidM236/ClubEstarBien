@@ -2297,14 +2297,18 @@ footer {
 }
 
 .modal-ally-image {
-  height: 150px;
+   height: 150px; /* Ajusta la altura del contenedor para que tenga más espacio */
+  width: auto; /* Permite que el ancho se ajuste automáticamente */
   overflow: hidden;
+  display: flex; /* Centra la imagen si el contenedor es más grande */
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-ally-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+  height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
+  object-fit: contain; /* Asegura que la imagen se vea completa sin ser recortada */
   transition: transform 0.3s ease;
 }
 
