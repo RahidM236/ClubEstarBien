@@ -754,6 +754,8 @@ footer {
   color: white;
   text-align: center;
   overflow: hidden;
+  /* Agrega la imagen de fondo aquí */
+  background-image: url("img/fondo-logo.jpg");
 }
 
 /* Overlay para hacer el texto legible sobre la imagen de fondo */
