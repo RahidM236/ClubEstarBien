@@ -246,7 +246,8 @@ nav a:hover {
     =====================================*/
 .hero {
   background: linear-gradient(rgba(25, 54, 95, 0.8), rgba(44, 110, 155, 0.8)),
-    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+      center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 150px 0 100px;
@@ -791,7 +792,8 @@ nav a:hover {
     =====================================*/
 .cta {
   background: linear-gradient(rgba(44, 110, 155, 0.9), rgba(24, 54, 94, 0.9)),
-    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+      center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 80px 0;
@@ -977,7 +979,7 @@ nav a:hover {
   # Footer Final Version
 =====================================*/
 :root {
-  --footer-bg: #1c1c1c;
+  --footer-bg: #0c0735;
   --text-light: #f0f0f0;
   --text-muted: #b0b0b0;
   --link-color: #ffffff;
@@ -1192,9 +1194,11 @@ footer {
   # Modal Servicios Adicionales
 =====================================*/
   .modal-header-servicios {
-    background: linear-gradient(135deg,
-        var(--primary-color),
-        var(--secondary-color));
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
     color: white;
     padding: 20px;
     text-align: center;
@@ -1385,9 +1389,11 @@ footer {
   # Modal Servicios Adicionales
 =====================================*/
 .modal-header-servicios {
-  background: linear-gradient(135deg,
-      var(--primary-color),
-      var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   padding: 20px;
   text-align: center;
@@ -1594,9 +1600,11 @@ footer {
   # Modal Aliados
 =====================================*/
 .modal-header-aliados {
-  background: linear-gradient(135deg,
-      var(--primary-color),
-      var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   padding: 20px;
   text-align: center;
@@ -2195,12 +2203,14 @@ footer {
 
 /* Colores de fondo */
 .instagram-card {
-  background: linear-gradient(45deg,
-      #f09533,
-      #e6693c,
-      #dc2742,
-      #cc2367,
-      #bc1888);
+  background: linear-gradient(
+    45deg,
+    #f09533,
+    #e6693c,
+    #dc2742,
+    #cc2367,
+    #bc1888
+  );
 }
 
 .tiktok-card {
@@ -2616,7 +2626,6 @@ footer {
 #descuentos-card .btn:hover {
   background-color: #c53030;
 }
-
 
 /* Modal principal */
 .modal {
