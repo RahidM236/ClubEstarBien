@@ -20,7 +20,7 @@ html {
   font-family: "Sansation", sans-serif;
   color: var(--text-color);
   background: var(--light-bg);
-  line-height: 1.6;  
+  line-height: 1.6;
 }
 
 .container {
@@ -562,7 +562,7 @@ footer {
   # Footer Final Version
 =====================================*/
 :root {
-  --footer-bg: #0c0735;
+  --footer-bg: #08071b;
   --text-light: #f0f0f0;
   --text-muted: #b0b0b0;
   --link-color: #ffffff;
@@ -1112,8 +1112,8 @@ footer {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

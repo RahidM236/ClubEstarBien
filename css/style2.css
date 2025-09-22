@@ -1889,8 +1889,8 @@ footer {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -2130,7 +2130,7 @@ footer {
 }
 
 /*=====================================
-  # Redes Sociales - Nueva Versión    
+  # Redes Sociales - Nueva Versión    
 =====================================*/
 .social-links-new {
   display: flex;
@@ -2150,18 +2150,23 @@ footer {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  background: #fff;
+  background: transparent; /* Fondo transparente */
   border-radius: 12px;
   padding: 15px 20px;
   width: 200px;
   /* mismo ancho para todas */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none; /* Quitamos la sombra */
+}
+
+/* Efecto hover */
+.social-card:hover {
+  transform: scale(1.05);
 }
 
 /*=====================================
-  # Redes Sociales - Ajustado TikTok    
+  # Redes Sociales - Ajustado TikTok    
 =====================================*/
 /* General */
 .social-card img {
@@ -2188,7 +2193,7 @@ footer {
   line-height: 1.1;
   margin-bottom: 2px;
   display: block;
-  color: #000;
+  color: #004080; /* Color azul oscuro para el texto principal */
 }
 
 /* Texto secundario */
@@ -2198,31 +2203,24 @@ footer {
   font-weight: 400;
   opacity: 0.9;
   display: block;
-  color: #fff;
+  color: #0056b3; /* Color azul más claro para el texto secundario */
 }
 
-/* Colores de fondo */
+/* Quitamos los colores de fondo de las tarjetas específicas */
 .instagram-card {
-  background: linear-gradient(
-    45deg,
-    #f09533,
-    #e6693c,
-    #dc2742,
-    #cc2367,
-    #bc1888
-  );
+  background: transparent;
 }
 
 .tiktok-card {
-  background-color: #000000bb;
+  background: transparent;
 }
 
 .facebook-card {
-  background-color: #1876f2;
+  background: transparent;
 }
 
 .youtube-card {
-  background-color: #ff0000cc;
+  background: transparent;
 }
 
 /* Responsive */
@@ -2253,7 +2251,6 @@ footer {
     font-size: 0.75em;
   }
 }
-
 /*=====================================
   # Modal Aliados - Carrusel
 =====================================*/
