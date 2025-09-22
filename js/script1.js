@@ -555,7 +555,7 @@ const plansData = {
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
       { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" },
       { service: "Servicio de Plomeria, Cerrajeria u Electricidad", coverage: "Para el hogar", limit: "1 evento (Hasta 40$ de Cobertura)" },
-      { service: "Reparacion In Situ (Cambios de neumatico y falla de Bateria)", coverage: "Para el Vehiculo", limit: "1 evento (Hasta 40$ de Cobertura)" },
+      { service: "Reparacion In Situ (Cambios de neumatico y falla de Bateria)", coverage: "Para el Vehiculo", limit: "1 evento" },
     ],
     benefits: [
       "Acceso a descuentos en farmacias aliadas",
