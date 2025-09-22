@@ -553,13 +553,15 @@ const plansData = {
     coverages: [
       { service: "Telemedicina 24/7", coverage: "Ilimitado", limit: "-" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
-      { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" }
+      { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" },
+      { service: "Servicio de Plomeria, Cerrajeria u Electricidad", coverage: "Para el hogar", limit: "1 evento (Hasta 40$ de Cobertura)" },
+      { service: "Reparacion In Situ (Cambios de neumatico y falla de Bateria)", coverage: "Para el Vehiculo", limit: "1 evento (Hasta 40$ de Cobertura)" },
     ],
     benefits: [
       "Acceso a descuentos en farmacias aliadas",
       "Soporte técnico 24/7",
       "App móvil incluida",
-      "Recordatorios de servicios por WhatsApp"
+      "Vigencia Mensual, Servicios no Acumulativos"
     ]
   },
   estandar: {
