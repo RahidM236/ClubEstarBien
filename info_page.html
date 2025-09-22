@@ -52,7 +52,15 @@
 
     <!-- Main Content -->
     <main class="info-page-main">
-      <section class="full-width-section parallax-bg">
+      <section
+        class="full-width-section parallax-bg"
+        style="
+          background-image: url('');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        "
+      >
         <div class="container content-overlay">
           <div class="card-and-image-container">
             <div class="text-card fade-in-left">
@@ -75,6 +83,8 @@
           </div>
         </div>
       </section>
+
+      <!-- -->
       <section class="standard-section">
         <div class="container alternate-layout">
           <div class="text-content">
@@ -92,11 +102,47 @@
             </p>
           </div>
           <div class="image-content">
-            <img
-              src="img/cellphoneImg.PNG"
-              alt="Tecnología y Confidencialidad"
-              class="responsive-image scale-up"
-            />
+            <div class="carousel-container">
+              <div class="carousel-slide">
+                <img
+                  src="img/cellphoneImg.PNG"
+                  alt="Descripción de la imagen 1"
+                  class="carousel-image"
+                />
+                <img
+                  src="img/home.jpg"
+                  alt="Descripción de la imagen 2"
+                  class="carousel-image"
+                />
+                <img
+                  src="img/listadoPago.jpg"
+                  alt="Descripción de la imagen 3"
+                  class="carousel-image"
+                />
+                <img
+                  src="img/historial.jpg"
+                  alt="Descripción de la imagen 4"
+                  class="carousel-image"
+                />
+                <img
+                  src="img/perfil.jpg"
+                  alt="Descripción de la imagen 5"
+                  class="carousel-image"
+                />
+                <img
+                  src="img/compartir.jpg"
+                  alt="Descripción de la imagen 6"
+                  class="carousel-image"
+                />
+              </div>
+              <button class="carousel-prev">&#10094;</button>
+              <button class="carousel-next">&#10095;</button>
+              <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
