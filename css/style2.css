@@ -2297,7 +2297,7 @@ footer {
 }
 
 .modal-ally-image {
-   height: 150px; /* Ajusta la altura del contenedor para que tenga más espacio */
+  height: 150px; /* Ajusta la altura del contenedor para que tenga más espacio */
   width: auto; /* Permite que el ancho se ajuste automáticamente */
   overflow: hidden;
   display: flex; /* Centra la imagen si el contenedor es más grande */
@@ -2306,7 +2306,7 @@ footer {
 }
 
 .modal-ally-image img {
-    width: 100%;
+  width: 100%;
   height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
   object-fit: contain; /* Asegura que la imagen se vea completa sin ser recortada */
   transition: transform 0.3s ease;
@@ -2994,5 +2994,117 @@ footer {
   .coverage-table {
     display: block;
     overflow-x: auto;
+  }
+}
+/*=====================================
+  # Sección de Clientes - Carrusel  
+=====================================*/ /* Sección de Clientes */
+.clients-section {
+  padding: 80px 0;
+  background-color: #f7f9fc;
+}
+
+.clients-section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.clients-carousel {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Máscara para difuminar los logos en los bordes */
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.clients-slide {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: slide-logos 40s linear infinite;
+}
+
+/* Este es el cambio clave para pausar la animación.
+  Se aplica a .clients-slide y no solo a los logos individuales,
+  lo que asegura que el carrusel completo se detenga.
+*/
+.clients-slide:hover {
+  animation-play-state: paused;
+}
+
+.client-logo {
+  height: 100px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Mantiene los colores originales y opacidad */
+  filter: none;
+  opacity: 1;
+}
+
+/* Animación del carrusel */
+@keyframes slide-logos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* El 50% en la animación garantiza que se repita de forma fluida.
+      Desplaza el carrusel exactamente a la mitad de su tamaño,
+      lo cual coincide con el punto donde se duplica el contenido.
+    */
+    transform: translateX(-50%);
+  }
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .clients-section {
+    padding: 60px 0;
+  }
+  .section-title h2 {
+    font-size: 28px;
+  }
+  .section-title p {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  .client-logo {
+    height: 80px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-section {
+    padding: 40px 0;
+  }
+  .section-title h2 {
+    font-size: 24px;
+  }
+  .client-logo {
+    height: 60px;
+    width: 120px;
   }
 }
