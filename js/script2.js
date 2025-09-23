@@ -266,3 +266,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+        threshold: 0.2
+    }
+    );
+
+    // Selecciona todos los elementos que quieres que aparezcan
+    const elementsToAnimate = document.querySelectorAll(
+        '.hero, .about .container, .services .container, .allies-section .container, .clients-section .container, .contact-new .container, .cta .container, .service-card, .ally-item, .contact-new .card-new, .social-card, .step-button'
+    );
+
+    elementsToAnimate.forEach((el) => {
+        el.classList.add('hidden');
+        observer.observe(el);
+    });
+});

@@ -3108,3 +3108,45 @@ footer {
     width: 120px;
   }
 }
+
+/*
+ * Sección de Animaciones
+ * Oculta los elementos que se animarán y define la transición.
+ */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Aplica la transición a los elementos específicos */
+/* Elementos dentro de las secciones */
+.about .about-flex-container,
+.services .services-grid,
+.services .telemedicina-card-container,
+.allies-carousel-container,
+.clients-carousel,
+.contact-cards-new,
+.social-links-new,
+.steps {
+  transition: opacity 1s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.3s; /* Un retraso sutil para un efecto más dramático */
+}
+
+/* Opcional: Anima también el carrusel de clientes */
+.clients-carousel {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Opcional: Anima las tarjetas de servicios */
+.services-grid .service-card {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s; /* Un pequeño retraso para un efecto más escalonado */
+}
