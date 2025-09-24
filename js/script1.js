@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeBeneficiosModal();
   initializeAllyModal();
   initializeDescuentosModal();
+  initializeImageModal();
 });
 
 /*=====================================
@@ -260,7 +261,7 @@ const aliadosData = {
     { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/opticolor.png", enlace: "https://opticolor.com.ve/" },
     { nombre: "Optica Caroni", imagen: "img/aliadosImg/SaludyBienestar/opticaCaroni.png", enlace: "https://opticacaroni.com/" },
     { nombre: "SonoLife", imagen: "img/aliadosImg/SaludyBienestar/sonolife.png", enlace: "https://www.instagram.com/sonolife.ve/?hl=en" },
-    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.facebook.com/100066210745136/about/?locale=es_ES&_rdr" },
+    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.facebook.com/100066210745136/about/?locale=es_ES&_rdr" },    
     // Agrega más aliados de salud aquí
   ],
   farmacia: [
@@ -309,9 +310,8 @@ const aliadosData = {
     // Agrega más aliados de restaurantes aquí
   ],
   TelemedicinaMascotas: [
-    { nombre: "Telemedicina1", imagen: "img/aliadosImg/restaurantes1.jpg", enlace: "https://ejemplo.com/restaurantes1" },
-    { nombre: "Telemedicina2", imagen: "img/aliadosImg/restaurantes2.jpg", enlace: "https://ejemplo.com/restaurantes2" },
-    // Agrega más aliados de restaurantes aquí
+    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://ejemplo.com/mascotas1" },    
+    // Agrega más aliados de telemedicina para mascotas aquí
   ]
 };
 
@@ -551,7 +551,7 @@ const plansData = {
     title: "Plan Básico",
     price: "$2",
     coverages: [
-      { service: "Telemedicina 24/7", coverage: "Ilimitado", limit: "-" },
+      { service: "Telemedicina 24/7", coverage: "Para la Persona", limit: "Ilimitado" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
       { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" },
       { service: "Servicio de Plomeria, Cerrajeria u Electricidad", coverage: "Para el hogar", limit: "1 evento (Hasta 40$ de Cobertura)" },
@@ -568,7 +568,7 @@ const plansData = {
     title: "Plan Estándar",
     price: "$15",
     coverages: [
-      { service: "Telemedicina 24/7", coverage: "Ilimitado", limit: "-" },
+      { service: "Telemedicina 24/7", coverage: "Para la Persona", limit: "ilimitado" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "3 eventos" },
       { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "3 eventos" },
       { service: "Asistencia en el hogar", coverage: "Plomería, electricidad, cerrajería", limit: "2 eventos" }
@@ -711,3 +711,147 @@ document.addEventListener('keydown', (e) => {
     planDetailsModal.classList.remove('show');
   }
 });
+
+/*=====================================
+  # Image Modal with Carousel
+=====================================*/
+function initializeImageModal() {
+  const imageModal = document.getElementById('imageModal');
+  const carouselTrack = imageModal.querySelector('#carouselTrack');
+  const prevBtn = imageModal.querySelector('.prev-btn');
+  const nextBtn = imageModal.querySelector('.next-btn');
+  const closeBtn = imageModal.querySelector('.close-btn');
+
+  let currentIndex = 0;
+  let images = [];
+
+  const categoryImages = {
+    'farmacia': [
+      '../img/Descuentos/Farmacia/descuento-farmacia-carmencita.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacia-doctoral.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacia-lasflores.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacia-yari.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacias-girasol.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmadaily.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmaoferta.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmapaz.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmas.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmatencion.jpg',
+    ],
+    'restaurantes': [
+      '../img/Descuentos/Restaurantes/descuento-ilvecchiocaminetto.jpg',
+      '../img/Descuentos/Restaurantes/descuento-lapaisa.jpg',
+      '../img/Descuentos/Restaurantes/descuento-salon-canton.jpg',
+      '../img/Descuentos/Restaurantes/descuento-sotano-siete.jpg'
+    ],
+    /*'restaurantes': [
+      './img/restaurante_1.jpg',
+      './img/restaurante_2.jpg'
+    ],*/
+    'calzado': [
+      '../img/Descuentos/Ropa Y Calzado/descuento-cerere.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-cerere.jpg',
+    ],
+    'mascotas': [
+      './img/mascotas_1.jpg',
+      './img/mascotas_2.jpg'
+    ],
+    'vehiculos': [
+      './img/vehiculos_1.jpg',
+      './img/vehiculos_2.jpg'
+    ],
+    'hogar': [
+      './img/hogar_1.jpg',
+      './img/hogar_2.jpg'
+    ]
+  };
+
+  function updateCarousel() {
+    if (images.length > 0) {
+      const slideWidth = carouselTrack.children[0].offsetWidth;
+      carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+  }
+
+  function openImageModal(category) {
+    images = categoryImages[category];
+    carouselTrack.innerHTML = '';
+    currentIndex = 0;
+
+    if (images && images.length > 0) {
+      images.forEach(imageSrc => {
+        const carouselSlide = document.createElement('div');
+        carouselSlide.className = 'carousel-slide';
+        const imgElement = document.createElement('img');
+        imgElement.src = imageSrc;
+        carouselSlide.appendChild(imgElement);
+        carouselTrack.appendChild(carouselSlide);
+      });
+
+      // Asegúrate de que las imágenes se hayan cargado para obtener el ancho
+      setTimeout(updateCarousel, 50);
+    }
+    
+    // Muestra u oculta los botones de navegación
+    prevBtn.style.display = images.length > 1 ? 'block' : 'none';
+    nextBtn.style.display = images.length > 1 ? 'block' : 'none';
+
+    imageModal.classList.add('show');
+  }
+
+  function closeImageModal() {
+    imageModal.classList.remove('show');
+    images = [];
+    carouselTrack.innerHTML = '';
+  }
+
+  // Navegación del carrusel
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  // Listener para los elementos que abren el modal
+  const clickableItems = document.querySelectorAll('.clickable-descuento-item');
+  const portfolioButtons = document.querySelectorAll('.open-image-modal');
+
+  [...clickableItems, ...portfolioButtons].forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const descuentosModal = document.getElementById('descuentosModal');
+      if (descuentosModal) {
+          descuentosModal.classList.remove('show');
+      }
+
+      const category = item.getAttribute('data-category');
+      if (category && categoryImages[category]) {
+        openImageModal(category);
+      }
+    });
+  });
+
+  // Listener para cerrar el modal
+  closeBtn.addEventListener('click', closeImageModal);
+
+  window.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      closeImageModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal.classList.contains('show')) {
+      closeImageModal();
+    }
+  });
+}

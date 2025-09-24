@@ -3150,3 +3150,201 @@ footer {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   transition-delay: 0.2s; /* Un pequeño retraso para un efecto más escalonado */
 }
+
+/* Estilos para el modal 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content-carrusel {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    color: white;
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Estilos para el Carrusel 
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo del carrusel 
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 70vh; /* Ajusta la altura máxima para pantallas grandes 
+    object-fit: contain;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}*/
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Usar flex para centrar el contenido del modal */    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+/* Modal visible */
+.modal.show {
+    display: flex;
+}
+
+/* Contenido del modal */
+.modal-content-carrusel {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: transparent; /* Opcional: para que solo se vea la imagen */
+    padding: 20px;
+    box-shadow: none; /* Opcional: para que no tenga sombra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    color: white;
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Estilos para el Carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Este es el estilo clave para la imagen */
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    /* La propiedad `object-fit: contain` ajusta la imagen a su contenedor sin recortarla */
+    object-fit: contain; 
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
