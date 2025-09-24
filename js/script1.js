@@ -269,38 +269,38 @@ const aliadosData = {
     { nombre: "Farmacia Doctoral", imagen: "img/aliadosImg/Farmacia/farmaciaDoctoral.jpeg", enlace: "https://www.instagram.com/farmaciadoctoral/reels/" },
     { nombre: "Farmacia Las Flores", imagen: "img/aliadosImg/Farmacia/farmaciaLasFlores.png", enlace: "https://www.instagram.com/farmacia_lasflores/reels/" },
     { nombre: "Grupo de Farmacias Girasol", imagen: "img/aliadosImg/Farmacia/farmaciasGirasol.png", enlace: "https://farmagirasol.com/" },
-    { nombre: "Farmacia Yari", imagen: "img/aliadosImg/Farmacia/farmaciaYari.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "FarmaDaily", imagen: "img/aliadosImg/Farmacia/farmaDaily.jpeg", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "FarmaOferta", imagen: "img/aliadosImg/Farmacia/farmaOferta.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmaser", imagen: "img/aliadosImg/Farmacia/farmaser.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmatención", imagen: "img/aliadosImg/Farmacia/farmatension.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmapaz", imagen: "img/aliadosImg/Farmacia/farmapaz.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmacia Yari", imagen: "img/aliadosImg/Farmacia/farmaciaYari.png", enlace: "https://www.instagram.com/p/DOkyXotDlRc/" },
+    { nombre: "FarmaDaily", imagen: "img/aliadosImg/Farmacia/farmaDaily.jpeg", enlace: "https://www.instagram.com/farmadailyca/" },
+    { nombre: "FarmaOferta", imagen: "img/aliadosImg/Farmacia/farmaOferta.png", enlace: "https://www.facebook.com/farmaofertamaracaibo" },
+    { nombre: "Farmaser", imagen: "img/aliadosImg/Farmacia/farmaser.png", enlace: "https://www.instagram.com/farmaservzla/?hl=en" },
+    { nombre: "Farmatención", imagen: "img/aliadosImg/Farmacia/farmatension.png", enlace: "https://www.instagram.com/farmatencion/?hl=en" },
+    { nombre: "Farmapaz", imagen: "img/aliadosImg/Farmacia/farmapaz.png", enlace: "https://www.instagram.com/farmapazofficial/" },
     // Agrega más aliados de farmacia aquí
   ],
   servicios: [
-    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://ejemplo.com/servicios1" },
-    { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://credimport.app/" },
+    { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://www.instagram.com/concepto.50/?hl=en" },
     { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://gamaenlinea.com/es/?srsltid=AfmBOooXaN5j0-XSZfl6d7J0Q36Jiz-xgmWNn23VQ_crxwKKOrzcOh0Q" },
     { nombre: "Full Motors", imagen: "img/aliadosImg/Servicios/fullmotors.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Wonderland", imagen: "img/aliadosImg/Servicios/wonderland.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://www.turaser.com/?https://www.turaser.com/es/&gad_source=1&gad_campaignid=22518847568&gbraid=0AAAAAoVGO8LSFXkt2lWJQhQZ4_w3aPgxU&gclid=Cj0KCQjwrc7GBhCfARIsAHGcW5VyGf87nLf6uMAQFhKUqIH0UTcvEVgyNrKTUoKZ3fWUmqDSyuD9Y0caAkHBEALw_wcB" },
+    { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://www.valeo.com/en/" },
+    { nombre: "Wonderland", imagen: "img/aliadosImg/Servicios/wonderland.png", enlace: "https://www.instagram.com/wonderlandvzla/?hl=en" },
     // Agrega más aliados de servicios aquí
   ],
   calzado: [
-    { nombre: "Converse", imagen: "img/aliadosImg/RopayCalzado/converse.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "Everlast", imagen: "img/aliadosImg/RopayCalzado/Everlast.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "Havaianas", imagen: "img/aliadosImg/RopayCalzado/havaianas.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "LucyLingerie", imagen: "img/aliadosImg/RopayCalzado/LucyLingerie.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/tuoutlet1.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Converse", imagen: "img/aliadosImg/RopayCalzado/converse.png", enlace: "https://www.converse.com/es" },
+    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://calzadoscerere.com/" },
+    { nombre: "Everlast", imagen: "img/aliadosImg/RopayCalzado/Everlast.png", enlace: "https://www.everlast.com/" },
+    { nombre: "Havaianas", imagen: "img/aliadosImg/RopayCalzado/havaianas.png", enlace: "https://www.havaianas.com/" },
+    { nombre: "LucyLingerie", imagen: "img/aliadosImg/RopayCalzado/LucyLingerie.png", enlace: "https://www.lucylingerie.com/" },
+    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://www.instagram.com/modasvenezuela__/" },
+    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/tuoutlet1.png", enlace: "https://www.instagram.com/tuoutletve/" },
+    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://www.instagram.com/sportway_venezuela/?hl=en" },
     // Agrega más aliados de calzado aquí
   ],
   mascotas: [
-    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://ejemplo.com/mascotas1" },
-    { nombre: "Egoavil Sardiñas Veterinarios", imagen: "img/aliadosImg/Mascotas/egoavilsardiñas.png", enlace: "https://ejemplo.com/mascotas2" },
+    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://www.instagram.com/evpet.vzla/" },
+    { nombre: "Egoavil Sardiñas Veterinarios", imagen: "img/aliadosImg/Mascotas/egoavilsardiñas.png", enlace: "https://mascotasana.com/" },
     // Agrega más aliados de mascotas aquí
   ],
   restaurantes: [
@@ -310,7 +310,7 @@ const aliadosData = {
     // Agrega más aliados de restaurantes aquí
   ],
   TelemedicinaMascotas: [
-    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://ejemplo.com/mascotas1" },    
+    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://www.instagram.com/evpet.vzla/" },    
     // Agrega más aliados de telemedicina para mascotas aquí
   ]
 };
@@ -738,31 +738,45 @@ function initializeImageModal() {
       '../img/Descuentos/Farmacia/descuento-farmas.jpg',
       '../img/Descuentos/Farmacia/descuento-farmatencion.jpg',
     ],
+    'salud': [
+      '../img/Descuentos/Salud Y Bienestar/decuento-castillito.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-buena-vida.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-optica.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-opticolor.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-physiosport.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-rehabplus.jpg',
+    ],
     'restaurantes': [
       '../img/Descuentos/Restaurantes/descuento-ilvecchiocaminetto.jpg',
       '../img/Descuentos/Restaurantes/descuento-lapaisa.jpg',
       '../img/Descuentos/Restaurantes/descuento-salon-canton.jpg',
       '../img/Descuentos/Restaurantes/descuento-sotano-siete.jpg'
     ],
-    /*'restaurantes': [
-      './img/restaurante_1.jpg',
-      './img/restaurante_2.jpg'
-    ],*/
     'calzado': [
       '../img/Descuentos/Ropa Y Calzado/descuento-cerere.jpg',
-      '../img/Descuentos/Ropa Y Calzado/descuento-cerere.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-concepto50.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-converse.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-everlast.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-havaianas.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-lucylingerie.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-modas.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-sport-way.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-tuoutlet.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-perryellis.jpg',
     ],
     'mascotas': [
-      './img/mascotas_1.jpg',
-      './img/mascotas_2.jpg'
+      '../img/Descuentos/Mascota/descuento-clubev15.jpg',
+      '../img/Descuentos/Mascota/descuento-egoavil.jpg',
+      '../img/Descuentos/Mascota/descuento-clubev2.jpg'
     ],
-    'vehiculos': [
-      './img/vehiculos_1.jpg',
-      './img/vehiculos_2.jpg'
-    ],
-    'hogar': [
-      './img/hogar_1.jpg',
-      './img/hogar_2.jpg'
+    'servicios': [
+      '../img/Descuentos/Servicios/descuento-credimport.jpg',
+      '../img/Descuentos/Servicios/descuento-fullmotors.jpg',
+      '../img/Descuentos/Servicios/descuento-sonolife.jpg',
+      '../img/Descuentos/Servicios/descuento-mawdy.jpg',
+      '../img/Descuentos/Servicios/descuento-laboatencion.jpg',
+      '../img/Descuentos/Servicios/descuento-turaser.jpg',      
+      '../img/Descuentos/Entretenimiento/descuento-wonderland.jpg',
     ]
   };
 
