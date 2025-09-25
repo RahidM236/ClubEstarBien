@@ -567,8 +567,10 @@ footer {
   --text-muted: #b0b0b0;
   --link-color: #ffffff;
   --line-color: #444;
-  --primary-footer-color: #ead917; /* Azul */
-  --secondary-footer-color: #f5f4f1; /* Amarillo */
+  --primary-footer-color: #ead917;
+  /* Azul */
+  --secondary-footer-color: #f5f4f1;
+  /* Amarillo */
 }
 
 footer {
@@ -601,7 +603,8 @@ footer {
 
 .footer-left .contact-info a:hover {
   color: var(--link-color);
-  transform: translateX(4px); /* efecto de desplazamiento al pasar el mouse */
+  transform: translateX(4px);
+  /* efecto de desplazamiento al pasar el mouse */
 }
 
 .footer-container-v2 {
@@ -637,8 +640,10 @@ footer {
   border-bottom: 2px solid var(--primary-footer-color);
   padding-bottom: 5px;
   display: inline-block;
-  margin-top: 90px; /* 🔽 baja cada bloque */
+  margin-top: 90px;
+  /* 🔽 baja cada bloque */
 }
+
 .footer-heading1 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -692,9 +697,11 @@ footer {
 .footer-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Alinea los elementos al lado derecho */
+  align-items: flex-end;
+  /* Alinea los elementos al lado derecho */
   text-align: right;
-  gap: 25px; /* Espacio entre Contáctanos y Síguenos */
+  gap: 25px;
+  /* Espacio entre Contáctanos y Síguenos */
 }
 
 /* Estilos de los iconos de redes sociales mejorados */
@@ -702,7 +709,8 @@ footer {
   display: flex;
   justify-content: flex-end;
   gap: 15px;
-  margin-top: 5px; /* Ajustamos el margen para que esté más cerca del título */
+  margin-top: 5px;
+  /* Ajustamos el margen para que esté más cerca del título */
 }
 
 .social-links-v2 a {
@@ -739,30 +747,47 @@ footer {
   margin: 0 auto 20px;
   width: 90%;
 }
-
-/*=====================================
-  # Estilos para la sección de "Conocer Más" (Renovada)
-=====================================*/
+/*=====================================*/
+/* # Estilos para la sección de "Conocer Más" */
+/*=====================================*/
 
 /* Sección de ancho completo con fondo de imagen y paralaje */
-/* Sección de fondo */
 .full-width-section.parallax-bg {
   position: relative;
   width: 100%;
+  height: 100vh; /* Ocupa toda la pantalla */
   overflow: hidden;
+
+  background-image: url("img/nuevasImg2.jpg"); /* Coloca tu ruta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Efecto parallax */
 }
 
-/* Info section */
-.info-section {
-  padding: 80px 20px;
+/* Overlay opcional para contraste */
+.full-width-section.parallax-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
+/* Contenido encima del parallax */
 .container.content-overlay {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Contenedor de texto e imagen */
 .card-and-image-container {
   display: flex;
   flex-wrap: wrap;
@@ -1369,7 +1394,7 @@ footer {
 =====================================*/
 
 .carousel-container {
-  max-width: 300px; /* Contenedor más compacto */
+  max-width: 200px; /* Contenedor más compacto */
   width: 100%;
   overflow: hidden;
   position: relative;
