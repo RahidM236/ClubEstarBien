@@ -549,7 +549,7 @@ function initializeDescuentosModal() {
 const plansData = {
   basico: {
     title: "Plan Básico",
-    price: "$2",
+    price: "",
     coverages: [
       { service: "Telemedicina 24/7", coverage: "Para la Persona", limit: "Ilimitado" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
