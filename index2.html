@@ -2310,7 +2310,7 @@ footer {
 }
 
 .modal-ally-image {
-   height: 150px; /* Ajusta la altura del contenedor para que tenga más espacio */
+  height: 150px; /* Ajusta la altura del contenedor para que tenga más espacio */
   width: auto; /* Permite que el ancho se ajuste automáticamente */
   overflow: hidden;
   display: flex; /* Centra la imagen si el contenedor es más grande */
@@ -2319,7 +2319,7 @@ footer {
 }
 
 .modal-ally-image img {
-    width: 100%;
+  width: 100%;
   height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
   object-fit: contain; /* Asegura que la imagen se vea completa sin ser recortada */
   transition: transform 0.3s ease;
@@ -3009,467 +3009,1128 @@ footer {
     overflow-x: auto;
   }
 }
+/*=====================================
+  # Sección de Clientes - Carrusel  
+=====================================*/ /* Sección de Clientes */
+.clients-section {
+  padding: 80px 0;
+  background-color: #f7f9fc;
+}
+
+.clients-section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.clients-carousel {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Máscara para difuminar los logos en los bordes */
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.clients-slide {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: slide-logos 40s linear infinite;
+}
+
+/* Este es el cambio clave para pausar la animación.
+  Se aplica a .clients-slide y no solo a los logos individuales,
+  lo que asegura que el carrusel completo se detenga.
+*/
+.clients-slide:hover {
+  animation-play-state: paused;
+}
+
+.client-logo {
+  height: 100px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Mantiene los colores originales y opacidad */
+  filter: none;
+  opacity: 1;
+}
+
+/* Animación del carrusel */
+@keyframes slide-logos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* El 50% en la animación garantiza que se repita de forma fluida.
+      Desplaza el carrusel exactamente a la mitad de su tamaño,
+      lo cual coincide con el punto donde se duplica el contenido.
+    */
+    transform: translateX(-50%);
+  }
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .clients-section {
+    padding: 60px 0;
+  }
+  .section-title h2 {
+    font-size: 28px;
+  }
+  .section-title p {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  .client-logo {
+    height: 80px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-section {
+    padding: 40px 0;
+  }
+  .section-title h2 {
+    font-size: 24px;
+  }
+  .client-logo {
+    height: 60px;
+    width: 120px;
+  }
+}
+
+/*
+ * Sección de Animaciones
+ * Oculta los elementos que se animarán y define la transición.
+ */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Aplica la transición a los elementos específicos */
+/* Elementos dentro de las secciones */
+.about .about-flex-container,
+.services .services-grid,
+.services .telemedicina-card-container,
+.allies-carousel-container,
+.clients-carousel,
+.contact-cards-new,
+.social-links-new,
+.steps {
+  transition: opacity 1s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.3s; /* Un retraso sutil para un efecto más dramático */
+}
+
+/* Opcional: Anima también el carrusel de clientes */
+.clients-carousel {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Opcional: Anima las tarjetas de servicios */
+.services-grid .service-card {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.2s; /* Un pequeño retraso para un efecto más escalonado */
+}
+
+/* Estilos para el modal 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content-carrusel {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    color: white;
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Estilos para el Carrusel 
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo del carrusel 
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 70vh; /* Ajusta la altura máxima para pantallas grandes 
+    object-fit: contain;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}*/
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Usar flex para centrar el contenido del modal */    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+/* Modal visible */
+.modal.show {
+    display: flex;
+}
+
+/* Contenido del modal */
+.modal-content-carrusel {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: transparent; /* Opcional: para que solo se vea la imagen */
+    padding: 20px;
+    box-shadow: none; /* Opcional: para que no tenga sombra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    color: white;
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Estilos para el Carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Este es el estilo clave para la imagen */
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    /* La propiedad `object-fit: contain` ajusta la imagen a su contenedor sin recortarla */
+    object-fit: contain; 
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="container header-container">
-      <div class="logo">
-        <img src="img/logo-solo-05.png" alt="ClubEstarBien Logo" height="50" />
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#quienes-somos">Quiénes Somos</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#aliados">Aliados</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <a href="form.html" class="btn">Afíliate</a>
-    </div>
-  </header>
-
-  <!--inicio Card-->
-  <section class="hero" id="inicio">
-    <div class="container">
-      <h1>Donde tu tranquilidad y bienestar se encuentran</h1>
-      <p>
-        Club Estar Bien te conecta con atención médica profesional, asistencia
-        en el hogar y beneficios exclusivos. Porque tu tranquilidad es nuestra
-        prioridad.
-      </p>
-      <a href="#servicios" class="btn">Descubre nuestros servicios</a>
-    </div>
-  </section>
-
-  <!--Quienes somos Card-->
-  <section class="about" id="quienes-somos">
-    <div class="container">
-      <div class="about-flex-container">
-        <div class="about-image">
-          <img src="img/logo-solo-03.png" alt="CLUB ESTAR BIEN" />
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="img/logo-solo-05.png"
+            alt="ClubEstarBien Logo"
+            height="50"
+          />
         </div>
-        <div class="about-content">
-          <div class="section-title">
-            <h2>¿Quiénes Somos?</h2>
-            <p class="sansation-light">
-              Club Estar Bien @Telemedicina24, C.A.
-            </p>
-          </div>
-          <p class="sansation-regular">
-            Somos una empresa comprometida con optimizar el modelo de atención
-            medica a través de un enfoque preventivo con el uso de la
-            tecnología. Actuamos como intermediarios en la prestación de
-            servicios de salud. Con más de 7 años de trayectoria en el mercado
-            venezolano, nuestra misión es conectar a los usuarios con la
-            atención médica que necesitan, operando a nivel nacional. Nos
-            destacamos por nuestra sólida base de clientes, con más de 40.000
-            afiliados activos, lo que demuestra nuestra consolidación y
-            confianza en el sector de la salud digital.
-          </p>
-          <a href="info_page.html" class="btn open-modal-btn" id="open-about-modal">Conocer más</a>
-        </div>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#aliados">Aliados</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <a href="form.html" class="btn">Afíliate</a>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!--Services Card-->
-  <section class="services" id="servicios">
-    <div class="container">
-      <div class="section-title">
-        <h2>Servicios diseñados para ti</h2>
-        <p class="sansation-light">
-          Ofrecemos soluciones integrales para tu bienestar y tranquilidad
+    <!--inicio Card-->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1>Donde tu tranquilidad y bienestar se encuentran</h1>
+        <p>
+          Club Estar Bien te conecta con atención médica profesional, asistencia
+          en el hogar y beneficios exclusivos. Porque tu tranquilidad es nuestra
+          prioridad.
         </p>
+        <a href="#servicios" class="btn">Descubre nuestros servicios</a>
       </div>
+    </section>
 
-      <div class="telemedicina-card-container">
-        <div class="telemedicina-card">
-          <div class="card-image">
-            <div class="card-badge">Producto Insignia</div>
-            <img src="img/TM.png" alt="Servicio de Telemedicina" />
+    <!--Quienes somos Card-->
+    <section class="about" id="quienes-somos">
+      <div class="container">
+        <div class="about-flex-container">
+          <div class="about-image">
+            <img src="img/logo-solo-03.png" alt="CLUB ESTAR BIEN" />
           </div>
-
-          <div class="card-content">
-            <div class="card-header">
-              <h2 class="card-title sansation-bold">Telemedicina</h2>
+          <div class="about-content">
+            <div class="section-title">
+              <h2>¿Quiénes Somos?</h2>
+              <p class="sansation-light">
+                Club Estar Bien @Telemedicina24, C.A.
+              </p>
             </div>
-            <p class="card-description">
-              Acceso ilimitado a médicos profesionales por llamadas y chats,
-              disponible las 24 horas, los 365 días del año. <br /><br />
-              Solo llamar al: 0800-232-0000
+            <p class="sansation-regular">
+              Somos una empresa comprometida con optimizar el modelo de atención
+              medica a través de un enfoque preventivo con el uso de la
+              tecnología. Actuamos como intermediarios en la prestación de
+              servicios de salud. Con más de 7 años de trayectoria en el mercado
+              venezolano, nuestra misión es conectar a los usuarios con la
+              atención médica que necesitan, operando a nivel nacional. Nos
+              destacamos por nuestra sólida base de clientes, con más de 40.000
+              afiliados activos, lo que demuestra nuestra consolidación y
+              confianza en el sector de la salud digital.
             </p>
+            <a
+              href="info_page.html"
+              class="btn open-modal-btn"
+              id="open-about-modal"
+              >Conocer más</a
+            >
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="services-grid">
-        <div class="service-card" id="domiciliaria-card">
-          <div class="service-image-wrapper">
-            <img src="img/asistenciaMedicaDomiciliaria.png" alt="Asistencia Médica Domiciliaria" />
-          </div>
-          <div class="service-content">
-            <h3>Asistencia Médica a tu Disposición</h3>
-            <button class="btn-more" data-service="domiciliaria">
-              <i class="fas fa-plus"></i>
-            </button>
-            <p class="hidden-info">
-              Atención médica a tu ubicación. Envío de una unidad de avance
-              con médico y paramédico para una evaluación completa.
-            </p>
+    <!--Services Card-->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-title">
+          <h2>Servicios diseñados para ti</h2>
+          <p class="sansation-light">
+            Ofrecemos soluciones integrales para tu bienestar y tranquilidad
+          </p>
+        </div>
+
+        <div class="telemedicina-card-container">
+          <div class="telemedicina-card">
+            <div class="card-image">
+              <div class="card-badge">Producto Insignia</div>
+              <img src="img/TM.png" alt="Servicio de Telemedicina" />
+            </div>
+
+            <div class="card-content">
+              <div class="card-header">
+                <h2 class="card-title sansation-bold">Telemedicina</h2>
+              </div>
+              <p class="card-description">
+                Acceso ilimitado a médicos profesionales por llamadas y chats,
+                disponible las 24 horas, los 365 días del año. <br /><br />
+                Solo llamar al: 0800-232-0000
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="service-card" id="ambulancia-card">
-          <div class="service-image-wrapper">
-            <img src="img/ambulancia.png" alt="Ambulancia" />
-          </div>
-          <div class="service-content">
-            <h3>Ambulancia</h3>
-            <button class="btn-more" data-service="ambulancia">
-              <i class="fas fa-plus"></i>
-            </button>
-            <p class="hidden-info">
-              Traslado urgente y seguro. Activamos el envío de una ambulancia
-              básica o UCI con personal de emergencia para un traslado rápido.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-card" id="hogar-card">
-          <div class="service-image-wrapper">
-            <img src="img/asistenciaenHogar.png" alt="Asistencia en el Hogar" />
-          </div>
-          <div class="service-content">
-            <h3>Asistencia en el Hogar</h3>
-            <button class="btn-more" data-service="hogar">
-              <i class="fas fa-plus"></i>
-            </button>
-            <p class="hidden-info">
-              Olvídate de las preocupaciones. Contamos con un equipo
-              especializado para resolver emergencias de plomería,
-              electricidad y cerrajería.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-card" id="vehicular-card">
-          <div class="service-image-wrapper">
-            <img src="img/asistenciaVehicular.png" alt="Asistencia Vehicular" />
-          </div>
-          <div class="service-content">
-            <h3>Asistencia Vehicular</h3>
-            <button class="btn-more" data-service="vehicular">
-              <i class="fas fa-plus"></i>
-            </button>
-            <p class="hidden-info">
-              No te quedes varado. Asistencia inmediata para fallas comunes
-              como batería descargada, cambio de neumático o problemas
-              eléctricos menores.
-            </p>
-          </div>
-        </div>
-
-        <div class="mawdy-cintillo-container">
-          <div class="mawdy-cintillo-animado">
-            <p class="alianza-texto">En alianza con</p>
-            <img src="img/aliadosImg/mawdy.jpg" alt="Aliado MAWDY" class="mawdy-cintillo" />
-          </div>
-              
-        </div>
-
-        <!-- En la sección de servicios -->
-        <div class="beneficios-descuentos-card-container">
-          <div class="service-card" id="beneficios-card">
+        <div class="services-grid">
+          <div class="service-card" id="domiciliaria-card">
             <div class="service-image-wrapper">
-              <img src="img/beneficios.png" alt="beneficios">
+              <img
+                src="img/asistenciaMedicaDomiciliaria.png"
+                alt="Asistencia Médica Domiciliaria"
+              />
             </div>
             <div class="service-content">
-              <h3>Beneficios</h3>
-              <!-- Cambiar ID para beneficios -->
-              <a href="#servicios" class="btn" id="open-beneficios-modal">Descubre cuáles son</a>
-            </div>
-          </div>
-
-          <div class="service-card" id="descuentos-card">
-            <div class="service-image-wrapper">
-              <img src="img/descuentos.png" alt="Descuentos">
-            </div>
-            <div class="service-content">
-              <h3>Descuentos</h3>
-              <!-- Cambiar ID para descuentos -->
-              <a href="#servicios" class="btn" id="open-descuentos-modal">Descubre cuáles son</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--Section aliados-->
-  <section class="allies-section" id="aliados">
-    <div class="container">
-      <div class="section-title">
-        <h2>Conoce Nuestros Aliados</h2>
-      </div>
-
-      <div class="allies-carousel-container">
-        <div class="allies-carousel">
-          <div class="ally-item" data-ally="salud">
-            <div class="ally-image">
-              <img src="img/aliadosImg/SaludYBienestar.png" alt="Salud y Bienestar" />
-            </div>
-            <div class="ally-content">
-              <h3>Salud y Bienestar</h3>
-              <p>Conoce nuestros aliados en el área de Salud y Bienestar</p>
-            </div>
-          </div>
-
-          <div class="ally-item" data-ally="farmacia">
-            <div class="ally-image">
-              <img src="img/aliadosImg/Farmacia.png" alt="Farmacia" />
-            </div>
-            <div class="ally-content">
-              <h3>Farmacia</h3>
-              <p>Conoce nuestros aliados en el área de Farmacia</p>
-            </div>
-          </div>
-
-          <div class="ally-item" data-ally="TelemedicinaMascotas">
-            <div class="ally-image">
-              <img src="img/aliadosImg/TelemedicinaMascotas.png" alt="TelemedicinaMascotas" />
-            </div>
-            <div class="ally-content">
-              <h3>Telemedicina para Mascotas</h3>
-              <p>
-                Conoce nuestros servicios en Telemedicina para mascotas por un
-                costo extra
+              <h3>Asistencia Médica a tu Disposición</h3>
+              <button class="btn-more" data-service="domiciliaria">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
+                Atención médica a tu ubicación. Envío de una unidad de avance
+                con médico y paramédico para una evaluación completa.
               </p>
             </div>
           </div>
 
-          <div class="ally-item" data-ally="mascotas">
-            <div class="ally-image">
-              <img src="img/aliadosImg/Mascotas.png" alt="Mascotas" />
+          <div class="service-card" id="ambulancia-card">
+            <div class="service-image-wrapper">
+              <img src="img/ambulancia.png" alt="Ambulancia" />
             </div>
-            <div class="ally-content">
-              <h3>Mascotas</h3>
-              <p>Conoce nuestros aliados en el área de Mascotas</p>
-            </div>
-          </div>
-
-          <div class="ally-item" data-ally="servicios">
-            <div class="ally-image">
-              <img src="img/aliadosImg/Servicios.png" alt="Servicios" />
-            </div>
-            <div class="ally-content">
-              <h3>Servicios</h3>
-              <p>Conoce nuestros aliados en el área de Servicios</p>
+            <div class="service-content">
+              <h3>Ambulancia</h3>
+              <button class="btn-more" data-service="ambulancia">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
+                Traslado urgente y seguro. Activamos el envío de una ambulancia
+                básica o UCI con personal de emergencia para un traslado rápido.
+              </p>
             </div>
           </div>
 
-          <div class="ally-item" data-ally="calzado">
-            <div class="ally-image">
-              <img src="img/aliadosImg/CalzadoYRopa.png" alt="Calzado y Ropa" />
+          <div class="service-card" id="hogar-card">
+            <div class="service-image-wrapper">
+              <img
+                src="img/asistenciaenHogar.png"
+                alt="Asistencia en el Hogar"
+              />
             </div>
-            <div class="ally-content">
-              <h3>Calzado y Ropa</h3>
-              <p>Conoce nuestros aliados en el área de Calzado y Ropa</p>
+            <div class="service-content">
+              <h3>Asistencia en el Hogar</h3>
+              <button class="btn-more" data-service="hogar">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
+                Olvídate de las preocupaciones. Contamos con un equipo
+                especializado para resolver emergencias de plomería,
+                electricidad y cerrajería.
+              </p>
             </div>
           </div>
 
-          <div class="ally-item" data-ally="restaurantes">
-            <div class="ally-image">
-              <img src="img/aliadosImg/Restaurantes.png" alt="Restaurantes" />
+          <div class="service-card" id="vehicular-card">
+            <div class="service-image-wrapper">
+              <img
+                src="img/asistenciaVehicular.png"
+                alt="Asistencia Vehicular"
+              />
             </div>
-            <div class="ally-content">
-              <h3>Restaurantes</h3>
-              <p>Conoce nuestros aliados en el área de Restaurantes</p>
+            <div class="service-content">
+              <h3>Asistencia Vehicular</h3>
+              <button class="btn-more" data-service="vehicular">
+                <i class="fas fa-plus"></i>
+              </button>
+              <p class="hidden-info">
+                No te quedes varado. Asistencia inmediata para fallas comunes
+                como batería descargada, cambio de neumático o problemas
+                eléctricos menores.
+              </p>
+            </div>
+          </div>
+
+          <div class="mawdy-cintillo-container">
+            <div class="mawdy-cintillo-animado">
+              <p class="alianza-texto">En alianza con</p>
+              <img
+                src="img/aliadosImg/mawdy.jpg"
+                alt="Aliado MAWDY"
+                class="mawdy-cintillo"
+              />
+            </div>
+                
+          </div>
+
+          <!-- En la sección de servicios -->
+          <div class="beneficios-descuentos-card-container">
+            <div class="service-card" id="beneficios-card">
+              <div class="service-image-wrapper">
+                <img src="img/beneficios.png" alt="beneficios" />
+              </div>
+              <div class="service-content">
+                <h3>Beneficios</h3>
+                <!-- Cambiar ID para beneficios -->
+                <a href="#servicios" class="btn" id="open-beneficios-modal"
+                  >Descubre cuáles son</a
+                >
+              </div>
+            </div>
+
+            <div class="service-card" id="descuentos-card">
+              <div class="service-image-wrapper">
+                <img src="img/descuentos.png" alt="Descuentos" />
+              </div>
+              <div class="service-content">
+                <h3>Descuentos</h3>
+                <!-- Cambiar ID para descuentos -->
+                <a href="#servicios" class="btn" id="open-descuentos-modal"
+                  >Descubre cuáles son</a
+                >
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Controles del carrusel -->
-        <button class="allies-carousel-control prev" aria-label="Anterior">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="allies-carousel-control next" aria-label="Siguiente">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-
-        <!-- Indicadores -->
-        <div class="carousel-indicators"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!--Contacts cards-->
-  <section class="contact-new" id="contacto">
-    <div class="container">
-      <div class="section-title">
-        <h2>Siempre estamos aquí para ti</h2>
+    <!--Section aliados-->
+    <section class="allies-section" id="aliados">
+      <div class="container">
+        <div class="section-title">
+          <h2>Conoce Nuestros Aliados</h2>
+        </div>
+
+        <div class="allies-carousel-container">
+          <div class="allies-carousel">
+            <div class="ally-item" data-ally="salud">
+              <div class="ally-image">
+                <img
+                  src="img/aliadosImg/SaludYBienestar.png"
+                  alt="Salud y Bienestar"
+                />
+              </div>
+              <div class="ally-content">
+                <h3>Salud y Bienestar</h3>
+                <p>Conoce nuestros aliados en el área de Salud y Bienestar</p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="farmacia">
+              <div class="ally-image">
+                <img src="img/aliadosImg/Farmacia.png" alt="Farmacia" />
+              </div>
+              <div class="ally-content">
+                <h3>Farmacia</h3>
+                <p>Conoce nuestros aliados en el área de Farmacia</p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="TelemedicinaMascotas">
+              <div class="ally-image">
+                <img
+                  src="img/aliadosImg/TelemedicinaMascotas.png"
+                  alt="TelemedicinaMascotas"
+                />
+              </div>
+              <div class="ally-content">
+                <h3>Telemedicina para Mascotas</h3>
+                <p>
+                  Conoce nuestros servicios en Telemedicina para mascotas por un
+                  costo extra
+                </p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="mascotas">
+              <div class="ally-image">
+                <img src="img/aliadosImg/Mascotas.png" alt="Mascotas" />
+              </div>
+              <div class="ally-content">
+                <h3>Mascotas</h3>
+                <p>Conoce nuestros aliados en el área de Mascotas</p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="servicios">
+              <div class="ally-image">
+                <img src="img/aliadosImg/Servicios.png" alt="Servicios" />
+              </div>
+              <div class="ally-content">
+                <h3>Servicios</h3>
+                <p>Conoce nuestros aliados en el área de Servicios</p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="calzado">
+              <div class="ally-image">
+                <img
+                  src="img/aliadosImg/CalzadoYRopa.png"
+                  alt="Calzado y Ropa"
+                />
+              </div>
+              <div class="ally-content">
+                <h3>Calzado y Ropa</h3>
+                <p>Conoce nuestros aliados en el área de Calzado y Ropa</p>
+              </div>
+            </div>
+
+            <div class="ally-item" data-ally="restaurantes">
+              <div class="ally-image">
+                <img src="img/aliadosImg/Restaurantes.png" alt="Restaurantes" />
+              </div>
+              <div class="ally-content">
+                <h3>Restaurantes</h3>
+                <p>Conoce nuestros aliados en el área de Restaurantes</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles del carrusel -->
+          <button class="allies-carousel-control prev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="allies-carousel-control next" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Indicadores -->
+          <div class="carousel-indicators"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section clientes-->
+    <section class="clients-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nuestros Clientes</h2>
+          <p>
+            Organizaciones que confían en nuestros servicios para el bienestar
+            de sus empleados.
+          </p>
+        </div>
+        <div class="clients-carousel">
+          <div class="clients-slide">
+            <div class="client-logo">
+              <!--LOGO 1-->
+              <img
+                src="img/LOGOS/LOGO-ALTER-GOLD.png"
+                alt="Logo de AlterGold"
+                title="AlterGold"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 2-->
+              <img src="img/LOGOS/LOGO-BDT.png" alt="Logo de BDT" title="BDT" />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 3-->
+              <img
+                src="img/LOGOS/LOGO-BISCORP.png"
+                alt="Logo de biscorp"
+                title="biscorp"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 4-->
+              <img
+                src="img/LOGOS/LOGO-CANTV.png"
+                alt="Logo de Cantv"
+                title="Cantv"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 5-->
+              <img
+                src="img/LOGOS/LOGO-DELSAY.png"
+                alt="Logo de Delsay"
+                title="Delsay"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 6-->
+              <img
+                src="img/LOGOS/LOGO-FT-PROYECTOS.png"
+                alt="Logo de FT Proyectos"
+                title="FT Proyectos"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 7-->
+              <img
+                src="img/LOGOS/LOGO-LA-GRAND-PLAZ.png"
+                alt="Logo de La Grand Plaz"
+                title="La Grand Plaz"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 8-->
+              <img
+                src="img/LOGOS/LOGO-MAPFRE.png"
+                alt="Logo de MAPFRE"
+                title="MAPFRE"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 9-->
+              <img
+                src="img/LOGOS/LOGO-MAWDY.png"
+                alt="Logo de MAWDY"
+                title="MAWDY"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 10-->
+              <img
+                src="img/LOGOS/LOGO-MPPOP.png"
+                alt="Logo de MPPOP"
+                title="Ministerio del Poder Popular de Obras Públicas"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 11-->
+              <img
+                src="img/LOGOS/LOGO-PDVSA.png"
+                alt="Logo de PDVSA"
+                title="PDVSA"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 12-->
+              <img src="img/LOGOS/LOGO-TCS.png" alt="Logo de TCS" title="TCS" />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 13-->
+              <img
+                src="img/LOGOS/LOGO-TELEMEDICINA.png"
+                alt="Logo de Telemedicina"
+                title="Telemedicina"
+              />
+            </div>
+            <!-- Repetir logos para efecto de carrusel infinito -->
+            <div class="client-logo">
+              <!--LOGO 1-->
+              <img
+                src="img/LOGOS/LOGO-ALTER-GOLD.png"
+                alt="Logo de AlterGold"
+                title="AlterGold"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 2-->
+              <img src="img/LOGOS/LOGO-BDT.png" alt="Logo de BDT" title="BDT" />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 3-->
+              <img
+                src="img/LOGOS/LOGO-BISCORP.png"
+                alt="Logo de biscorp"
+                title="biscorp"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 4-->
+              <img
+                src="img/LOGOS/LOGO-CANTV.png"
+                alt="Logo de Cantv"
+                title="Cantv"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 5-->
+              <img
+                src="img/LOGOS/LOGO-DELSAY.png"
+                alt="Logo de Delsay"
+                title="Delsay"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 6-->
+              <img
+                src="img/LOGOS/LOGO-FT-PROYECTOS.png"
+                alt="Logo de FT Proyectos"
+                title="FT Proyectos"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 7-->
+              <img
+                src="img/LOGOS/LOGO-LA-GRAND-PLAZ.png"
+                alt="Logo de La Grand Plaz"
+                title="La Grand Plaz"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 8-->
+              <img
+                src="img/LOGOS/LOGO-MAPFRE.png"
+                alt="Logo de MAPFRE"
+                title="MAPFRE"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 9-->
+              <img
+                src="img/LOGOS/LOGO-MAWDY.png"
+                alt="Logo de MAWDY"
+                title="MAWDY"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 10-->
+              <img
+                src="img/LOGOS/LOGO-MPPOP.png"
+                alt="Logo de MPPOP"
+                title="Ministerio del Poder Popular de Obras Públicas"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 11-->
+              <img
+                src="img/LOGOS/LOGO-PDVSA.png"
+                alt="Logo de PDVSA"
+                title="PDVSA"
+              />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 12-->
+              <img src="img/LOGOS/LOGO-TCS.png" alt="Logo de TCS" title="TCS" />
+            </div>
+            <div class="client-logo">
+              <!--LOGO 13-->
+              <img
+                src="img/LOGOS/LOGO-TELEMEDICINA.png"
+                alt="Logo de Telemedicina"
+                title="Telemedicina"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contacts cards-->
+    <section class="contact-new" id="contacto">
+      <div class="container">
+        <div class="section-title">
+          <h2>Siempre estamos aquí para ti</h2>
+          <p class="sansation-light">
+            Contáctanos a través de cualquiera de nuestros canales
+          </p>
+        </div>
+
+        <div class="contact-cards-new">
+          <div class="card-new">
+            <h3>Contacto Empresarial</h3>
+            <div class="card-body-new">
+              <p>
+                <strong>Oficina Central:</strong> Av Fco. de Miranda Torre Bazar
+                Bolivar piso 3 oficina 301
+              </p>
+              <p><strong>Móvil:</strong> 0424-1576342</p>
+              <div class="btn-container">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=comercializacion@clubestarbien.com&su=Solicitud de Información&body=Hola, me gustaría obtener más información sobre sus servicios."
+                  class="btn-base btn-email"
+                  target="_blank"
+                  aria-label="Abrir Correo"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="email-icon"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Abrir Correo
+                </a>
+                <a
+                  href="https://wa.me/584141576342?text=Hola,%20quisiera%20más%20información%20sobre%20el%20servicio%20empresarial."
+                  class="btn-base btn-whatsapp"
+                  target="_blank"
+                  aria-label="Contactar por WhatsApp"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="fab fa-whatsapp whatsapp-icon"
+                  >
+                    <path
+                      d="M12.04 2C6.54 2 2.04 6.54 2.04 12.04C2.04 14.15 2.72 16.14 3.88 17.78L2.04 22L6.37 20.12C7.94 20.98 9.94 21.54 12.04 21.54C17.54 21.54 22.04 17.04 22.04 11.54C22.04 6.04 17.54 2 12.04 2ZM17.29 15.69C16.92 16.59 15.99 16.98 15.14 16.89C14.29 16.81 13.56 16.6 12.89 16.27C11.5 15.64 10.22 14.54 9.14 13.16C8.75 12.49 8.52 11.72 8.44 10.87C8.36 10.02 8.71 9.09 9.61 8.72L10.24 8.46C10.74 8.24 11.24 8.24 11.74 8.46C12.24 8.68 12.74 8.91 13.14 9.32L14.28 10.22C14.78 10.72 15.02 11.22 15.02 11.72C15.02 12.22 14.78 12.72 14.28 13.14L13.14 14.28C12.74 14.68 12.24 14.91 11.74 14.91C11.24 14.91 10.74 14.68 10.24 14.46L9.61 14.2C9.11 14.28 8.61 14.04 8.4 13.54C8.16 13.04 8.16 12.54 8.32 12.04L8.7 11.24C9.15 10.39 9.92 9.76 10.89 9.53C11.79 9.3 12.7 9.52 13.58 9.93C14.48 10.34 15.22 11.08 15.69 12.02L16.29 13.16C16.76 14.06 17.22 14.72 17.29 15.69Z"
+                    ></path>
+                  </svg>
+                  Abrir chat
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-new">
+            <h3>Soporte Técnico 24/7</h3>
+            <div class="card-body-new">
+              <p><strong>Teléfono:</strong> 0800-232-0000</p>
+              <strong>Correo: </strong
+              ><a href="mailto:info@clubestarbien.com" class="mailto"
+                >info@clubestarbien.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-links-new">
+        <a
+          href="https://www.instagram.com/clubestarbienve/?hl=es"
+          target="_blank"
+          aria-label="Instagram"
+          class="social-card instagram-card"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+            alt="Instagram Logo"
+          />
+          <span>CLUBESTARBIENVE</span>
+          <small>¡Síguenos!</small>
+        </a>
+        <a
+          href="https://www.tiktok.com/@clubestarbien"
+          target="_blank"
+          aria-label="TikTok"
+          class="social-card tiktok-card"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg"
+            alt="TikTok Logo Blanco"
+          />
+          <span>@CLUBESTARBIEN</span>
+          <small>Únete</small>
+        </a>
+
+        <a
+          href="https://www.facebook.com/clubestarbienve/?locale=es_LA"
+          target="_blank"
+          aria-label="Facebook"
+          class="social-card facebook-card"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+            alt="Facebook Logo"
+          />
+          <span>CLUB ESTAR BIENVE</span>
+          <small>Dale 'Me Gusta'</small>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCt4nFZEFyE23kRHoivjCbxg"
+          target="_blank"
+          aria-label="YouTube"
+          class="social-card youtube-card"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+            alt="YouTube Logo"
+          />
+          <span>CLUB ESTAR BIENVE</span>
+          <small>¡Suscríbete!</small>
+        </a>
+      </div>
+    </section>
+
+    <!--Section pasos de la app-->
+    <section class="cta" id="afiliate">
+      <div class="container">
+        <h2>¿Listo para Transformar tu Vida?</h2>
         <p class="sansation-light">
-          Contáctanos a través de cualquiera de nuestros canales
+          Únete hoy mismo a ClubEstarBien y emprende tu camino hacia el
+          bienestar integral con nuestro apoyo y orientación profesional.
         </p>
-      </div>
-
-      <div class="contact-cards-new">
-        <div class="card-new">
-          <h3>Contacto Empresarial</h3>
-          <div class="card-body-new">
+        <div class="steps">
+          <button class="step-button" id="btn-paso-1">
+            <div class="step-number">1</div>
+            <h3>Solicita tu servicio</h3>
             <p>
-              <strong>Oficina Central:</strong> Av Fco. de Miranda Torre Bazar
-              Bolivar piso 3 oficina 301
+              Usa nuestra página web o App para afiliarte de forma instantánea.
             </p>
-            <p><strong>Móvil:</strong> 0424-1576342</p>
-            <div class="btn-container">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=comercializacion@clubestarbien.com&su=Solicitud de Información&body=Hola, me gustaría obtener más información sobre sus servicios."
-                class="btn-base btn-email" target="_blank" aria-label="Abrir Correo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="email-icon">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                Abrir Correo
+            <div class="app-stores-container">
+              <a
+                href="https://play.google.com/store/apps/details?id=ceb.com.club&hl=es_VE"
+                target="_blank"
+                aria-label="Descargar en Google Play"
+              >
+                <img src="img/Google_Play_Store.avif" alt="Google Play" />
               </a>
-              <a href="https://wa.me/584141576342?text=Hola,%20quisiera%20más%20información%20sobre%20el%20servicio%20empresarial."
-                class="btn-base btn-whatsapp" target="_blank" aria-label="Contactar por WhatsApp">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="fab fa-whatsapp whatsapp-icon">
-                  <path
-                    d="M12.04 2C6.54 2 2.04 6.54 2.04 12.04C2.04 14.15 2.72 16.14 3.88 17.78L2.04 22L6.37 20.12C7.94 20.98 9.94 21.54 12.04 21.54C17.54 21.54 22.04 17.04 22.04 11.54C22.04 6.04 17.54 2 12.04 2ZM17.29 15.69C16.92 16.59 15.99 16.98 15.14 16.89C14.29 16.81 13.56 16.6 12.89 16.27C11.5 15.64 10.22 14.54 9.14 13.16C8.75 12.49 8.52 11.72 8.44 10.87C8.36 10.02 8.71 9.09 9.61 8.72L10.24 8.46C10.74 8.24 11.24 8.24 11.74 8.46C12.24 8.68 12.74 8.91 13.14 9.32L14.28 10.22C14.78 10.72 15.02 11.22 15.02 11.72C15.02 12.22 14.78 12.72 14.28 13.14L13.14 14.28C12.74 14.68 12.24 14.91 11.74 14.91C11.24 14.91 10.74 14.68 10.24 14.46L9.61 14.2C9.11 14.28 8.61 14.04 8.4 13.54C8.16 13.04 8.16 12.54 8.32 12.04L8.7 11.24C9.15 10.39 9.92 9.76 10.89 9.53C11.79 9.3 12.7 9.52 13.58 9.93C14.48 10.34 15.22 11.08 15.69 12.02L16.29 13.16C16.76 14.06 17.22 14.72 17.29 15.69Z">
-                  </path>
-                </svg>
-                Abrir chat
+              <a
+                href="https://apps.apple.com/us/app/club-estar-bien/id6469519763"
+                target="_blank"
+                aria-label="Descargar en App Store"
+              >
+                <img src="img/apple-app-store.avif" alt="App Store" />
               </a>
             </div>
-          </div>
+          </button>
+
+          <button class="step-button" id="btn-paso-2">
+            <div class="step-number">2</div>
+            <h3>Elige tu plan</h3>
+            <p>
+              Selecciona el plan ideal para tus necesidades, con una afiliación
+              mensual flexible.
+            </p>
+            <br />
+            <a href="#planes" class="btn" id="open-plans-modal">Ver planes</a>
+          </button>
+
+          <button class="step-button" id="btn-paso-3">
+            <div class="step-number">3</div>
+            <h3>Beneficios y descuentos</h3>
+            <p>
+              Disfruta de nuestros beneficios y descuentos proporcionados por
+              nuestros aliados.
+            </p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--Modal para abrir planes-->
+    <div id="planesModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <div class="modal-header">
+          <h2>Planes de Afiliación</h2>
+          <p>Elige el plan que mejor se adapte a tus necesidades</p>
         </div>
 
-        <div class="card-new">
-          <h3>Soporte Técnico 24/7</h3>
-          <div class="card-body-new">
-            <p><strong>Teléfono:</strong> 0800-232-0000</p>
-            <strong>Correo: </strong><a href="mailto:info@clubestarbien.com" class="mailto">info@clubestarbien.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="social-links-new">
-      <a href="https://www.instagram.com/clubestarbienve/?hl=es" target="_blank" aria-label="Instagram"
-        class="social-card instagram-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo" />
-        <span>CLUBESTARBIENVE</span>
-        <small>¡Síguenos!</small>
-      </a>
-      <a href="https://www.tiktok.com/@clubestarbien" target="_blank" aria-label="TikTok"
-        class="social-card tiktok-card">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok Logo Blanco" />
-        <span>@CLUBESTARBIEN</span>
-        <small>Únete a la diversión</small>
-      </a>
-
-      <a href="https://www.facebook.com/clubestarbienve/?locale=es_LA" target="_blank" aria-label="Facebook"
-        class="social-card facebook-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-          alt="Facebook Logo" />
-        <span>CLUB ESTAR BIENVE</span>
-        <small>Dale 'Me Gusta'</small>
-      </a>
-      <a href="https://www.youtube.com/channel/UCt4nFZEFyE23kRHoivjCbxg" target="_blank" aria-label="YouTube"
-        class="social-card youtube-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
-          alt="YouTube Logo" />
-        <span>CLUB ESTAR BIENVE</span>
-        <small>¡Suscríbete!</small>
-      </a>
-    </div>
-  </section>
-
-  <!--Section pasos de la app-->
-  <section class="cta" id="afiliate">
-    <div class="container">
-      <h2>¿Listo para Transformar tu Vida?</h2>
-      <p class="sansation-light">
-        Únete hoy mismo a ClubEstarBien y emprende tu camino hacia el
-        bienestar integral con nuestro apoyo y orientación profesional.
-      </p>
-      <div class="steps">
-        <button class="step-button" id="btn-paso-1">
-          <div class="step-number">1</div>
-          <h3>Solicita tu servicio</h3>
-          <p>
-            Usa nuestra página web o App para afiliarte de forma instantánea.
-          </p>
-          <div class="app-stores-container">
-            <a href="https://play.google.com/store/apps/details?id=ceb.com.club&hl=es_VE" target="_blank"
-              aria-label="Descargar en Google Play">
-              <img src="img/Google_Play_Store.avif" alt="Google Play" />
-            </a>
-            <a href="https://apps.apple.com/us/app/club-estar-bien/id6469519763" target="_blank"
-              aria-label="Descargar en App Store">
-              <img src="img/apple-app-store.avif" alt="App Store" />
-            </a>
-          </div>
-        </button>
-
-        <button class="step-button" id="btn-paso-2">
-          <div class="step-number">2</div>
-          <h3>Elige tu plan</h3>
-          <p>
-            Selecciona el plan ideal para tus necesidades, con una afiliación
-            mensual flexible.
-          </p>
-          <br />
-          <a href="#planes" class="btn" id="open-plans-modal">Ver planes</a>
-        </button>
-
-        <button class="step-button" id="btn-paso-3">
-          <div class="step-number">3</div>
-          <h3>Beneficios y descuentos</h3>
-          <p>
-            Disfruta de nuestros beneficios y descuentos proporcionados por
-            nuestros aliados.
-          </p>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!--Modal para abrir planes-->
-  <div id="planesModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-
-      <div class="modal-header">
-        <h2>Planes de Afiliación</h2>
-        <p>Elige el plan que mejor se adapte a tus necesidades</p>
-      </div>
-
-      <div class="modal-body">
-        <div class="plans-container">
-          <!-- Plan Básico -->
-          <div class="plan-card" data-plan="basico">
-            <div class="plan-header">
-              <h3 class="plan-title">Plan Básico</h3>
-              <div class="plan-price">$2</div>
-              <div class="plan-period">por persona / mes</div>
+        <div class="modal-body">
+          <div class="plans-container">
+            <!-- Plan Básico -->
+            <div class="plan-card" data-plan="basico">
+              <div class="plan-header">
+                <h3 class="plan-title">Plan Básico</h3>
+                <div class="plan-price">$2</div>
+                <div class="plan-period">por persona / mes</div>
+              </div>
+              <div class="plan-body">
+                <ul class="plan-features">
+                  <li><i class="fas fa-check"></i> Telemedicina 24/7</li>
+                  <li>
+                    <i class="fas fa-check"></i> Asistencia médica domiciliaria
+                    (1 evento)
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Traslado en ambulancia (1
+                    evento)
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Descuentos en farmacias aliadas
+                  </li>
+                </ul>
+                <button class="plan-button">Ver Detalles</button>
+              </div>
             </div>
-            <div class="plan-body">
-              <ul class="plan-features">
-                <li><i class="fas fa-check"></i> Telemedicina 24/7</li>
-                <li><i class="fas fa-check"></i> Asistencia médica domiciliaria (1 evento)</li>
-                <li><i class="fas fa-check"></i> Traslado en ambulancia (1 evento)</li>
-                <li><i class="fas fa-check"></i> Descuentos en farmacias aliadas</li>
-              </ul>
-              <button class="plan-button">Ver Detalles</button>
-            </div>
-          </div>
 
-          <!-- Plan Estándar
+            <!-- Plan Estándar
           <div class="plan-card featured" data-plan="estandar">
             <div class="plan-badge">MÁS POPULAR</div>
             <div class="plan-header">
@@ -3508,385 +4169,566 @@ footer {
               <button class="plan-button">Ver Detalles</button>
             </div>
           </div>
-          -->
+          --></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal de detalles del plan -->
-  <div id="planDetailsModal" class="plan-details-modal">
-    <div class="plan-details-content">
-      <span class="close-btn" id="close-plan-details">&times;</span>
+    <!-- Modal de detalles del plan -->
+    <div id="planDetailsModal" class="plan-details-modal">
+      <div class="plan-details-content">
+        <span class="close-btn" id="close-plan-details">&times;</span>
 
-      <div class="plan-details-header">
-        <h2 id="planDetailsTitle" class="plan-details-title">Plan Estándar</h2>
-        <div id="planDetailsPrice" class="plan-details-price">$2</div>
-        <div class="plan-period">por persona / mes</div>
-      </div>
-
-      <div class="plan-details-body">
-        <div class="coverage-section">
-          <h3>Coberturas Incluidas</h3>
-          <table class="coverage-table">
-            <thead>
-              <tr>
-                <th>Servicio</th>
-                <th>Cobertura</th>
-                <th>Límite</th>
-              </tr>
-            </thead>
-            <tbody id="coverageTableBody">
-              <!-- Los datos se llenarán dinámicamente -->
-            </tbody>
-          </table>
+        <div class="plan-details-header">
+          <h2 id="planDetailsTitle" class="plan-details-title">
+            Plan Estándar
+          </h2>
+          <div id="planDetailsPrice" class="plan-details-price">$2</div>
+          <div class="plan-period">por persona / mes</div>
         </div>
 
-        <div class="coverage-section">
-          <h3>Beneficios Adicionales</h3>
-          <div class="plan-benefits" id="planBenefits">
-            <!-- Los beneficios se llenarán dinámicamente -->
+        <div class="plan-details-body">
+          <div class="coverage-section">
+            <h3>Coberturas Incluidas</h3>
+            <table class="coverage-table">
+              <thead>
+                <tr>
+                  <th>Servicio</th>
+                  <th>Cobertura</th>
+                  <th>Límite</th>
+                </tr>
+              </thead>
+              <tbody id="coverageTableBody">
+                <!-- Los datos se llenarán dinámicamente -->
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        <div class="plan-actions">
-          <a href="form.html" class="btn-primary">Afiliarse Ahora</a>
-          <button class="btn-secondary" id="closeDetailsBtn">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal para Beneficios Adicionales -->
-  <div id="serviciosModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-
-      <div class="modal-header-servicios">
-        <h2>Servicios Adicionales para tu bienestar</h2>
-      </div>
-
-      <div class="modal-body">
-        <div class="modal-flex-container">
-          <p class="servicios-intro">
-            Complementamos tu atención médica con soluciones que te ahorran
-            tiempo y te brindan tranquilidad por un precio adicional:
-          </p>
-
-          <div class="servicios-grid">
-            <div class="servicio-item">
-              <div class="servicio-icono">
-                <i class="fas fa-house-medical"></i>
-              </div>
-              <h3>Atención médica a domicilio</h3>
-              <p>
-                Profesionales de la salud disponibles para atenderte en la
-                comodidad de tu hogar.
-              </p>
-            </div>
-
-            <div class="servicio-item">
-              <div class="servicio-icono">
-                <i class="fas fa-vial"></i>
-              </div>
-              <h3>Laboratorio y Rayos X donde Prefieras</h3>
-              <p>
-                Realizamos estudios de laboratorio y radiología desde nuestras sedes hasta tu domicilio.
-              </p>
-            </div>
-
-            <div class="servicio-item">
-              <div class="servicio-icono">
-                <i class="fas fa-ambulance"></i>
-              </div>
-              <h3>Ambulancia disponible</h3>
-              <p>
-                Servicio de ambulancia disponible las 24 horas para cuando más
-                la necesites.
-              </p>
-            </div>
-
-            <div class="servicio-item">
-              <div class="servicio-icono">
-                <i class="fas fa-user-md"></i>
-              </div>
-              <h3>Citas con especialistas</h3>
-              <p>
-                Programación de citas con médicos especialistas en nuestra red
-                de APS.
-              </p>
-            </div>
-
-            <div class="servicio-item">
-              <div class="servicio-icono">
-                <i class="fas fa-pills"></i>
-              </div>
-              <h3>Entrega de medicamentos</h3>
-              <p>
-                Te llevamos tus medicamentos recetados directamente a tu
-                puerta.
-              </p>
-            </div>
-
-            <div class="servicio-item">
-              <div class="servicio-icono">
-                <i class="fas fa-hospital"></i>
-              </div>
-              <h3>Gestión de hospitalización</h3>
-              <p>
-                Coordinamos hospitalizaciones y cirugías con nuestras clínicas
-                aliadas.
-              </p>
+          <div class="coverage-section">
+            <h3>Beneficios Adicionales</h3>
+            <div class="plan-benefits" id="planBenefits">
+              <!-- Los beneficios se llenarán dinámicamente -->
             </div>
           </div>
 
-          <div class="servicios-beneficios">
-            <h3>Beneficios exclusivos</h3>
-            <div class="beneficios-lista">
-              <div class="beneficio-item">
-                <span class="beneficio-icono">📍</span>
-                <span>Diagnóstico con prescripción médica</span>
-              </div>
-              <div class="beneficio-item">
-                <span class="beneficio-icono">🚗</span>
-                <span>Menos traslados, más comodidad</span>
-              </div>
-            </div>
+          <div class="plan-actions">
+            <a href="form.html" class="btn-primary">Afiliarse Ahora</a>
+            <button class="btn-secondary" id="closeDetailsBtn">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal para Descuentos -->
-  <div id="descuentosModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
+    <!-- Modal para Beneficios Adicionales -->
+    <div id="serviciosModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
 
-      <div class="modal-header-descuentos">
-        <h2>Descuentos Exclusivos para Afiliados</h2>
-        <p>Disfruta de estos beneficios especiales en nuestros aliados comerciales</p>
-      </div>
-
-      <div class="modal-body-descuentos">
-        <div class="descuentos-grid">
-          <div class="descuento-item">
-            <div class="descuento-icono">
-              <i class="fas fa-prescription-bottle"></i>
-            </div>
-            <h3>Farmacias Aliadas</h3>
-            <p>Descuentos especiales en medicamentos y productos de farmacia.</p>
-            <span class="descuento-porcentaje">10% - 15%</span>
-          </div>
-
-          <div class="descuento-item">
-            <div class="descuento-icono">
-              <i class="fas fa-utensils"></i>
-            </div>
-            <h3>Restaurantes</h3>
-            <p>Disfruta de descuentos en nuestros restaurantes aliados.</p>
-            <span class="descuento-porcentaje">10% - 20%</span>
-          </div>
-
-          <div class="descuento-item">
-            <div class="descuento-icono">
-              <i class="fas fa-shoe-prints"></i>
-            </div>
-            <h3>Calzado y Ropa</h3>
-            <p>Descuentos en marcas reconocidas de calzado y vestimenta.</p>
-            <span class="descuento-porcentaje">15% - 25%</span>
-          </div>
-
-          <div class="descuento-item">
-            <div class="descuento-icono">
-              <i class="fas fa-paw"></i>
-            </div>
-            <h3>Productos para Mascotas</h3>
-            <p>Descuentos en alimentos y accesorios para tus mascotas.</p>
-            <span class="descuento-porcentaje">10% - 20%</span>
-          </div>
-
-          <div class="descuento-item">
-            <div class="descuento-icono">
-              <i class="fas fa-car"></i>
-            </div>
-            <h3>Servicios Vehiculares</h3>
-            <p>Descuentos en mantenimiento y servicios para tu vehículo.</p>
-            <span class="descuento-porcentaje">10% - 15%</span>
-          </div>
-
-          <div class="descuento-item">
-            <div class="descuento-icono">
-              <i class="fas fa-home"></i>
-            </div>
-            <h3>Servicios para el Hogar</h3>
-            <p>Descuentos en plomería, electricidad y cerrajería.</p>
-            <span class="descuento-porcentaje">15% - 20%</span>
-          </div>
+        <div class="modal-header-servicios">
+          <h2>Servicios Adicionales para tu bienestar</h2>
         </div>
 
-        <div style="margin-top: 30px; padding: 15px; background-color: #e8f4ff; border-radius: 8px;">
-          <h3 style="color: #18365e; margin-top: 0;">¿Cómo acceder a los descuentos?</h3>
-          <p>Para disfrutar de estos descuentos, simplemente presenta tu Codigo QR de afiliado al Club Estar Bien en
-            cualquiera de nuestros establecimientos aliados.</p>
-          <p>Si aún no tienes tu credencial digital, descárgala desde nuestra aplicación móvil.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="modal-body">
+          <div class="modal-flex-container">
+            <p class="servicios-intro">
+              Complementamos tu atención médica con soluciones que te ahorran
+              tiempo y te brindan tranquilidad por un precio adicional:
+            </p>
 
-  <!-- Modal para Aliados -->
-  <div id="aliadosModal" class="modal">
-    <div class="modal-content aliados-modal-content">
-      <span class="close-btn">&times;</span>
+            <div class="servicios-grid">
+              <div class="servicio-item">
+                <div class="servicio-icono">
+                  <i class="fas fa-house-medical"></i>
+                </div>
+                <h3>Atención médica a domicilio</h3>
+                <p>
+                  Profesionales de la salud disponibles para atenderte en la
+                  comodidad de tu hogar.
+                </p>
+              </div>
 
-      <div class="modal-header-aliados">
-        <h2 id="modalAliadosTitle">Aliados</h2>
-      </div>
+              <div class="servicio-item">
+                <div class="servicio-icono">
+                  <i class="fas fa-vial"></i>
+                </div>
+                <h3>Laboratorio y Rayos X donde Prefieras</h3>
+                <p>
+                  Realizamos estudios de laboratorio y radiología desde nuestras
+                  sedes hasta tu domicilio.
+                </p>
+              </div>
 
-      <div class="modal-body">
-        <div class="modal-carousel-container">
-          <div class="modal-carousel" id="modalCarousel">
-            <!-- Los aliados se cargarán dinámicamente aquí -->
+              <div class="servicio-item">
+                <div class="servicio-icono">
+                  <i class="fas fa-ambulance"></i>
+                </div>
+                <h3>Ambulancia disponible</h3>
+                <p>
+                  Servicio de ambulancia disponible las 24 horas para cuando más
+                  la necesites.
+                </p>
+              </div>
+
+              <div class="servicio-item">
+                <div class="servicio-icono">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <h3>Citas con especialistas</h3>
+                <p>
+                  Programación de citas con médicos especialistas en nuestra red
+                  de APS.
+                </p>
+              </div>
+
+              <div class="servicio-item">
+                <div class="servicio-icono">
+                  <i class="fas fa-pills"></i>
+                </div>
+                <h3>Entrega de medicamentos</h3>
+                <p>
+                  Te llevamos tus medicamentos recetados directamente a tu
+                  puerta.
+                </p>
+              </div>
+
+              <div class="servicio-item">
+                <div class="servicio-icono">
+                  <i class="fas fa-hospital"></i>
+                </div>
+                <h3>Gestión de hospitalización</h3>
+                <p>
+                  Coordinamos hospitalizaciones y cirugías con nuestras clínicas
+                  aliadas.
+                </p>
+              </div>
+            </div>
+
+            <div class="servicios-beneficios">
+              <h3>Beneficios exclusivos</h3>
+              <div class="beneficios-lista">
+                <div class="beneficio-item">
+                  <span class="beneficio-icono">📍</span>
+                  <span>Diagnóstico con prescripción médica</span>
+                </div>
+                <div class="beneficio-item">
+                  <span class="beneficio-icono">🚗</span>
+                  <span>Menos traslados, más comodidad</span>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <!-- Controles del carrusel dentro del modal -->
-          <button class="modal-carousel-control prev" aria-label="Anterior">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="modal-carousel-control next" aria-label="Siguiente">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-
-          <!-- Indicadores para el modal -->
-          <div class="modal-carousel-indicators"></div>
         </div>
       </div>
     </div>
-  </div>
 
+    <!-- Modal para Descuentos 
+    <div id="descuentosModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
 
-  <a href="#inicio" id="btn-scroll-top" class="float-btn" aria-label="Volver arriba">
-    <i class="fas fa-arrow-up"></i></a>
-  <a href="https://wa.me/584141576342?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios."
-    id="btn-whatsapp" class="float-btn" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i></a>
-
-  <img src="img/avatarbot.png" alt="Abrir chat" class="open-chat-avatar" id="open-chat-btn" />
-
-  <div class="chat-widget" id="chat-widget">
-    <div class="chat-header">
-      <img src="img/logo-solo-02.png" alt="Tu Logo" class="chat-logo" />
-      <span class="chat-title">Tu Asistente Virtual</span>
-      <button class="close-chat-button" id="close-chat-btn">&times;</button>
-    </div>
-
-    <div class="chat-body">
-      <div class="welcome-container">
-        <img src="img/avatarbot.png" alt="Tu Asistente" class="chat-avatar-in-chat" />
-        <div class="welcome-message-bubble">
-          <div class="welcome-title">
-            <img src="img/logo-solo-02.png" alt="Logo Bot" class="welcome-logo" />
-            <p>¡Hola! Soy tu asistente virtual de Club Estar Bien.</p>
-          </div>
-          <p>¿En qué puedo ayudarte hoy?</p>
-        </div>
-      </div>
-
-      <div class="button-group">
-        <button class="chat-button">
-          <i class="fas fa-user-md"></i> Hablar con un médico
-        </button>
-        <button class="chat-button">
-          <i class="fas fa-clipboard-list"></i> Solicitar servicios
-        </button>
-        <button class="chat-button">
-          <i class="fas fa-info-circle"></i> Consultar Estatus
-        </button>
-      </div>
-    </div>
-
-    <div class="chat-input-area">
-      <input type="text" placeholder="Escríbeme aquí que necesitas" class="chat-input" />
-      <button class="send-button"><i class="fas fa-paper-plane"></i></button>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-container-v2">
-      <div class="footer-section-v2 footer-left">
-        <div class="footer-logo">
-          <img src="img/logo-solo-06.png" alt="ClubEstarBien" class="footer-logo-img" />
-        </div>
-        <h3 class="footer-heading1">Enlaces Rápidos</h3>
-        <ul class="contact-info">
-          <li><a href="/ClubEstarBien/#inicio">Inicio</a></li>
-          <li>
-            <a href="/ClubEstarBien/#quienes-somos">Quiénes Somos</a>
-          </li>
-          <li>
-            <a href="/ClubEstarBien/#servicios">Servicios</a>
-          </li>
-          <li><a href="/ClubEstarBien/#aliados">Aliados</a></li>
-          <li><a href="/ClubEstarBien/#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-section-v2 footer-center">
-        <div class="info-section">
-          <h3 class="footer-heading">
-            <i class="fas fa-map-marker-alt"></i> Sede principal
-          </h3>
-          <p>Av Fco. de Miranda Torre Bazar Bolivar piso 3 oficina 301</p>
+        <div class="modal-header-descuentos">
+          <h2>Descuentos Exclusivos para Afiliados</h2>
           <p>
-            <img src="https://flagcdn.com/ve.svg" alt="Bandera de Venezuela" class="flag-icon" />
-            Venezuela
+            Disfruta de estos beneficios especiales en nuestros aliados
+            comerciales
           </p>
         </div>
+
+        <div class="modal-body-descuentos">
+          <div class="descuentos-grid">
+            <div class="descuento-item">
+              <div class="descuento-icono">
+                <i class="fas fa-prescription-bottle"></i>
+              </div>
+              <h3>Farmacias Aliadas</h3>
+              <p>
+                Descuentos especiales en medicamentos y productos de farmacia.
+              </p>
+              <span class="descuento-porcentaje">8% - 35%</span>
+            </div>
+
+            <div class="descuento-item">
+              <div class="descuento-icono">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3>Restaurantes</h3>
+              <p>Disfruta de descuentos en nuestros restaurantes aliados.</p>
+              <span class="descuento-porcentaje">10%</span>
+            </div>
+
+            <div class="descuento-item">
+              <div class="descuento-icono">
+                <i class="fas fa-shoe-prints"></i>
+              </div>
+              <h3>Calzado y Ropa</h3>
+              <p>Descuentos en marcas reconocidas de calzado y vestimenta.</p>
+              <span class="descuento-porcentaje">5% - 20%</span>
+            </div>
+
+            <div class="descuento-item">
+              <div class="descuento-icono">
+                <i class="fas fa-paw"></i>
+              </div>
+              <h3>Productos para Mascotas</h3>
+              <p>Descuentos en alimentos y accesorios para tus mascotas.</p>
+              <span class="descuento-porcentaje">10% - 15%</span>
+            </div>
+
+            <div class="descuento-item">
+              <div class="descuento-icono">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3>Servicios Vehiculares</h3>
+              <p>Descuentos en mantenimiento y servicios para tu vehículo.</p>
+              <span class="descuento-porcentaje">10% - 15%</span>
+            </div>
+
+            <div class="descuento-item">
+              <div class="descuento-icono">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>Servicios para el Hogar</h3>
+              <p>Descuentos en plomería, electricidad y cerrajería.</p>
+              <span class="descuento-porcentaje">15% - 20%</span>
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-top: 30px;
+              padding: 15px;
+              background-color: #e8f4ff;
+              border-radius: 8px;
+            "
+          >
+            <h3 style="color: #18365e; margin-top: 0">
+              ¿Cómo acceder a los descuentos?
+            </h3>
+            <p>
+              Para disfrutar de estos descuentos, simplemente presenta tu Codigo
+              QR de afiliado al Club Estar Bien en cualquiera de nuestros
+              establecimientos aliados.
+            </p>
+            <p>
+              Si aún no tienes tu credencial digital, descárgala desde nuestra
+              aplicación móvil.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="footer-section-v2 footer-right">
-        <div class="info-section">
-          <h3 class="footer-heading">
-            <i class="fas fa-envelope"></i> Contáctanos
-          </h3>
+    </div>-->
+
+    <div id="descuentosModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <div class="modal-header-descuentos">
+            <h2>Descuentos Exclusivos para Afiliados</h2>
+            <p>
+                Disfruta de estos beneficios especiales en nuestros aliados
+                comerciales
+            </p>
+        </div>
+
+        <div class="modal-body-descuentos">
+            <div class="descuentos-grid">
+                <div class="descuento-item clickable-descuento-item" data-category="farmacia">
+                    <div class="descuento-icono">
+                        <i class="fas fa-prescription-bottle"></i>
+                    </div>
+                    <h3>Farmacias Aliadas</h3>
+                    <p>
+                        Descuentos especiales en medicamentos y productos de farmacia.
+                    </p>
+                    <span class="descuento-porcentaje">8% - 35%</span>
+                </div>
+
+                <div class="descuento-item clickable-descuento-item" data-category="salud">
+                    <div class="descuento-icono">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Salud y Bienestar</h3>
+                    <p>Descuentos en Salud y Bienestar para ti.</p>
+                    <span class="descuento-porcentaje">10% - 15%</span>
+                </div>
+
+                <div class="descuento-item clickable-descuento-item" data-category="servicios">
+                    <div class="descuento-icono">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Servicios</h3>
+                    <p>Descuentos en servicios para ti.</p>
+                    <span class="descuento-porcentaje">10% - 15%</span>
+                </div>
+
+                <div class="descuento-item clickable-descuento-item" data-category="mascotas">
+                    <div class="descuento-icono">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Productos para Mascotas</h3>
+                    <p>Descuentos en alimentos y accesorios para tus mascotas.</p>
+                    <span class="descuento-porcentaje">10% - 15%</span>
+                </div>
+
+                <div class="descuento-item clickable-descuento-item" data-category="calzado">
+                    <div class="descuento-icono">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h3>Calzado y Ropa</h3>
+                    <p>Descuentos en marcas reconocidas de calzado y vestimenta.</p>
+                    <span class="descuento-porcentaje">5% - 20%</span>
+                </div>                
+                
+                <div class="descuento-item clickable-descuento-item" data-category="restaurantes">
+                    <div class="descuento-icono">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Restaurantes</h3>
+                    <p>Disfruta de descuentos en nuestros restaurantes aliados.</p>
+                    <span class="descuento-porcentaje">10%</span>
+                </div>
+            </div>
+
+            <div style="
+                    margin-top: 30px;
+                    padding: 15px;
+                    background-color: #e8f4ff;
+                    border-radius: 8px;
+                ">
+                <h3 style="color: #18365e; margin-top: 0">
+                    ¿Cómo acceder a los descuentos?
+                </h3>
+                <p>
+                    Para disfrutar de estos descuentos, simplemente presenta tu Codigo
+                    QR de afiliado al Club Estar Bien en cualquiera de nuestros
+                    establecimientos aliados.
+                </p>
+                <p>
+                    Si aún no tienes tu credencial digital, descárgala desde nuestra
+                    aplicación móvil.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content-carrusel">
+            <span class="close-btn">&times;</span>
+            <div class="carousel-container">
+                <div id="carouselTrack" class="carousel-track">
+                    </div>
+                <button class="carousel-btn prev-btn">&lt;</button>
+                <button class="carousel-btn next-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Aliados -->
+    <div id="aliadosModal" class="modal">
+      <div class="modal-content aliados-modal-content">
+        <span class="close-btn">&times;</span>
+
+        <div class="modal-header-aliados">
+          <h2 id="modalAliadosTitle">Aliados</h2>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-carousel-container">
+            <div class="modal-carousel" id="modalCarousel">
+              <!-- Los aliados se cargarán dinámicamente aquí -->
+            </div>
+
+            <!-- Controles del carrusel dentro del modal -->
+            <button class="modal-carousel-control prev" aria-label="Anterior">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-carousel-control next" aria-label="Siguiente">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Indicadores para el modal -->
+            <div class="modal-carousel-indicators"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <a
+      href="#inicio"
+      id="btn-scroll-top"
+      class="float-btn"
+      aria-label="Volver arriba"
+    >
+      <i class="fas fa-arrow-up"></i
+    ></a>
+    <a
+      href="https://wa.me/584141576342?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios."
+      id="btn-whatsapp"
+      class="float-btn"
+      target="_blank"
+      aria-label="WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i
+    ></a>
+
+    <img
+      src="img/avatarbot.png"
+      alt="Abrir chat"
+      class="open-chat-avatar"
+      id="open-chat-btn"
+    />
+
+    <div class="chat-widget" id="chat-widget">
+      <div class="chat-header">
+        <img src="img/logo-solo-02.png" alt="Tu Logo" class="chat-logo" />
+        <span class="chat-title">Tu Asistente Virtual</span>
+        <button class="close-chat-button" id="close-chat-btn">&times;</button>
+      </div>
+
+      <div class="chat-body">
+        <div class="welcome-container">
+          <img
+            src="img/avatarbot.png"
+            alt="Tu Asistente"
+            class="chat-avatar-in-chat"
+          />
+          <div class="welcome-message-bubble">
+            <div class="welcome-title">
+              <img
+                src="img/logo-solo-02.png"
+                alt="Logo Bot"
+                class="welcome-logo"
+              />
+              <p>¡Hola! Soy tu asistente virtual de Club Estar Bien.</p>
+            </div>
+            <p>¿En qué puedo ayudarte hoy?</p>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="chat-button">
+            <i class="fas fa-user-md"></i> Hablar con un médico
+          </button>
+          <button class="chat-button">
+            <i class="fas fa-clipboard-list"></i> Solicitar servicios
+          </button>
+          <button class="chat-button">
+            <i class="fas fa-info-circle"></i> Consultar Estatus
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input
+          type="text"
+          placeholder="Escríbeme aquí que necesitas"
+          class="chat-input"
+        />
+        <button class="send-button"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container-v2">
+        <div class="footer-section-v2 footer-left">
+          <div class="footer-logo">
+            <img
+              src="img/logo-solo-06.png"
+              alt="ClubEstarBien"
+              class="footer-logo-img"
+            />
+          </div>
+          <h3 class="footer-heading1">Enlaces Rápidos</h3>
           <ul class="contact-info">
+            <li><a href="/ClubEstarBien/#inicio">Inicio</a></li>
             <li>
-              <a href="mailto:info@clubestarbien.com">info@clubestarbien.com</a>
+              <a href="/ClubEstarBien/#quienes-somos">Quiénes Somos</a>
             </li>
             <li>
-              <a href="tel:0800-232-0000">0800-232-0000</a> /
-              <a href="tel:0424-1576342">0424-1576342</a>
+              <a href="/ClubEstarBien/#servicios">Servicios</a>
             </li>
+            <li><a href="/ClubEstarBien/#aliados">Aliados</a></li>
+            <li><a href="/ClubEstarBien/#contacto">Contacto</a></li>
           </ul>
         </div>
-        <div class="footer-social-section">
-          <h3 class="footer-heading">Síguenos en:</h3>
-          <div class="social-links-v2">
-            <a href="https://www.facebook.com/clubestarbienve" target="_blank" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/clubestarbienve" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@clubestarbien" target="_blank" aria-label="TikTok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.youtube.com/@ClubEstarBienYt" target="_blank" aria-label="youtube">
-              <i class="fab fa-youtube"></i>
-            </a>
+        <div class="footer-section-v2 footer-center">
+          <div class="info-section">
+            <h3 class="footer-heading">
+              <i class="fas fa-map-marker-alt"></i> Sede principal
+            </h3>
+            <p>Av Fco. de Miranda Torre Bazar Bolivar piso 3 oficina 301</p>
+            <p>
+              <img
+                src="https://flagcdn.com/ve.svg"
+                alt="Bandera de Venezuela"
+                class="flag-icon"
+              />
+              Venezuela
+            </p>
+          </div>
+        </div>
+        <div class="footer-section-v2 footer-right">
+          <div class="info-section">
+            <h3 class="footer-heading">
+              <i class="fas fa-envelope"></i> Contáctanos
+            </h3>
+            <ul class="contact-info">
+              <li>
+                <a href="mailto:info@clubestarbien.com"
+                  >info@clubestarbien.com</a
+                >
+              </li>
+              <li>
+                <a href="tel:0800-232-0000">0800-232-0000</a> /
+                <a href="tel:0424-1576342">0424-1576342</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-social-section">
+            <h3 class="footer-heading">Síguenos en:</h3>
+            <div class="social-links-v2">
+              <a
+                href="https://www.facebook.com/clubestarbienve"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/clubestarbienve"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@clubestarbien"
+                target="_blank"
+                aria-label="TikTok"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@ClubEstarBienYt"
+                target="_blank"
+                aria-label="youtube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="copyright-v2">
-      <hr />
-      <p>&copy; 2023 ClubEstarBien. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-  <script src="js/script2.js"></script>
-  <script src="js/script1.js"></script>
-  <script>
-    /*=====================================
+      <div class="copyright-v2">
+        <hr />
+        <p>&copy; 2023 ClubEstarBien. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script>
+      /*=====================================
       # DOM Content Loaded
     =====================================*/
 document.addEventListener('DOMContentLoaded', () => {
@@ -3898,6 +4740,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeBeneficiosModal();
   initializeAllyModal();
   initializeDescuentosModal();
+  initializeImageModal();
 });
 
 /*=====================================
@@ -4148,7 +4991,7 @@ const aliadosData = {
     { nombre: "Opticolor", imagen: "img/aliadosImg/SaludyBienestar/opticolor.png", enlace: "https://opticolor.com.ve/" },
     { nombre: "Optica Caroni", imagen: "img/aliadosImg/SaludyBienestar/opticaCaroni.png", enlace: "https://opticacaroni.com/" },
     { nombre: "SonoLife", imagen: "img/aliadosImg/SaludyBienestar/sonolife.png", enlace: "https://www.instagram.com/sonolife.ve/?hl=en" },
-    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.facebook.com/100066210745136/about/?locale=es_ES&_rdr" },
+    { nombre: "RehabPlus", imagen: "img/aliadosImg/SaludyBienestar/rehabplus.png", enlace: "https://www.facebook.com/100066210745136/about/?locale=es_ES&_rdr" },    
     // Agrega más aliados de salud aquí
   ],
   farmacia: [
@@ -4156,38 +4999,38 @@ const aliadosData = {
     { nombre: "Farmacia Doctoral", imagen: "img/aliadosImg/Farmacia/farmaciaDoctoral.jpeg", enlace: "https://www.instagram.com/farmaciadoctoral/reels/" },
     { nombre: "Farmacia Las Flores", imagen: "img/aliadosImg/Farmacia/farmaciaLasFlores.png", enlace: "https://www.instagram.com/farmacia_lasflores/reels/" },
     { nombre: "Grupo de Farmacias Girasol", imagen: "img/aliadosImg/Farmacia/farmaciasGirasol.png", enlace: "https://farmagirasol.com/" },
-    { nombre: "Farmacia Yari", imagen: "img/aliadosImg/Farmacia/farmaciaYari.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "FarmaDaily", imagen: "img/aliadosImg/Farmacia/farmaDaily.jpeg", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "FarmaOferta", imagen: "img/aliadosImg/Farmacia/farmaOferta.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmaser", imagen: "img/aliadosImg/Farmacia/farmaser.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmatención", imagen: "img/aliadosImg/Farmacia/farmatension.png", enlace: "https://ejemplo.com/farmacia2" },
-    { nombre: "Farmapaz", imagen: "img/aliadosImg/Farmacia/farmapaz.png", enlace: "https://ejemplo.com/farmacia2" },
+    { nombre: "Farmacia Yari", imagen: "img/aliadosImg/Farmacia/farmaciaYari.png", enlace: "https://www.instagram.com/p/DOkyXotDlRc/" },
+    { nombre: "FarmaDaily", imagen: "img/aliadosImg/Farmacia/farmaDaily.jpeg", enlace: "https://www.instagram.com/farmadailyca/" },
+    { nombre: "FarmaOferta", imagen: "img/aliadosImg/Farmacia/farmaOferta.png", enlace: "https://www.facebook.com/farmaofertamaracaibo" },
+    { nombre: "Farmaser", imagen: "img/aliadosImg/Farmacia/farmaser.png", enlace: "https://www.instagram.com/farmaservzla/?hl=en" },
+    { nombre: "Farmatención", imagen: "img/aliadosImg/Farmacia/farmatension.png", enlace: "https://www.instagram.com/farmatencion/?hl=en" },
+    { nombre: "Farmapaz", imagen: "img/aliadosImg/Farmacia/farmapaz.png", enlace: "https://www.instagram.com/farmapazofficial/" },
     // Agrega más aliados de farmacia aquí
   ],
   servicios: [
-    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://ejemplo.com/servicios1" },
-    { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Credimport", imagen: "img/aliadosImg/Servicios/credimport.png", enlace: "https://credimport.app/" },
+    { nombre: "Concepto50", imagen: "img/aliadosImg/Servicios/concepto50.png", enlace: "https://www.instagram.com/concepto.50/?hl=en" },
     { nombre: "Gama", imagen: "img/aliadosImg/Servicios/gama.png", enlace: "https://gamaenlinea.com/es/?srsltid=AfmBOooXaN5j0-XSZfl6d7J0Q36Jiz-xgmWNn23VQ_crxwKKOrzcOh0Q" },
     { nombre: "Full Motors", imagen: "img/aliadosImg/Servicios/fullmotors.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://ejemplo.com/servicios2" },
-    { nombre: "Wonderland", imagen: "img/aliadosImg/Servicios/wonderland.png", enlace: "https://ejemplo.com/servicios2" },
+    { nombre: "Turaser", imagen: "img/aliadosImg/Servicios/turaser.png", enlace: "https://www.turaser.com/?https://www.turaser.com/es/&gad_source=1&gad_campaignid=22518847568&gbraid=0AAAAAoVGO8LSFXkt2lWJQhQZ4_w3aPgxU&gclid=Cj0KCQjwrc7GBhCfARIsAHGcW5VyGf87nLf6uMAQFhKUqIH0UTcvEVgyNrKTUoKZ3fWUmqDSyuD9Y0caAkHBEALw_wcB" },
+    { nombre: "Valeo", imagen: "img/aliadosImg/Servicios/valeo.png", enlace: "https://www.valeo.com/en/" },
+    { nombre: "Wonderland", imagen: "img/aliadosImg/Servicios/wonderland.png", enlace: "https://www.instagram.com/wonderlandvzla/?hl=en" },
     // Agrega más aliados de servicios aquí
   ],
   calzado: [
-    { nombre: "Converse", imagen: "img/aliadosImg/RopayCalzado/converse.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "Everlast", imagen: "img/aliadosImg/RopayCalzado/Everlast.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "Havaianas", imagen: "img/aliadosImg/RopayCalzado/havaianas.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "LucyLingerie", imagen: "img/aliadosImg/RopayCalzado/LucyLingerie.png", enlace: "https://ejemplo.com/calzado1" },
-    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/tuoutlet1.png", enlace: "https://ejemplo.com/calzado2" },
-    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://ejemplo.com/calzado1" },
+    { nombre: "Converse", imagen: "img/aliadosImg/RopayCalzado/converse.png", enlace: "https://www.converse.com/es" },
+    { nombre: "Cerere", imagen: "img/aliadosImg/RopayCalzado/Cerere.png", enlace: "https://calzadoscerere.com/" },
+    { nombre: "Everlast", imagen: "img/aliadosImg/RopayCalzado/Everlast.png", enlace: "https://www.everlast.com/" },
+    { nombre: "Havaianas", imagen: "img/aliadosImg/RopayCalzado/havaianas.png", enlace: "https://www.havaianas.com/" },
+    { nombre: "LucyLingerie", imagen: "img/aliadosImg/RopayCalzado/LucyLingerie.png", enlace: "https://www.lucylingerie.com/" },
+    { nombre: "Modas", imagen: "img/aliadosImg/RopayCalzado/Modas.png", enlace: "https://www.instagram.com/modasvenezuela__/" },
+    { nombre: "TuOutlet", imagen: "img/aliadosImg/RopayCalzado/tuoutlet1.png", enlace: "https://www.instagram.com/tuoutletve/" },
+    { nombre: "SportWay", imagen: "img/aliadosImg/RopayCalzado/SportWay.png", enlace: "https://www.instagram.com/sportway_venezuela/?hl=en" },
     // Agrega más aliados de calzado aquí
   ],
   mascotas: [
-    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://ejemplo.com/mascotas1" },
-    { nombre: "Egoavil Sardiñas Veterinarios", imagen: "img/aliadosImg/Mascotas/egoavilsardiñas.png", enlace: "https://ejemplo.com/mascotas2" },
+    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://www.instagram.com/evpet.vzla/" },
+    { nombre: "Egoavil Sardiñas Veterinarios", imagen: "img/aliadosImg/Mascotas/egoavilsardiñas.png", enlace: "https://mascotasana.com/" },
     // Agrega más aliados de mascotas aquí
   ],
   restaurantes: [
@@ -4197,9 +5040,8 @@ const aliadosData = {
     // Agrega más aliados de restaurantes aquí
   ],
   TelemedicinaMascotas: [
-    { nombre: "Telemedicina1", imagen: "img/aliadosImg/restaurantes1.jpg", enlace: "https://ejemplo.com/restaurantes1" },
-    { nombre: "Telemedicina2", imagen: "img/aliadosImg/restaurantes2.jpg", enlace: "https://ejemplo.com/restaurantes2" },
-    // Agrega más aliados de restaurantes aquí
+    { nombre: "Club Ev", imagen: "img/aliadosImg/Mascotas/clubev.png", enlace: "https://www.instagram.com/evpet.vzla/" },    
+    // Agrega más aliados de telemedicina para mascotas aquí
   ]
 };
 
@@ -4439,7 +5281,7 @@ const plansData = {
     title: "Plan Básico",
     price: "$2",
     coverages: [
-      { service: "Telemedicina 24/7", coverage: "Ilimitado", limit: "-" },
+      { service: "Telemedicina 24/7", coverage: "Para la Persona", limit: "Ilimitado" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "1 evento" },
       { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "1 evento" },
       { service: "Servicio de Plomeria, Cerrajeria u Electricidad", coverage: "Para el hogar", limit: "1 evento (Hasta 40$ de Cobertura)" },
@@ -4456,7 +5298,7 @@ const plansData = {
     title: "Plan Estándar",
     price: "$15",
     coverages: [
-      { service: "Telemedicina 24/7", coverage: "Ilimitado", limit: "-" },
+      { service: "Telemedicina 24/7", coverage: "Para la Persona", limit: "ilimitado" },
       { service: "Atención médica domiciliaria", coverage: "Para la persona", limit: "3 eventos" },
       { service: "Traslado en ambulancia", coverage: "Urgencia-Emergencia", limit: "3 eventos" },
       { service: "Asistencia en el hogar", coverage: "Plomería, electricidad, cerrajería", limit: "2 eventos" }
@@ -4599,7 +5441,460 @@ document.addEventListener('keydown', (e) => {
     planDetailsModal.classList.remove('show');
   }
 });
-  </script>
-</body>
+
+/*=====================================
+  # Image Modal with Carousel
+=====================================*/
+function initializeImageModal() {
+  const imageModal = document.getElementById('imageModal');
+  const carouselTrack = imageModal.querySelector('#carouselTrack');
+  const prevBtn = imageModal.querySelector('.prev-btn');
+  const nextBtn = imageModal.querySelector('.next-btn');
+  const closeBtn = imageModal.querySelector('.close-btn');
+
+  let currentIndex = 0;
+  let images = [];
+
+  const categoryImages = {
+    'farmacia': [
+      '../img/Descuentos/Farmacia/descuento-farmacia-carmencita.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacia-doctoral.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacia-lasflores.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacia-yari.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmacias-girasol.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmadaily.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmaoferta.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmapaz.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmas.jpg',
+      '../img/Descuentos/Farmacia/descuento-farmatencion.jpg',
+    ],
+    'salud': [
+      '../img/Descuentos/Salud Y Bienestar/decuento-castillito.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-buena-vida.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-optica.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-opticolor.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-physiosport.jpg',
+      '../img/Descuentos/Salud Y Bienestar/descuento-rehabplus.jpg',
+    ],
+    'restaurantes': [
+      '../img/Descuentos/Restaurantes/descuento-ilvecchiocaminetto.jpg',
+      '../img/Descuentos/Restaurantes/descuento-lapaisa.jpg',
+      '../img/Descuentos/Restaurantes/descuento-salon-canton.jpg',
+      '../img/Descuentos/Restaurantes/descuento-sotano-siete.jpg'
+    ],
+    'calzado': [
+      '../img/Descuentos/Ropa Y Calzado/descuento-cerere.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-concepto50.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-converse.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-everlast.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-havaianas.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-lucylingerie.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-modas.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-sport-way.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-tuoutlet.jpg',
+      '../img/Descuentos/Ropa Y Calzado/descuento-perryellis.jpg',
+    ],
+    'mascotas': [
+      '../img/Descuentos/Mascota/descuento-clubev15.jpg',
+      '../img/Descuentos/Mascota/descuento-egoavil.jpg',
+      '../img/Descuentos/Mascota/descuento-clubev2.jpg'
+    ],
+    'servicios': [
+      '../img/Descuentos/Servicios/descuento-credimport.jpg',
+      '../img/Descuentos/Servicios/descuento-fullmotors.jpg',
+      '../img/Descuentos/Servicios/descuento-sonolife.jpg',
+      '../img/Descuentos/Servicios/descuento-mawdy.jpg',
+      '../img/Descuentos/Servicios/descuento-laboatencion.jpg',
+      '../img/Descuentos/Servicios/descuento-turaser.jpg',      
+      '../img/Descuentos/Entretenimiento/descuento-wonderland.jpg',
+    ]
+  };
+
+  function updateCarousel() {
+    if (images.length > 0) {
+      const slideWidth = carouselTrack.children[0].offsetWidth;
+      carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+  }
+
+  function openImageModal(category) {
+    images = categoryImages[category];
+    carouselTrack.innerHTML = '';
+    currentIndex = 0;
+
+    if (images && images.length > 0) {
+      images.forEach(imageSrc => {
+        const carouselSlide = document.createElement('div');
+        carouselSlide.className = 'carousel-slide';
+        const imgElement = document.createElement('img');
+        imgElement.src = imageSrc;
+        carouselSlide.appendChild(imgElement);
+        carouselTrack.appendChild(carouselSlide);
+      });
+
+      // Asegúrate de que las imágenes se hayan cargado para obtener el ancho
+      setTimeout(updateCarousel, 50);
+    }
+    
+    // Muestra u oculta los botones de navegación
+    prevBtn.style.display = images.length > 1 ? 'block' : 'none';
+    nextBtn.style.display = images.length > 1 ? 'block' : 'none';
+
+    imageModal.classList.add('show');
+  }
+
+  function closeImageModal() {
+    imageModal.classList.remove('show');
+    images = [];
+    carouselTrack.innerHTML = '';
+  }
+
+  // Navegación del carrusel
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  // Listener para los elementos que abren el modal
+  const clickableItems = document.querySelectorAll('.clickable-descuento-item');
+  const portfolioButtons = document.querySelectorAll('.open-image-modal');
+
+  [...clickableItems, ...portfolioButtons].forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const descuentosModal = document.getElementById('descuentosModal');
+      if (descuentosModal) {
+          descuentosModal.classList.remove('show');
+      }
+
+      const category = item.getAttribute('data-category');
+      if (category && categoryImages[category]) {
+        openImageModal(category);
+      }
+    });
+  });
+
+  // Listener para cerrar el modal
+  closeBtn.addEventListener('click', closeImageModal);
+
+  window.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      closeImageModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal.classList.contains('show')) {
+      closeImageModal();
+    }
+  });
+}
+    </script>
+    <script>
+      // Esperamos a que todo el contenido del DOM se cargue.
+document.addEventListener('DOMContentLoaded', function () {
+    initializeSmoothScroll();
+    initializeCarousel();
+    initializeAccordion();
+    initializeServiceModal();
+    initializeAllyModal();
+});
+
+// ==========================================================
+// Lógica para los botones de menú y smooth scroll
+// ==========================================================
+function initializeSmoothScroll() {
+    // Aplica "smooth scroll" a todos los enlaces de navegación y botones
+    // con 'href' que comienzan con '#'.
+    document.querySelectorAll('a[href^="#"], .btn[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Ajustamos la posición para dejar un espacio superior de 80px.
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollBtn = document.getElementById("btn-scroll-top");
+
+    // Muestra u oculta el botón al hacer scroll
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) { // El número 200 es la distancia en pixeles que se debe desplazar para que el botón aparezca
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
+    });
+
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollBtn = document.getElementById("btn-scroll-top");
+
+    // Muestra u oculta el botón al hacer scroll
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
+    });
+
+    // Scroll suave al hacer clic en el botón
+    scrollBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentItem = 0;
+
+    function showNextItem() {
+        // Esconde el ítem actual
+        galleryItems[currentItem].classList.remove('active');
+
+        // Calcula el próximo ítem
+        currentItem = (currentItem + 1) % galleryItems.length;
+
+        // Muestra el próximo ítem
+        galleryItems[currentItem].classList.add('active');
+    }
+
+    // Cambia la imagen cada 4 segundos
+    setInterval(showNextItem, 4000);
+});
+
+// ==========================================================
+// Lógica para el chat widget
+// ==========================================================
+
+const chatWidget = document.getElementById('chat-widget');
+const openChatBtn = document.getElementById('open-chat-btn');
+const closeChatBtn = document.getElementById('close-chat-btn');
+const chatBody = document.querySelector('.chat-body');
+const chatInput = document.querySelector('.chat-input');
+const sendButton = document.querySelector('.send-button');
+const chatButtons = document.querySelectorAll('.chat-button');
+
+// Función para agregar un mensaje al chat
+function addMessage(message, sender) {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message-bubble');
+
+    if (sender === 'user') {
+        messageContainer.classList.add('user-message');
+        const p = document.createElement('p');
+        p.textContent = message;
+        messageContainer.appendChild(p);
+    } else { // Es un mensaje del bot
+        messageContainer.classList.add('bot-message');
+        const logoImg = document.createElement('img');
+        logoImg.src = 'img/logo-solo-02.png';
+        logoImg.alt = 'Logo Bot';
+        logoImg.classList.add('bot-logo');
+        const messageContent = document.createElement('p');
+        messageContent.innerHTML = message;
+        messageContainer.appendChild(logoImg);
+        messageContainer.appendChild(messageContent);
+    }
+
+    chatBody.appendChild(messageContainer);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Función para mostrar un formulario de contacto para el médico
+function showContactForm() {
+    const formHtml = `
+        <div class="contact-form-container">
+            <p>Por favor, ingresa tu número de teléfono para que un médico te llame.</p>
+            <input type="tel" id="user-phone" placeholder="Tu número de teléfono" class="chat-input" />
+            <button class="send-form-button">Enviar</button>
+        </div>
+    `;
+    const formContainer = document.createElement('div');
+    formContainer.innerHTML = formHtml;
+    chatBody.appendChild(formContainer);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    const sendFormButton = formContainer.querySelector('.send-form-button');
+    const phoneInput = formContainer.querySelector('#user-phone');
+
+    sendFormButton.addEventListener('click', () => {
+        const phoneNumber = phoneInput.value.trim();
+        if (phoneNumber) {
+            addMessage('Gracias. Un médico se pondrá en contacto contigo en el número ' + phoneNumber + '.', 'bot');
+            sendFormButton.disabled = true;
+            phoneInput.disabled = true;
+        } else {
+            addMessage('Por favor, introduce un número de teléfono válido.', 'bot');
+        }
+    });
+}
+
+// Función para obtener la respuesta del bot según la opción seleccionada
+function getBotResponse(option) {
+    switch (option) {
+        case 'Hablar con un médico':
+            showContactForm();
+            return '¡Claro! Para hablar con un médico, por favor, ingresa tus datos y un especialista te contactará en breve.';
+        case 'Solicitar servicios':
+            // Esta es la clave: el botón ya no agrega un mensaje, sino que redirige
+            return '¡Con gusto! Redirigiendo a la sección de servicios...';
+        case 'Consultar Estatus':
+            return 'Para consultar el estatus de tu solicitud, por favor, introduce tu número de referencia.';
+        default:
+            return 'Lo siento, no entiendo tu solicitud. Por favor, selecciona una de las opciones o escribe tu pregunta.';
+    }
+}
+
+// Abre el chat
+openChatBtn.addEventListener('click', () => {
+    chatWidget.classList.add('active');
+    openChatBtn.style.display = 'none';
+});
+
+// Cierra el chat
+closeChatBtn.addEventListener('click', () => {
+    chatWidget.classList.remove('active');
+    openChatBtn.style.display = 'block';
+});
+
+// Interacción de los botones (Lógica optimizada)
+chatButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const userMessage = button.textContent.trim();
+        addMessage(userMessage, 'user');
+
+        // Lógica de redirección específica para el botón de servicios
+        if (userMessage === 'Solicitar servicios') {
+            // Se redirige directamente sin mostrar un mensaje clicable en el chat
+            window.location.href = '/ClubEstarBien/index.html#servicios';
+        } else {
+            const botResponse = getBotResponse(userMessage);
+            setTimeout(() => {
+                addMessage(botResponse, 'bot');
+            }, 500);
+        }
+    });
+});
+
+// Lógica para enviar un mensaje con la tecla Enter o el botón de envío
+chatInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        sendButton.click();
+    }
+});
+
+sendButton.addEventListener('click', () => {
+    const message = chatInput.value.trim();
+    if (message !== '') {
+        addMessage(message, 'user');
+        chatInput.value = '';
+
+        setTimeout(() => {
+            addMessage('Gracias por tu mensaje. Actualmente, el bot solo puede responder a las opciones predefinidas. Por favor, selecciona una de las opciones.', 'bot');
+        }, 500);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    let currentIndex = 0;
+    const totalImages = carouselImages.length;
+
+    function updateCarousel() {
+        carouselSlide.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    // Navegación con los botones
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+
+    // Navegación con los puntos
+    dotsContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('dot')) {
+            const dotIndex = Array.from(dotsContainer.children).indexOf(event.target);
+            currentIndex = dotIndex;
+            updateCarousel();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+        threshold: 0.2
+    }
+    );
+
+    // Selecciona todos los elementos que quieres que aparezcan
+    const elementsToAnimate = document.querySelectorAll(
+        '.hero, .about .container, .services .container, .allies-section .container, .clients-section .container, .contact-new .container, .cta .container, .service-card, .ally-item, .contact-new .card-new, .social-card, .step-button'
+    );
+
+    elementsToAnimate.forEach((el) => {
+        el.classList.add('hidden');
+        observer.observe(el);
+    });
+});
+    </script>
+  </body>
 
 </html>
