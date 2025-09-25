@@ -1389,40 +1389,45 @@ footer {
   font-size: 1.1rem;
 }
 
-/*=====================================
-  # Estilos para el Carrusel de Imágenes  
-=====================================*/
+/*=====================================*/
+/* # Estilos para el Carrusel de Imágenes */
+/*=====================================*/
 
 .carousel-container {
-  max-width: 200px; /* Contenedor más compacto */
+  max-width: 500px; /* Más ancho para mostrar mejor las imágenes */
   width: 100%;
   overflow: hidden;
   position: relative;
   background: #f9f9f9;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  margin: auto;
+  margin: 40px auto; /* Separación del resto de la página */
+  height: auto; /* Altura fija para el carrusel */
 }
 
 .carousel-slide {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Efecto más suave */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-image {
   flex: 0 0 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain; /* Imagen completa siempre */
+  width: 100%;
+  /* CLAVE 3: La imagen ocupa 100% del alto y ancho del slide */
+  height: 100%;
+
+  /* object-fit: contain -> Muestra la imagen completa sin recortar. 
+       Si quieres que llene completamente y recorte los bordes, usa 'cover'. */
+  object-fit: contain;
+
   display: block;
   background: #fff;
   padding: 6px;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Efecto elevación sutil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
-/* Efecto hover */
 .carousel-image:hover {
   transform: scale(1.02);
 }
@@ -1436,14 +1441,14 @@ footer {
   background: rgba(44, 110, 155, 0.8);
   color: #fff;
   border: none;
-  width: 38px;
-  height: 38px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
   z-index: 10;
   transition: background 0.3s, transform 0.2s;
 }
@@ -1455,25 +1460,25 @@ footer {
 }
 
 .carousel-prev {
-  left: 10px;
+  left: -20px; /* Se colocan fuera del contenedor para que no cubran la imagen */
 }
 .carousel-next {
-  right: 10px;
+  right: -20px;
 }
 
 /* Dots */
 .carousel-dots {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: rgba(44, 110, 155, 0.4);
   border-radius: 50%;
   cursor: pointer;
@@ -1494,13 +1499,21 @@ footer {
 
   .carousel-prev,
   .carousel-next {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     font-size: 18px;
   }
 
   .dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .carousel-prev {
+    left: -10px;
+  }
+
+  .carousel-next {
+    right: -10px;
   }
 }
