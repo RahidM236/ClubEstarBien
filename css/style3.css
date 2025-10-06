@@ -119,6 +119,23 @@ body {
   border-color: #007bff;
 }
 
+/* ---------------------------------------------------- */
+/* ==== ESTILOS DE VALIDACIÓN AÑADIDOS ==== */
+/* ---------------------------------------------------- */
+
+.form-group .input-error {
+  /* Hacemos el borde más grueso y rojo para destacar el error */
+  border: 2px solid #dc3545; /* Rojo de Bootstrap para error */
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+/* Asegura que el borde de error se mantenga incluso al enfocar */
+.form-group input.input-error:focus,
+.form-group select.input-error:focus {
+  border-color: #dc3545;
+}
+
+/* ---------------------------------------------------- */
 /* ==== Botones ==== */
 .form-buttons {
   display: flex;
