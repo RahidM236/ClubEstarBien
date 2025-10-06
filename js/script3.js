@@ -219,3 +219,22 @@ document.addEventListener("DOMContentLoaded", () => {
         // Si hay un archivo, la validación pasa y se envía.
     });
 });
+
+
+function togglePasswordVisibility(inputId, iconId) {
+    const passwordInput = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+
+    // 1. Cambia el tipo de input
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        // 2. Cambia el icono a "ojo abierto"
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    } else {
+        passwordInput.type = "password";
+        // 3. Cambia el icono a "ojo cerrado"
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    }
+}

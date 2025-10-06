@@ -8,6 +8,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="img/logo-solo-02.png" type="image/png" />
+    <link href="FONTS/fonts1" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="css/style3.css" />
   </head>
   <body>
@@ -45,31 +53,454 @@
               <label for="municipio">Elija un municipio:</label>
               <select id="municipio" name="municipio" required>
                 <option value="">Seleccione un municipio</option>
+                <!-- ============================================== -->
+                <!-- INICIO: LISTA COMPLETA DE MUNICIPIOS DE VENEZUELA -->
+                <!-- ============================================== -->
+
                 <!-- Distrito Capital -->
-                <option value="Libertador">
-                  Libertador (Distrito Capital)
-                </option>
+                <optgroup label="Distrito Capital">
+                  <option value="Libertador">
+                    Libertador (Distrito Capital)
+                  </option>
+                </optgroup>
+
                 <!-- Amazonas -->
-                <option value="Alto Orinoco">Alto Orinoco</option>
-                <option value="Atabapo">Atabapo</option>
-                <option value="Atures">Atures</option>
-                <option value="Autana">Autana</option>
-                <option value="Manapiare">Manapiare</option>
-                <option value="Maroa">Maroa</option>
-                <option value="Rio Negro">Río Negro</option>
+                <optgroup label="Amazonas">
+                  <option value="Alto Orinoco">Alto Orinoco</option>
+                  <option value="Atabapo">Atabapo</option>
+                  <option value="Atures">Atures</option>
+                  <option value="Autana">Autana</option>
+                  <option value="Manapiare">Manapiare</option>
+                  <option value="Maroa">Maroa</option>
+                  <option value="Rio Negro">Río Negro</option>
+                </optgroup>
+
                 <!-- Anzoátegui -->
-                <option value="Anaco">Anaco</option>
-                <option value="Aragua (Barcelona)">Aragua (Barcelona)</option>
-                <option value="Bruzual (Clarines)">Bruzual (Clarines)</option>
-                <option value="Diego Bautista Urbaneja">
-                  Diego Bautista Urbaneja
-                </option>
-                <option value="Guanta">Guanta</option>
-                <option value="Jose Gregorio Monagas">
-                  José Gregorio Monagas
-                </option>
-                <option value="Puerto la Cruz">Puerto la Cruz</option>
-                <!-- Continúa para todos los estados... -->
+                <optgroup label="Anzoátegui">
+                  <option value="Anaco">Anaco</option>
+                  <option value="Aragua">Aragua</option>
+                  <option value="Bolivar">Bolívar (Barcelona)</option>
+                  <option value="Bruzual">Bruzual (Clarines)</option>
+                  <option value="Cajigal">Cajigal</option>
+                  <option value="Carvajal">Carvajal</option>
+                  <option value="Freites">Freites</option>
+                  <option value="Guanipa">Guanipa (San José de Guanipa)</option>
+                  <option value="Guanta">Guanta</option>
+                  <option value="Independencia">Independencia</option>
+                  <option value="Libertad">Libertad</option>
+                  <option value="McGregor">Sir Arthur McGregor</option>
+                  <option value="Miranda">Miranda</option>
+                  <option value="Monagas">Monagas</option>
+                  <option value="Peñalver">Peñalver (Puerto Píritu)</option>
+                  <option value="Píritu">Píritu</option>
+                  <option value="Simón Rodríguez">Simón Rodríguez</option>
+                  <option value="Sotillo">Sotillo (Puerto La Cruz)</option>
+                  <option value="Urbaneja">Diego Bautista Urbaneja</option>
+                </optgroup>
+
+                <!-- Apure -->
+                <optgroup label="Apure">
+                  <option value="Achaguas">Achaguas</option>
+                  <option value="Biruaca">Biruaca</option>
+                  <option value="Muñoz">Muñoz</option>
+                  <option value="Páez">Páez (Guasdualito)</option>
+                  <option value="Pedro Camejo">Pedro Camejo</option>
+                  <option value="Rómulo Gallegos">Rómulo Gallegos</option>
+                  <option value="San Fernando">San Fernando</option>
+                </optgroup>
+
+                <!-- Aragua -->
+                <optgroup label="Aragua">
+                  <option value="Bolívar">Bolívar (San Mateo)</option>
+                  <option value="Camatagua">Camatagua</option>
+                  <option value="F. L. Alcantara">F. Linares Alcántara</option>
+                  <option value="Girardot">Girardot (Maracay)</option>
+                  <option value="José A. Lamas">José Ángel Lamas</option>
+                  <option value="J. F. Ribas">José Félix Ribas</option>
+                  <option value="J. R. Revenga">José Rafael Revenga</option>
+                  <option value="Libertador">Libertador (Palo Negro)</option>
+                  <option value="M. B. Iragorry">Mario Briceño Iragorry</option>
+                  <option value="Ocumare Costa Oro">
+                    Ocumare de la Costa de Oro
+                  </option>
+                  <option value="San Casimiro">San Casimiro</option>
+                  <option value="San Sebastián">San Sebastián</option>
+                  <option value="S. Mariño">Santiago Mariño</option>
+                  <option value="S. Michelena">Santos Michelena</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Tovar">Tovar</option>
+                  <option value="Urdaneta">Urdaneta</option>
+                  <option value="Zamora">Zamora</option>
+                </optgroup>
+
+                <!-- Barinas -->
+                <optgroup label="Barinas">
+                  <option value="A. Arvelo Torrealba">
+                    A. Arvelo Torrealba
+                  </option>
+                  <option value="A. Eloy Blanco">Andrés Eloy Blanco</option>
+                  <option value="A. J. de Sucre">Antonio José de Sucre</option>
+                  <option value="Arismendi">Arismendi</option>
+                  <option value="Barinas">Barinas</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Cruz Paredes">Cruz Paredes</option>
+                  <option value="Ezequiel Zamora">Ezequiel Zamora</option>
+                  <option value="Obispos">Obispos</option>
+                  <option value="Pedraza">Pedraza</option>
+                  <option value="Rojas">Rojas</option>
+                  <option value="Sosa">Sosa</option>
+                </optgroup>
+
+                <!-- Bolívar -->
+                <optgroup label="Bolívar">
+                  <option value="Caroní">Caroní (Puerto Ordaz)</option>
+                  <option value="Cedeño">Cedeño</option>
+                  <option value="El Callao">El Callao</option>
+                  <option value="Gran Sabana">Gran Sabana</option>
+                  <option value="Heres">Heres (Ciudad Bolívar)</option>
+                  <option value="Piar">Piar</option>
+                  <option value="Roscio">Roscio</option>
+                  <option value="Sifontes">Sifontes</option>
+                  <option value="Sucre">Sucre</option>
+                </optgroup>
+
+                <!-- Carabobo -->
+                <optgroup label="Carabobo">
+                  <option value="Bejuma">Bejuma</option>
+                  <option value="Carlos Arvelo">Carlos Arvelo</option>
+                  <option value="Diego Ibarra">Diego Ibarra</option>
+                  <option value="Guacara">Guacara</option>
+                  <option value="J. J. Mora">Juan José Mora</option>
+                  <option value="Libertador">Libertador</option>
+                  <option value="Los Guayos">Los Guayos</option>
+                  <option value="Miranda">Miranda</option>
+                  <option value="Montalbán">Montalbán</option>
+                  <option value="Naguanagua">Naguanagua</option>
+                  <option value="Puerto Cabello">Puerto Cabello</option>
+                  <option value="San Joaquín">San Joaquín</option>
+                  <option value="Valencia">Valencia</option>
+                </optgroup>
+
+                <!-- Cojedes -->
+                <optgroup label="Cojedes">
+                  <option value="Anzoátegui">Anzoátegui</option>
+                  <option value="Falcón">Falcón</option>
+                  <option value="Girardot">Girardot</option>
+                  <option value="Lima Blanco">Lima Blanco</option>
+                  <option value="Pao S. J. B.">Pao de San Juan Bautista</option>
+                  <option value="Ricaurte">Ricaurte</option>
+                  <option value="Rómulo Gallegos">Rómulo Gallegos</option>
+                  <option value="San Carlos">San Carlos</option>
+                  <option value="Tinaquillo">Tinaquillo</option>
+                </optgroup>
+
+                <!-- Delta Amacuro -->
+                <optgroup label="Delta Amacuro">
+                  <option value="Antonio Díaz">Antonio Díaz</option>
+                  <option value="Casacoima">Casacoima</option>
+                  <option value="Pedernales">Pedernales</option>
+                  <option value="Tucupita">Tucupita</option>
+                </optgroup>
+
+                <!-- Falcón -->
+                <optgroup label="Falcón">
+                  <option value="Acosta">Acosta</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Buchivacoa">Buchivacoa</option>
+                  <option value="Cacique Manaure">Cacique Manaure</option>
+                  <option value="Carirubana">Carirubana</option>
+                  <option value="Colina">Colina</option>
+                  <option value="Dabajuro">Dabajuro</option>
+                  <option value="Democracia">Democracia</option>
+                  <option value="Falcón">Falcón</option>
+                  <option value="Federación">Federación</option>
+                  <option value="Jacura">Jacura</option>
+                  <option value="Los Taques">Los Taques</option>
+                  <option value="Mauroa">Mauroa</option>
+                  <option value="Miranda">Miranda (Coro)</option>
+                  <option value="M. Iturriza">Monseñor Iturriza</option>
+                  <option value="Palma">Palma</option>
+                  <option value="Petit">Petit</option>
+                  <option value="Píritu">Píritu</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Silva">Silva</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Tocópero">Tocópero</option>
+                  <option value="Unión">Unión</option>
+                  <option value="Zamora">Zamora</option>
+                </optgroup>
+
+                <!-- Guárico -->
+                <optgroup label="Guárico">
+                  <option value="Camaguán">Camaguán</option>
+                  <option value="Chaguaramas">Chaguaramas</option>
+                  <option value="El Socorro">El Socorro</option>
+                  <option value="F. de Miranda">Francisco de Miranda</option>
+                  <option value="J. F. Ribas">José Félix Ribas</option>
+                  <option value="J. T. Monagas">José Tadeo Monagas</option>
+                  <option value="J. G. Roscio">Juan Germán Roscio</option>
+                  <option value="Julián Mellado">Julián Mellado</option>
+                  <option value="Las Mercedes">Las Mercedes</option>
+                  <option value="Leonardo Infante">Leonardo Infante</option>
+                  <option value="Ortiz">Ortiz</option>
+                  <option value="S. G. Guayabal">
+                    San Gerónimo de Guayabal
+                  </option>
+                  <option value="S. J. Guaribe">San José de Guaribe</option>
+                  <option value="S. M. de Ipire">Santa María de Ipire</option>
+                  <option value="Zaraza">Zaraza</option>
+                </optgroup>
+
+                <!-- La Guaira (antes Vargas) -->
+                <optgroup label="La Guaira">
+                  <option value="Vargas">Vargas</option>
+                </optgroup>
+
+                <!-- Lara -->
+                <optgroup label="Lara">
+                  <option value="A. Eloy Blanco">Andrés Eloy Blanco</option>
+                  <option value="Crespo">Crespo</option>
+                  <option value="Iribarren">Iribarren (Barquisimeto)</option>
+                  <option value="Jiménez">Jiménez</option>
+                  <option value="Morán">Morán</option>
+                  <option value="Palavecino">Palavecino</option>
+                  <option value="Simón Planas">Simón Planas</option>
+                  <option value="Torres">Torres</option>
+                  <option value="Urdaneta">Urdaneta</option>
+                </optgroup>
+
+                <!-- Mérida -->
+                <optgroup label="Mérida">
+                  <option value="Alberto Adriani">Alberto Adriani</option>
+                  <option value="Andrés Bello">Andrés Bello</option>
+                  <option value="A. P. Salinas">Antonio Pinto Salinas</option>
+                  <option value="Aricagua">Aricagua</option>
+                  <option value="Arzobispo Chacón">Arzobispo Chacón</option>
+                  <option value="Campo Elías">Campo Elías</option>
+                  <option value="C. P. Olmedo">Caracciolo Parra Olmedo</option>
+                  <option value="Cardenal Quintero">Cardenal Quintero</option>
+                  <option value="Guaraque">Guaraque</option>
+                  <option value="J. C. Salas">Julio César Salas</option>
+                  <option value="Justo Briceño">Justo Briceño</option>
+                  <option value="Libertador">Libertador (Mérida)</option>
+                  <option value="Miranda">Miranda</option>
+                  <option value="O. R. de Lora">Obispo Ramos de Lora</option>
+                  <option value="Padre Noguera">Padre Noguera</option>
+                  <option value="Pueblo Llano">Pueblo Llano</option>
+                  <option value="Rangel">Rangel</option>
+                  <option value="Rivas Dávila">Rivas Dávila</option>
+                  <option value="Santos Marquina">Santos Marquina</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Tovar">Tovar</option>
+                  <option value="T. F. Cordero">Tulio Febres Cordero</option>
+                  <option value="Zea">Zea</option>
+                </optgroup>
+
+                <!-- Miranda -->
+                <optgroup label="Miranda">
+                  <option value="Acevedo">Acevedo</option>
+                  <option value="Andrés Bello">Andrés Bello</option>
+                  <option value="Baruta">Baruta</option>
+                  <option value="Brión">Brión</option>
+                  <option value="Buroz">Buroz</option>
+                  <option value="Carrizal">Carrizal</option>
+                  <option value="Chacao">Chacao</option>
+                  <option value="C. Rojas">Cristóbal Rojas</option>
+                  <option value="El Hatillo">El Hatillo</option>
+                  <option value="Guaicaipuro">Guaicaipuro</option>
+                  <option value="Independencia">Independencia</option>
+                  <option value="Lander">Lander</option>
+                  <option value="Los Salias">Los Salias</option>
+                  <option value="Páez">Páez</option>
+                  <option value="Paz Castillo">Paz Castillo</option>
+                  <option value="Pedro Gual">Pedro Gual</option>
+                  <option value="Plaza">Plaza</option>
+                  <option value="S. Bolívar">Simón Bolívar</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Urdaneta">Urdaneta</option>
+                  <option value="Zamora">Zamora</option>
+                </optgroup>
+
+                <!-- Monagas -->
+                <optgroup label="Monagas">
+                  <option value="Acosta">Acosta</option>
+                  <option value="Aguasay">Aguasay</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Caripe">Caripe</option>
+                  <option value="Cedeño">Cedeño</option>
+                  <option value="Ezequiel Zamora">Ezequiel Zamora</option>
+                  <option value="Libertador">Libertador</option>
+                  <option value="Maturín">Maturín</option>
+                  <option value="Piar">Piar</option>
+                  <option value="Punceres">Punceres</option>
+                  <option value="Santa Bárbara">Santa Bárbara</option>
+                  <option value="Sotillo">Sotillo</option>
+                  <option value="Uracoa">Uracoa</option>
+                </optgroup>
+
+                <!-- Nueva Esparta -->
+                <optgroup label="Nueva Esparta">
+                  <option value="A. del Campo">Antolín del Campo</option>
+                  <option value="Arismendi">Arismendi</option>
+                  <option value="Díaz">Díaz</option>
+                  <option value="García">García</option>
+                  <option value="Gómez">Gómez</option>
+                  <option value="Maneiro">Maneiro</option>
+                  <option value="Marcano">Marcano</option>
+                  <option value="Mariño">Mariño</option>
+                  <option value="Tubores">Tubores</option>
+                  <option value="Villalba">Villalba</option>
+                </optgroup>
+
+                <!-- Portuguesa -->
+                <optgroup label="Portuguesa">
+                  <option value="Agua Blanca">Agua Blanca</option>
+                  <option value="Araure">Araure</option>
+                  <option value="Esteller">Esteller</option>
+                  <option value="Guanare">Guanare</option>
+                  <option value="Guanarito">Guanarito</option>
+                  <option value="M. J. V. de Unda">
+                    Monseñor J. V. de Unda
+                  </option>
+                  <option value="Ospino">Ospino</option>
+                  <option value="Páez">Páez</option>
+                  <option value="Papelón">Papelón</option>
+                  <option value="S. G. Boconoito">
+                    San Genaro de Boconoito
+                  </option>
+                  <option value="S. R. de Onoto">San Rafael de Onoto</option>
+                  <option value="Santa Rosalía">Santa Rosalía</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Turén">Turén</option>
+                </optgroup>
+
+                <!-- Sucre -->
+                <optgroup label="Sucre">
+                  <option value="A. Eloy Blanco">Andrés Eloy Blanco</option>
+                  <option value="Andrés Mata">Andrés Mata</option>
+                  <option value="Arismendi">Arismendi</option>
+                  <option value="Benítez">Benítez</option>
+                  <option value="Bermúdez">Bermúdez</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Cajigal">Cajigal</option>
+                  <option value="C. S. Acosta">Cruz Salmerón Acosta</option>
+                  <option value="Libertador">Libertador</option>
+                  <option value="Mariño">Mariño</option>
+                  <option value="Mejía">Mejía</option>
+                  <option value="Montes">Montes</option>
+                  <option value="Ribero">Ribero</option>
+                  <option value="Sucre">Sucre (Cumaná)</option>
+                  <option value="Valdez">Valdez</option>
+                </optgroup>
+
+                <!-- Táchira -->
+                <optgroup label="Táchira">
+                  <option value="Andrés Bello">Andrés Bello</option>
+                  <option value="A. R. Costa">Antonio Rómulo Costa</option>
+                  <option value="Ayacucho">Ayacucho</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Cárdenas">Cárdenas</option>
+                  <option value="Córdoba">Córdoba</option>
+                  <option value="Fernández Feo">Fernández Feo</option>
+                  <option value="F. de Miranda">Francisco de Miranda</option>
+                  <option value="García de Hevia">García de Hevia</option>
+                  <option value="Guásimos">Guásimos</option>
+                  <option value="Independencia">Independencia</option>
+                  <option value="Jáuregui">Jáuregui</option>
+                  <option value="J. M. Vargas">José María Vargas</option>
+                  <option value="Junín">Junín</option>
+                  <option value="Libertador">Libertador</option>
+                  <option value="Lobatera">Lobatera</option>
+                  <option value="Michelena">Michelena</option>
+                  <option value="Panamericano">Panamericano</option>
+                  <option value="P. M. Ureña">Pedro María Ureña</option>
+                  <option value="R. Urdaneta">Rafael Urdaneta</option>
+                  <option value="S. D. Maldonado">
+                    Samuel Darío Maldonado
+                  </option>
+                  <option value="San Cristóbal">San Cristóbal</option>
+                  <option value="Seboruco">Seboruco</option>
+                  <option value="S. Rodríguez">Simón Rodríguez</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Torbes">Torbes</option>
+                  <option value="Uribante">Uribante</option>
+                </optgroup>
+
+                <!-- Trujillo -->
+                <optgroup label="Trujillo">
+                  <option value="Andrés Bello">Andrés Bello</option>
+                  <option value="Boconó">Boconó</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Candelaria">Candelaria</option>
+                  <option value="Carache">Carache</option>
+                  <option value="Escuque">Escuque</option>
+                  <option value="J. F. M. Cañizalez">J. F. M. Cañizalez</option>
+                  <option value="J. V. C. Elías">J. V. C. Elías</option>
+                  <option value="La Ceiba">La Ceiba</option>
+                  <option value="Miranda">Miranda</option>
+                  <option value="Monte Carmelo">Monte Carmelo</option>
+                  <option value="Motatán">Motatán</option>
+                  <option value="Pampán">Pampán</option>
+                  <option value="Pampanito">Pampanito</option>
+                  <option value="Rafael Rangel">Rafael Rangel</option>
+                  <option value="S. R. de Carvajal">
+                    San Rafael de Carvajal
+                  </option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Trujillo">Trujillo</option>
+                  <option value="Urdaneta">Urdaneta</option>
+                  <option value="Valera">Valera</option>
+                </optgroup>
+
+                <!-- Yaracuy -->
+                <optgroup label="Yaracuy">
+                  <option value="Aristides Bastidas">Aristides Bastidas</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Bruzual">Bruzual</option>
+                  <option value="Cocorote">Cocorote</option>
+                  <option value="Independencia">Independencia</option>
+                  <option value="J. A. Páez">José Antonio Páez</option>
+                  <option value="La Trinidad">La Trinidad</option>
+                  <option value="Manuel Monge">Manuel Monge</option>
+                  <option value="Nirgua">Nirgua</option>
+                  <option value="Peña">Peña</option>
+                  <option value="San Felipe">San Felipe</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Veroes">Veroes</option>
+                </optgroup>
+
+                <!-- Zulia -->
+                <optgroup label="Zulia">
+                  <option value="Almirante Padilla">Almirante Padilla</option>
+                  <option value="Baralt">Baralt</option>
+                  <option value="Cabimas">Cabimas</option>
+                  <option value="Catatumbo">Catatumbo</option>
+                  <option value="Colón">Colón</option>
+                  <option value="F. J. Pulgar">Francisco Javier Pulgar</option>
+                  <option value="J. E. Lossada">Jesús Enrique Lossada</option>
+                  <option value="J. M. Semprún">Jesús María Semprún</option>
+                  <option value="La Cañada de Urdaneta">
+                    La Cañada de Urdaneta
+                  </option>
+                  <option value="Lagunillas">Lagunillas</option>
+                  <option value="Machiques de Perijá">
+                    Machiques de Perijá
+                  </option>
+                  <option value="Mara">Mara</option>
+                  <option value="Maracaibo">Maracaibo</option>
+                  <option value="Miranda">Miranda</option>
+                  <option value="Páez">Páez</option>
+                  <option value="R. de Perijá">Rosario de Perijá</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Santa Rita">Santa Rita</option>
+                  <option value="S. Bolívar">Simón Bolívar</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="V. Rodríguez">Valmore Rodríguez</option>
+                </optgroup>
+
+                <!-- ============================================== -->
+                <!-- FIN: LISTA COMPLETA DE MUNICIPIOS DE VENEZUELA -->
+                <!-- ============================================== -->
               </select>
             </div>
 
@@ -196,7 +627,12 @@
                   placeholder="Ingrese su contraseña"
                   required
                 />
-                <span class="toggle-password" data-target="password">👁️</span>
+                <span
+                  class="toggle-password"
+                  onclick="togglePasswordVisibility('password', 'togglePasswordIcon')"
+                >
+                  <i id="togglePasswordIcon" class="fas fa-eye-slash"></i>
+                </span>
               </div>
             </div>
 
@@ -210,9 +646,15 @@
                   placeholder="Repita su contraseña"
                   required
                 />
-                <span class="toggle-password" data-target="confirmPassword"
-                  >👁️</span
+                <span
+                  class="toggle-password"
+                  onclick="togglePasswordVisibility('confirmPassword', 'toggleConfirmPasswordIcon')"
                 >
+                  <i
+                    id="toggleConfirmPasswordIcon"
+                    class="fas fa-eye-slash"
+                  ></i>
+                </span>
               </div>
             </div>
 
