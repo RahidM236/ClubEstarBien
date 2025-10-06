@@ -70,12 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentItem = 0;
 
     function showNextItem() {
-        // ✅ VERIFICACIÓN DE SEGURIDAD
-        if (galleryItems.length === 0) {
-            console.error("Error: No se encontraron elementos con la clase '.gallery-item'.");
-            return; // Detiene la ejecución si no hay ítems
-        }
-        
         // Esconde el ítem actual
         galleryItems[currentItem].classList.remove('active');
 
@@ -86,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryItems[currentItem].classList.add('active');
     }
 
-    // ... el setInterval
+    // Cambia la imagen cada 4 segundos
     setInterval(showNextItem, 4000);
 });
 
