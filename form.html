@@ -667,8 +667,6 @@
               </button>
             </div>
           </div>
-
-          <!-- Paso 3 -->
           <div class="step" id="step3">
             <h2 class="form-title full-width">Carga de Documentos</h2>
 
@@ -686,6 +684,25 @@
                   CARGAR FOTO
                 </button>
               </div>
+
+              <span
+                id="fileNameDisplay"
+                style="display: block; margin-top: 10px; font-weight: bold"
+              ></span>
+
+              <img
+                id="filePreview"
+                src=""
+                alt="Previsualización del documento"
+                style="
+                  max-width: 100%;
+                  max-height: 200px;
+                  margin-top: 10px;
+                  border: 1px solid #ccc;
+                  display: none;
+                "
+              />
+
               <input
                 type="file"
                 id="documentoIdentidad"
@@ -695,7 +712,6 @@
                 required
               />
             </div>
-
             <div class="form-buttons full-width">
               <button type="button" class="btn-nav prev" id="prev3">
                 Anterior
