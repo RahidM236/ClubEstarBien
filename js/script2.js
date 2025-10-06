@@ -1,10 +1,6 @@
 // Esperamos a que todo el contenido del DOM se cargue.
 document.addEventListener('DOMContentLoaded', function () {
-    initializeSmoothScroll();
-    initializeCarousel();
-    initializeAccordion();
-    initializeServiceModal();
-    initializeAllyModal();
+    initializeSmoothScroll();            
 });
 
 // ==========================================================
@@ -74,6 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentItem = 0;
 
     function showNextItem() {
+        // ✅ VERIFICACIÓN DE SEGURIDAD
+        if (galleryItems.length === 0) {
+            console.error("Error: No se encontraron elementos con la clase '.gallery-item'.");
+            return; // Detiene la ejecución si no hay ítems
+        }
+        
         // Esconde el ítem actual
         galleryItems[currentItem].classList.remove('active');
 
@@ -84,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryItems[currentItem].classList.add('active');
     }
 
-    // Cambia la imagen cada 4 segundos
+    // ... el setInterval
     setInterval(showNextItem, 4000);
 });
 
